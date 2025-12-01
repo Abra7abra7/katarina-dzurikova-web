@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -72,6 +73,12 @@ export function Navbar() {
               >
                 Služby
               </button>
+              <Link
+                href="/sluzby"
+                className="text-sm uppercase tracking-luxury font-sans font-semibold text-ink hover:text-gold transition-colors duration-300"
+              >
+                Cenník
+              </Link>
               <button
                 onClick={() => scrollToSection("gallery")}
                 className="text-sm uppercase tracking-luxury font-sans font-semibold text-ink hover:text-gold transition-colors duration-300"
@@ -139,6 +146,13 @@ export function Navbar() {
               >
                 Služby
               </button>
+              <Link
+                href="/sluzby"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-3xl font-serif text-ink hover:text-gold transition-colors duration-300 text-left"
+              >
+                Cenník
+              </Link>
               <button
                 onClick={() => scrollToSection("gallery")}
                 className="text-3xl font-serif text-ink hover:text-gold transition-colors duration-300 text-left"

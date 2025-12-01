@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 interface Service {
   id: number;
@@ -181,6 +183,21 @@ export function ServicesSection() {
             </div>
           </div>
         </div>
+
+        {/* CTA Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
+          viewport={{ once: true }}
+          className="mt-16 md:mt-20 flex justify-center"
+        >
+          <Link href="/sluzby">
+            <Button variant="luxury" className="text-base md:text-lg px-8 md:px-12 py-6">
+              Zobraziť kompletný cenník
+            </Button>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
