@@ -49,14 +49,14 @@ export function HeroSection() {
       </motion.div>
 
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col justify-center items-start container mx-auto px-6 lg:px-12">
+      <div className="relative z-10 h-full flex flex-col justify-center items-start container mx-auto px-4 sm:px-6 lg:px-12">
         <div className="max-w-5xl">
           {/* Overline */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="mb-6"
+            className="mb-4 md:mb-6"
           >
             <span className="text-xs uppercase tracking-luxury font-sans font-semibold text-gold">
               Estetická Medicína
@@ -68,7 +68,7 @@ export function HeroSection() {
             variants={staggerContainer}
             initial="hidden"
             animate="show"
-            className="font-serif text-6xl md:text-8xl lg:text-9xl font-bold tracking-editorial leading-none text-ink mb-8 overflow-hidden"
+            className="font-serif text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold tracking-editorial leading-none text-ink mb-6 md:mb-8 overflow-hidden"
           >
             <div className="overflow-hidden">
               <motion.span variants={textReveal} className="inline-block">
@@ -87,7 +87,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2, duration: 0.8 }}
-            className="font-sans text-lg md:text-xl text-ink/80 leading-relaxed max-w-2xl"
+            className="font-sans text-base md:text-lg lg:text-xl text-ink/80 leading-relaxed max-w-2xl pr-4"
           >
             Precízna starostlivosť rešpektujúca vašu prirodzenosť.
           </motion.p>

@@ -92,25 +92,36 @@ export function ServicesSection() {
                 onMouseLeave={() => setHoveredService(null)}
                 className="group border-t border-stone-300 py-8 cursor-pointer transition-all duration-500"
               >
-                <div className="flex items-start justify-between gap-8">
+                {/* Mobile Image */}
+                <div className="relative w-full aspect-[4/3] mb-6 overflow-hidden lg:hidden">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover saturate-75 group-hover:scale-105 transition-transform duration-700"
+                    quality={90}
+                  />
+                </div>
+
+                <div className="flex items-start justify-between gap-4 md:gap-8">
                   <div className="flex-1">
-                    <div className="flex items-baseline gap-4 mb-2">
+                    <div className="flex items-baseline gap-3 md:gap-4 mb-2">
                       <span className="text-xs font-sans font-semibold text-gold">
                         {String(service.id).padStart(2, "0")}
                       </span>
-                      <h3 className="font-serif text-2xl md:text-4xl font-semibold tracking-editorial text-ink group-hover:text-gold transition-colors duration-500">
+                      <h3 className="font-serif text-xl md:text-2xl lg:text-4xl font-semibold tracking-editorial text-ink group-hover:text-gold transition-colors duration-500">
                         {service.title}
                       </h3>
                     </div>
-                    <p className="text-sm uppercase tracking-luxury font-sans font-semibold text-ink/50 mb-4">
+                    <p className="text-xs md:text-sm uppercase tracking-luxury font-sans font-semibold text-ink/50 mb-3 md:mb-4">
                       {service.subtitle}
                     </p>
-                    <p className="text-base text-ink/70 leading-relaxed max-w-2xl mb-4">
+                    <p className="text-sm md:text-base text-ink/70 leading-relaxed max-w-2xl mb-3 md:mb-4">
                       {service.description}
                     </p>
-                    <div className="flex items-center gap-6 text-sm text-ink/60">
+                    <div className="flex items-center gap-4 md:gap-6 text-xs md:text-sm text-ink/60">
                       <span>⏱ {service.duration}</span>
-                      <span className="font-semibold text-ink">
+                      <span className="font-semibold text-ink text-base md:text-lg">
                         {service.price}
                       </span>
                     </div>
@@ -121,6 +132,7 @@ export function ServicesSection() {
                       rotate: hoveredService === service.id ? 45 : 0,
                     }}
                     transition={{ duration: 0.3 }}
+                    className="hidden md:block"
                   >
                     <ArrowUpRight
                       className="text-gold opacity-0 group-hover:opacity-100 transition-opacity duration-500"

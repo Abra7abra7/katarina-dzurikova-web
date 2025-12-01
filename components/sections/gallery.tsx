@@ -103,24 +103,24 @@ export function GallerySection() {
     <section
       id="gallery"
       ref={sectionRef}
-      className="relative bg-canvas py-24 md:py-32 overflow-hidden"
+      className="relative bg-canvas py-16 md:py-24 lg:py-32 overflow-hidden"
     >
-      <div className="container mx-auto px-6 lg:px-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-12">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.33, 1, 0.68, 1] }}
           viewport={{ once: true }}
-          className="mb-20 text-center"
+          className="mb-12 md:mb-16 lg:mb-20 text-center"
         >
           <span className="text-xs uppercase tracking-luxury font-sans font-semibold text-gold">
             Galéria
           </span>
-          <h2 className="mt-6 font-serif text-4xl md:text-6xl font-semibold tracking-editorial leading-tight text-ink">
+          <h2 className="mt-4 md:mt-6 font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-editorial leading-tight text-ink px-4">
             Vízia krásy
           </h2>
-          <p className="mt-6 text-lg text-ink/70 max-w-2xl mx-auto">
+          <p className="mt-4 md:mt-6 text-base md:text-lg text-ink/70 max-w-2xl mx-auto px-4">
             Pohľad do sveta profesionálnej estetickej starostlivosti
           </p>
         </motion.div>
@@ -131,13 +131,13 @@ export function GallerySection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
           viewport={{ once: true }}
-          className="mb-12 flex flex-wrap justify-center gap-3"
+          className="mb-8 md:mb-12 flex flex-wrap justify-center gap-2 md:gap-3 px-4"
         >
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setActiveFilter(category)}
-              className={`px-6 py-2 text-sm uppercase tracking-luxury font-sans font-semibold transition-all duration-500 ${
+              className={`px-4 md:px-6 py-2 text-xs md:text-sm uppercase tracking-luxury font-sans font-semibold transition-all duration-500 ${
                 activeFilter === category
                   ? "bg-gold text-canvas"
                   : "bg-canvas border border-gold/30 text-gold hover:bg-gold/10"
@@ -149,7 +149,7 @@ export function GallerySection() {
         </motion.div>
 
         {/* Parallax Masonry Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
           {/* Column 1 */}
           <motion.div style={{ y: y1 }} className="space-y-6">
             {filterImages(galleryImages.column1).map((image, index) => (
@@ -173,11 +173,11 @@ export function GallerySection() {
                   quality={90}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/0 to-ink/0 opacity-0 group-hover:opacity-100 transition-all duration-700" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                   <span className="text-xs uppercase tracking-luxury font-sans font-semibold text-gold">
                     {image.category}
                   </span>
-                  <p className="mt-2 text-sm text-canvas/90">{image.alt}</p>
+                  <p className="mt-1 md:mt-2 text-xs md:text-sm text-canvas/90">{image.alt}</p>
                 </div>
               </motion.div>
             ))}
@@ -206,11 +206,11 @@ export function GallerySection() {
                   quality={90}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/0 to-ink/0 opacity-0 group-hover:opacity-100 transition-all duration-700" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                   <span className="text-xs uppercase tracking-luxury font-sans font-semibold text-gold">
                     {image.category}
                   </span>
-                  <p className="mt-2 text-sm text-canvas/90">{image.alt}</p>
+                  <p className="mt-1 md:mt-2 text-xs md:text-sm text-canvas/90">{image.alt}</p>
                 </div>
               </motion.div>
             ))}
@@ -239,11 +239,11 @@ export function GallerySection() {
                   quality={90}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/0 to-ink/0 opacity-0 group-hover:opacity-100 transition-all duration-700" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                   <span className="text-xs uppercase tracking-luxury font-sans font-semibold text-gold">
                     {image.category}
                   </span>
-                  <p className="mt-2 text-sm text-canvas/90">{image.alt}</p>
+                  <p className="mt-1 md:mt-2 text-xs md:text-sm text-canvas/90">{image.alt}</p>
                 </div>
               </motion.div>
             ))}

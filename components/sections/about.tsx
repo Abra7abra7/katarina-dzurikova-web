@@ -17,10 +17,10 @@ export function AboutSection() {
     <section
       id="about"
       ref={sectionRef}
-      className="relative bg-canvas py-24 md:py-32 overflow-hidden"
+      className="relative bg-canvas py-16 md:py-24 lg:py-32 overflow-hidden"
     >
-      <div className="container mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-start">
           {/* Left Side - Image (Sticky) */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -74,14 +74,14 @@ export function AboutSection() {
               </span>
 
               {/* Headline */}
-              <h2 className="font-serif text-4xl md:text-6xl font-semibold tracking-editorial leading-tight text-ink">
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-editorial leading-tight text-ink">
                 Vaša prirodzená krása, zvýraznená s citom
               </h2>
 
               {/* Body Text with Drop Cap */}
-              <div className="space-y-6 text-ink/80 leading-relaxed">
-                <p className="text-lg md:text-xl">
-                  <span className="float-left font-serif text-7xl leading-none mr-3 mt-2 text-gold">
+              <div className="space-y-4 md:space-y-6 text-ink/80 leading-relaxed">
+                <p className="text-base md:text-lg lg:text-xl">
+                  <span className="float-left font-serif text-5xl md:text-7xl leading-none mr-2 md:mr-3 mt-1 md:mt-2 text-gold">
                     V
                   </span>
                   erím, že každá žena má jedinečnú krásu, ktorá si zaslúži
@@ -89,14 +89,14 @@ export function AboutSection() {
                   na rešpekte k vašej prirodzenosti – nechcem meniť, ale
                   zvýrazniť to najlepšie, čo už máte.
                 </p>
-                <p className="text-base md:text-lg">
+                <p className="text-sm md:text-base lg:text-lg">
                   S viac ako 10-ročnými skúsenosťami v estetickej medicíne som
                   sa špecializovala na neinvazívne procedúry, ktoré prinášajú
                   viditeľné výsledky bez rizika a s minimálnym prestojom.
                   Každému ošetreniu venujem maximálnu pozornosť a čas, aby ste
                   sa cítili pohodlne a v bezpečí.
                 </p>
-                <p className="text-base md:text-lg">
+                <p className="text-sm md:text-base lg:text-lg">
                   Moja klinika je priestorom pokoja, kde sa o vás postarám s
                   rovnakým rešpektom a starostlivosťou, aké by som chcela pre
                   seba. Pretože skutočná krása nie je o dokonalosti – je o
@@ -114,20 +114,20 @@ export function AboutSection() {
                   ease: [0.33, 1, 0.68, 1],
                 }}
                 viewport={{ once: true }}
-                className="mt-16 py-12 border-t border-b border-gold/30"
+                className="mt-12 md:mt-16 py-8 md:py-12 border-t border-b border-gold/30"
               >
-                <p className="font-serif text-3xl md:text-4xl italic text-center leading-relaxed text-ink">
+                <p className="font-serif text-2xl sm:text-3xl md:text-4xl italic text-center leading-relaxed text-ink px-4">
                   &ldquo;Výsledky, ktoré nekričia – ale žiaria&rdquo;
                 </p>
               </motion.blockquote>
 
               {/* Credentials */}
-              <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="mt-8 md:mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 <div>
                   <h4 className="text-xs uppercase tracking-luxury font-sans font-semibold text-gold mb-3">
                     Vzdelanie
                   </h4>
-                  <ul className="space-y-2 text-ink/70">
+                  <ul className="space-y-2 text-sm md:text-base text-ink/70">
                     <li>— Lekárska fakulta UK Bratislava</li>
                     <li>— Certifikácia estetická medicína</li>
                     <li>— Pokročilé techniky injekčnej lipolýzy</li>
@@ -137,7 +137,7 @@ export function AboutSection() {
                   <h4 className="text-xs uppercase tracking-luxury font-sans font-semibold text-gold mb-3">
                     Špecializácia
                   </h4>
-                  <ul className="space-y-2 text-ink/70">
+                  <ul className="space-y-2 text-sm md:text-base text-ink/70">
                     <li>— Neinvazívny lifting</li>
                     <li>— Obnovenie kontúr tváre</li>
                     <li>— Anti-aging protokoly</li>
