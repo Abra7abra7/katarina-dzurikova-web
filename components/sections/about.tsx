@@ -32,8 +32,8 @@ export function AboutSection() {
             <div className="relative aspect-[3/4] overflow-hidden">
               <motion.div style={{ y: imageY }} className="h-full w-full">
                 <Image
-                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2787&auto=format&fit=crop"
-                  alt="Katarína Dzuriková"
+                  src="/images/gallery/WhatsApp Image 2025-12-01 at 20.53.46 (11).jpeg"
+                  alt="MUDr. Katarína Dzuriková"
                   fill
                   className="object-cover saturate-75"
                   quality={90}
