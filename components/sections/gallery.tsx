@@ -2,28 +2,80 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const galleryImages = {
   column1: [
-    "https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=2940&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=2835&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=2940&auto=format&fit=crop",
+    {
+      src: "/images/gallery/client-relaxing-1.jpg",
+      alt: "Klientka počas procedúry - relaxačná atmosféra",
+      category: "Atmosféra",
+    },
+    {
+      src: "/images/gallery/laser-treatment-1.jpg",
+      alt: "Pokročilé laserové ošetrenie",
+      category: "Procedúry",
+    },
+    {
+      src: "/images/gallery/lip-treatment-1.jpg",
+      alt: "Permanentný make-up pier",
+      category: "Výsledky",
+    },
+    {
+      src: "/images/gallery/clinic-interior-1.jpg",
+      alt: "Interiér kliniky",
+      category: "Priestory",
+    },
   ],
   column2: [
-    "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=2940&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=2940&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?q=80&w=2940&auto=format&fit=crop",
+    {
+      src: "/images/gallery/laser-treatment-2.jpg",
+      alt: "Starostlivé ošetrenie pokožky",
+      category: "Procedúry",
+    },
+    {
+      src: "/images/gallery/katarina-tools.jpg",
+      alt: "Profesionálne vybavenie",
+      category: "Profesionalita",
+    },
+    {
+      src: "/images/gallery/lip-treatment-2.jpg",
+      alt: "Prirodzený výsledok pier",
+      category: "Výsledky",
+    },
+    {
+      src: "/images/gallery/certificates.jpg",
+      alt: "Certifikáty a ocenenia",
+      category: "Kvalifikácia",
+    },
   ],
   column3: [
-    "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?q=80&w=2787&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1524946461678-c0cce4ac8053?q=80&w=2835&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=2938&auto=format&fit=crop",
+    {
+      src: "/images/gallery/client-relaxing-2.jpg",
+      alt: "Luxusné prostredie kliniky",
+      category: "Atmosféra",
+    },
+    {
+      src: "/images/gallery/facial-treatment.jpg",
+      alt: "Ošetrenie pleti najmodernejšou technikou",
+      category: "Procedúry",
+    },
+    {
+      src: "/images/gallery/katarina-portrait.jpg",
+      alt: "MUDr. Katarína Dzuriková",
+      category: "Tím",
+    },
+    {
+      src: "/images/gallery/clinic-interior-2.jpg",
+      alt: "Priestor pre vašu starostlivosť",
+      category: "Priestory",
+    },
   ],
 };
 
 export function GallerySection() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const [activeFilter, setActiveFilter] = useState<string>("Všetko");
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
@@ -33,6 +85,19 @@ export function GallerySection() {
   const y1 = useTransform(scrollYProgress, [0, 1], ["0%", "-10%"]);
   const y2 = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"]);
   const y3 = useTransform(scrollYProgress, [0, 1], ["0%", "-15%"]);
+
+  const categories = [
+    "Všetko",
+    "Procedúry",
+    "Výsledky",
+    "Atmosféra",
+    "Priestory",
+  ];
+
+  const filterImages = (images: typeof galleryImages.column1) => {
+    if (activeFilter === "Všetko") return images;
+    return images.filter((img) => img.category === activeFilter);
+  };
 
   return (
     <section
@@ -55,13 +120,39 @@ export function GallerySection() {
           <h2 className="mt-6 font-serif text-4xl md:text-6xl font-semibold tracking-editorial leading-tight text-ink">
             Vízia krásy
           </h2>
+          <p className="mt-6 text-lg text-ink/70 max-w-2xl mx-auto">
+            Pohľad do sveta profesionálnej estetickej starostlivosti
+          </p>
+        </motion.div>
+
+        {/* Filter Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
+          viewport={{ once: true }}
+          className="mb-12 flex flex-wrap justify-center gap-3"
+        >
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setActiveFilter(category)}
+              className={`px-6 py-2 text-sm uppercase tracking-luxury font-sans font-semibold transition-all duration-500 ${
+                activeFilter === category
+                  ? "bg-gold text-canvas"
+                  : "bg-canvas border border-gold/30 text-gold hover:bg-gold/10"
+              }`}
+            >
+              {category}
+            </button>
+          ))}
         </motion.div>
 
         {/* Parallax Masonry Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Column 1 */}
           <motion.div style={{ y: y1 }} className="space-y-6">
-            {galleryImages.column1.map((image, index) => (
+            {filterImages(galleryImages.column1).map((image, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -75,20 +166,26 @@ export function GallerySection() {
                 className="relative aspect-[3/4] overflow-hidden group cursor-pointer"
               >
                 <Image
-                  src={image}
-                  alt={`Gallery image ${index + 1}`}
+                  src={image.src}
+                  alt={image.alt}
                   fill
                   className="object-cover saturate-75 group-hover:scale-105 group-hover:saturate-100 transition-all duration-700"
                   quality={90}
                 />
-                <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/10 transition-all duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/0 to-ink/0 opacity-0 group-hover:opacity-100 transition-all duration-700" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                  <span className="text-xs uppercase tracking-luxury font-sans font-semibold text-gold">
+                    {image.category}
+                  </span>
+                  <p className="mt-2 text-sm text-canvas/90">{image.alt}</p>
+                </div>
               </motion.div>
             ))}
           </motion.div>
 
           {/* Column 2 - Different parallax speed */}
           <motion.div style={{ y: y2 }} className="space-y-6 md:mt-12">
-            {galleryImages.column2.map((image, index) => (
+            {filterImages(galleryImages.column2).map((image, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -102,20 +199,26 @@ export function GallerySection() {
                 className="relative aspect-[3/4] overflow-hidden group cursor-pointer"
               >
                 <Image
-                  src={image}
-                  alt={`Gallery image ${index + 4}`}
+                  src={image.src}
+                  alt={image.alt}
                   fill
                   className="object-cover saturate-75 group-hover:scale-105 group-hover:saturate-100 transition-all duration-700"
                   quality={90}
                 />
-                <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/10 transition-all duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/0 to-ink/0 opacity-0 group-hover:opacity-100 transition-all duration-700" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                  <span className="text-xs uppercase tracking-luxury font-sans font-semibold text-gold">
+                    {image.category}
+                  </span>
+                  <p className="mt-2 text-sm text-canvas/90">{image.alt}</p>
+                </div>
               </motion.div>
             ))}
           </motion.div>
 
           {/* Column 3 */}
           <motion.div style={{ y: y3 }} className="space-y-6 md:mt-6">
-            {galleryImages.column3.map((image, index) => (
+            {filterImages(galleryImages.column3).map((image, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -129,13 +232,19 @@ export function GallerySection() {
                 className="relative aspect-[3/4] overflow-hidden group cursor-pointer"
               >
                 <Image
-                  src={image}
-                  alt={`Gallery image ${index + 7}`}
+                  src={image.src}
+                  alt={image.alt}
                   fill
                   className="object-cover saturate-75 group-hover:scale-105 group-hover:saturate-100 transition-all duration-700"
                   quality={90}
                 />
-                <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/10 transition-all duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/0 to-ink/0 opacity-0 group-hover:opacity-100 transition-all duration-700" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                  <span className="text-xs uppercase tracking-luxury font-sans font-semibold text-gold">
+                    {image.category}
+                  </span>
+                  <p className="mt-2 text-sm text-canvas/90">{image.alt}</p>
+                </div>
               </motion.div>
             ))}
           </motion.div>
