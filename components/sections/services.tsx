@@ -20,36 +20,58 @@ interface Service {
 const services: Service[] = [
   {
     id: 1,
-    title: "Lifting bez skalpela",
-    subtitle: "Neinvazívne omladzovanie",
-    duration: "90 min",
-    price: "€180",
+    title: "Doplnkové služby",
+    subtitle: "Masáže a wellness procedúry",
+    duration: "od 1 min",
+    price: "od 2 €",
     description:
-      "Pokročilá kombinácia RF technológie a mezoterapie pre prirodzený lifting efekt. Viditeľné výsledky bez operácie.",
+      "Masáž tváre, parafínový zábal rúk a ďalšie relaxačné procedúry pre kompletný zážitok starostlivosti.",
     image:
-      "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=2940&auto=format&fit=crop",
+      "/images/gallery/WhatsApp Image 2025-12-01 at 20.53.38 (3).jpeg",
   },
   {
     id: 2,
-    title: "Vyžarujúca pleť",
-    subtitle: "Hĺbková regenerácia",
-    duration: "60 min",
-    price: "€120",
+    title: "Mihalnice",
+    subtitle: "5D predĺženie a styling",
+    duration: "od 30 min",
+    price: "od 10 €",
     description:
-      "Luxusné ošetrenie zahŕňajúce hĺbkové čistenie, booster sérum a masáž tváre. Pleť je svieža, hydratovaná a žiariaca.",
+      "Profesionálne predĺženie mihalníc 5D technikou pre dokonalý a prirodzený vzhľad vašich očí.",
     image:
-      "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=2940&auto=format&fit=crop",
+      "/images/gallery/WhatsApp Image 2025-12-01 at 20.53.46 (10).jpeg",
   },
   {
     id: 3,
-    title: "Age-Management",
-    subtitle: "Prvé vrásky & prevencia",
-    duration: "75 min",
-    price: "€150",
+    title: "Permanentný make-up",
+    subtitle: "Tetovanie pier a obočia",
+    duration: "od 2 h",
+    price: "od 30 €",
     description:
-      "Cielený program pre prevenciu a korekciu prvých znakov starnutia. Jemné vyhladzovanie vrások s dlhodobým efektom.",
+      "Perfect lips a púdrové obočie s profesionálnym prístupom. Prirodzený výsledok, ktorý vydrží roky.",
     image:
-      "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?q=80&w=2940&auto=format&fit=crop",
+      "/images/gallery/WhatsApp Image 2025-12-01 at 20.53.46 (5).jpeg",
+  },
+  {
+    id: 4,
+    title: "Pleťové ošetrenia",
+    subtitle: "Hydratácia, lifting a regenerácia",
+    duration: "od 1 h",
+    price: "od 30 €",
+    description:
+      "Široká škála pleťových ošetrení - od hydratačných cez liftingové až po čistiace. Každé ošetrenie prispôsobené vašej pleti.",
+    image:
+      "/images/gallery/WhatsApp Image 2025-12-01 at 20.53.38.jpeg",
+  },
+  {
+    id: 5,
+    title: "Vizáž",
+    subtitle: "Úprava a farbenie obočia",
+    duration: "od 15 min",
+    price: "od 5 €",
+    description:
+      "Kompletné služby pre dokonalý vzhľad - úprava obočia, farbenie mihalníc, laminácia a mapping obočia podľa proporcií tváre.",
+    image:
+      "/images/gallery/WhatsApp Image 2025-12-01 at 20.53.46 (11).jpeg",
   },
 ];
 
