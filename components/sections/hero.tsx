@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useState } from "react";
 
 const textReveal = {
   hidden: { y: "100%", opacity: 0 },
@@ -24,28 +25,48 @@ const staggerContainer = {
 };
 
 export function HeroSection() {
+  const [videoError, setVideoError] = useState(false);
+
   return (
     <section
       id="hero"
       className="relative h-screen w-full overflow-hidden bg-canvas"
     >
-      {/* Background Image */}
+      {/* Background Video/Image */}
       <motion.div
         initial={{ scale: 1.2, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1.8, ease: [0.33, 1, 0.68, 1] }}
         className="absolute inset-0 z-0"
       >
-        <Image
-          src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=2940&auto=format&fit=crop"
-          alt="Aesthetic beauty"
-          fill
-          className="object-cover brightness-90 saturate-75"
-          priority
-          quality={95}
-        />
+        {!videoError ? (
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            onError={() => setVideoError(true)}
+            className="absolute inset-0 w-full h-full object-cover brightness-90 saturate-75"
+          >
+            <source
+              src="/images/gallery/video/WhatsApp Video 2025-12-01 at 21.47.46.mp4"
+              type="video/mp4"
+            />
+          </video>
+        ) : (
+          <Image
+            src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=2940&auto=format&fit=crop"
+            alt="Aesthetic beauty"
+            fill
+            className="object-cover brightness-90 saturate-75"
+            priority
+            quality={95}
+          />
+        )}
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-canvas/80" />
+        {/* Subtle dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-ink/10" />
       </motion.div>
 
       {/* Content */}
