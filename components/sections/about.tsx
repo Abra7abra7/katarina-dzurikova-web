@@ -117,7 +117,7 @@ export function AboutSection() {
                 className="mt-16 py-12 border-t border-b border-gold/30"
               >
                 <p className="font-serif text-3xl md:text-4xl italic text-center leading-relaxed text-ink">
-                  "Výsledky, ktoré nekričia – ale žiaria"
+                  &ldquo;Výsledky, ktoré nekričia – ale žiaria&rdquo;
                 </p>
               </motion.blockquote>
 
