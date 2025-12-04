@@ -1,17 +1,54 @@
-# 🚀 KOMPLETNÝ PLÁN - SHINE Web
+# 🚀 KOMPLETNÝ PLÁN - SHINE Web (Katarína Dzuriková)
 
-> Tento dokument slúži ako plán pre dokončenie projektu a zároveň ako šablóna pre budúce weby.
+> **Doména:** https://www.katarinadzurikova.sk  
+> **Aktualizované:** 4. December 2025  
+> **Stav projektu:** 🟢 TAKMER HOTOVÉ
 
 ---
 
 ## 📋 OBSAH
 
-1. [Šablóna pre budúce projekty](#šablóna-pre-budúce-projekty)
-2. [AI citácie a SEO](#ai-citácie-a-seo)
-3. [Google & Bing indexácia](#google--bing-indexácia)
-4. [PageSpeed optimalizácia](#pagespeed-optimalizácia)
-5. [Prezentačné metriky](#prezentačné-metriky)
-6. [Akčný checklist](#akčný-checklist)
+1. [Aktuálny stav projektu](#aktuálny-stav-projektu)
+2. [Šablóna pre budúce projekty](#šablóna-pre-budúce-projekty)
+3. [AI citácie a SEO](#ai-citácie-a-seo)
+4. [Google & Bing indexácia](#google--bing-indexácia)
+5. [PageSpeed optimalizácia](#pagespeed-optimalizácia)
+6. [Prezentačné metriky](#prezentačné-metriky)
+7. [Akčný checklist](#akčný-checklist)
+
+---
+
+## 🎯 AKTUÁLNY STAV PROJEKTU
+
+### ✅ DOKONČENÉ (4.12.2025)
+
+| Položka | Status | Poznámka |
+|---------|--------|----------|
+| Web nasadený na Vercel | ✅ | www.katarinadzurikova.sk |
+| PageSpeed Desktop | ✅ **98/100** | Výborné |
+| PageSpeed Mobile | ✅ **95/100** | Výborné |
+| Dostupnosť | ✅ **95-100/100** | |
+| SEO Score | ✅ **100/100** | |
+| Best Practices | ✅ **100/100** | |
+| Hero video optimalizované | ✅ | 748KB (z 1.47MB) |
+| Google Search Console | ✅ | Overené HTML súborom |
+| Sitemap odoslaný | ✅ | sitemap.xml |
+| Schema.org BeautySalon | ✅ | Funguje (Rich Results Test) |
+| Schema.org FAQ | ✅ | 6 otázok |
+| Schema.org Recenzie | ✅ | Funguje |
+| llms.txt | ✅ | S FAQ sekciou |
+| robots.txt | ✅ | |
+| OpenGraph / Twitter Cards | ✅ | |
+| Canonical URLs | ✅ | |
+
+### 🔴 ZOSTÁVA DOKONČIŤ
+
+| Položka | Priorita | Poznámka |
+|---------|----------|----------|
+| **Google Business Profile** | 🔴 KRITICKÉ | Pre lokálne SEO v mapách |
+| Bing Webmaster Tools | 🟡 Voliteľné | Import z GSC |
+| Request indexing v GSC | 🟡 Odporúčané | Urýchli indexáciu |
+| Zbierať recenzie | 🟢 Priebežne | Po spustení |
 
 ---
 
@@ -21,320 +58,217 @@
 
 ```markdown
 ## ZÁKLADNÉ INFO
-- Názov biznisu: [napr. SHINE Studio]
-- Typ biznisu: [kozmetika/kaderníctvo/wellness/reštaurácia...]
-- Doména: [napr. shine-studio.sk]
-- Jazyk webu: [sk/cs/en]
+- Názov biznisu: SHINE Štúdio Krásy
+- Typ biznisu: Kozmetický salón
+- Doména: www.katarinadzurikova.sk
+- Jazyk webu: sk
 
 ## KONTAKTNÉ ÚDAJE
-- Adresa ulica: [Pavlova Ves 24]
-- Adresa PSČ + mesto: [032 21 p. Bobrovec]
-- Telefón: [+421 904 678 007]
-- Email: [email@example.com]
-- Instagram: [@handle]
-- Facebook: [URL]
+- Adresa ulica: Pavlova Ves 24
+- Adresa PSČ + mesto: 032 21 p. Bobrovec
+- Telefón: +421 904 678 007
+- Email: Katarinasosikova@gmail.com
+- Instagram: @k.dzurikova.studiokrasyshine
 
 ## LOKALITA PRE SEO (KRITICKÉ!)
-- Hlavné mesto/obec: [Pavlova Ves]
-- Okres: [Liptovský Mikuláš]
-- Kraj: [Žilinský]
-- Okolité mestá pre targeting: [Ružomberok, Jasná, Bešeňová, Nízke Tatry...]
-- GPS súradnice: [lat: 49.0847, lng: 19.5347]
+- Hlavné mesto/obec: Pavlova Ves
+- Okres: Liptovský Mikuláš
+- Kraj: Žilinský
+- Okolité mestá pre targeting: Liptovský Mikuláš, Ružomberok, Jasná, Bešeňová, Nízke Tatry, Demänovská Dolina
+- GPS súradnice: lat: 49.1089, lng: 19.5844
 
 ## REZERVÁCIE/OBJEDNÁVKY
-- Typ: [Bookio/Reservio/vlastný formulár/žiadny]
-- URL: [https://services.bookio.com/...]
-- Telefónna rezervácia: [áno/nie]
+- Typ: Bookio
+- URL: https://services.bookio.com/studio-krasy-shine-yl2qwybl/widget?lang=sk
+- Telefónna rezervácia: áno
 
-## SLUŽBY/PRODUKTY (pre každú kategóriu)
-Kategória 1:
-- Názov: [Permanentný make-up]
-- Popis: [2-3 vety o službe]
-- Cenový rozsah: [od XX € do YY €]
-- Trvanie: [60-120 min]
-- Obrázky: [min 3 relevantné fotky]
+## SLUŽBY/PRODUKTY
+Kategória 1: Pleťové ošetrenia (od 30€)
+Kategória 2: Permanentný make-up (od 30€)
+Kategória 3: Mihalnice (od 10€)
+Kategória 4: Vizáž (od 5€)
+Kategória 5: Doplnkové služby (od 2€)
 
-Kategória 2:
-- ... (opakovať pre každú)
-
-## O MAJITEĽOVI/FIRME
-- Meno: [Katarína Dzúriková]
-- Životopis: [3-5 odsekov - príbeh, hodnoty, prístup]
-- Vzdelanie: [školy, roky]
-- Certifikácie: [kurzy, školenia]
-- Profesionálna fotka: [vysoká kvalita, min 1200px]
-
-## MÉDIÁ (POTREBNÉ SÚBORY)
-- Logo: [SVG formát, ideálne aj PNG verzia]
-- Favicon: [32x32, 180x180 pre Apple]
-- Hero video/obrázok: [max 2MB, 1920px šírka]
-- Galéria: [min 12 fotiek, kategorizované]
-- OG Image: [1200x630px pre sociálne siete]
+## O MAJITEĽOVI
+- Meno: Katarína Dzuriková
+- Vzdelanie: SOŠ služieb Rimavská Sobota, UMB Banská Bystrica
+- Certifikácie: PMU (LEA MATYI, Marina Bondar), Kobido, BioRePeel
 
 ## FARBY A ŠTÝL
-- Primárna farba: [hex kód]
-- Sekundárna farba: [hex kód]
-- Akcent/zlatá: [hex kód]
-- Pozadie: [hex kód]
-- Text: [hex kód]
-- Font nadpisy: [názov fontu]
-- Font text: [názov fontu]
-
-## DODATOČNÉ POŽIADAVKY
-- [ ] Blog sekcia
-- [ ] E-shop
-- [ ] Viacjazyčnosť
-- [ ] Newsletter
-- [ ] Live chat
+- Primárna farba: #2C2C28 (Ink)
+- Sekundárna farba: #F9F8F6 (Canvas)
+- Akcent/zlatá: #CFB998 (Gold)
+- Font nadpisy: Playfair Display
+- Font text: Lato
 ```
 
 ---
 
 ## 🤖 AI CITÁCIE A SEO
 
-### ✅ Už implementované v tomto projekte:
+### ✅ IMPLEMENTOVANÉ:
 
 | Položka | Status | Súbor | Popis |
 |---------|--------|-------|-------|
-| llms.txt | ✅ | `/public/llms.txt` | Informácie pre AI agentov |
-| Schema.org JSON-LD | ✅ | `app/layout.tsx` | Štruktúrované dáta pre Google |
+| llms.txt | ✅ | `/public/llms.txt` | Informácie pre AI agentov + FAQ |
+| Schema.org BeautySalon | ✅ | `app/layout.tsx` | Kompletné s openingHours, priceRange, areaServed |
+| Schema.org FAQ | ✅ | `app/layout.tsx` | 6 najčastejších otázok |
+| Schema.org AggregateRating | ✅ | `app/layout.tsx` | Recenzie |
 | robots.txt | ✅ | `/public/robots.txt` | Povolenia pre crawlery |
-| sitemap.xml | ✅ | `app/sitemap.ts` | Mapa stránok pre indexáciu |
+| sitemap.xml | ✅ | `app/sitemap.ts` | Automaticky generovaný |
 | OpenGraph metadata | ✅ | `app/layout.tsx` | Pre sociálne siete |
 | Twitter Cards | ✅ | `app/layout.tsx` | Pre Twitter/X |
 | Canonical URLs | ✅ | `app/layout.tsx` | Proti duplicitnému obsahu |
 | Mobile-first | ✅ | Všade | Responzívny dizajn |
-
-### 🔴 TREBA EŠTE IMPLEMENTOVAŤ:
-
-#### 1. FAQ Schema.org (pre Google rich snippets)
-**Súbor:** `app/layout.tsx` - pridať do jsonLd
-
-```json
-{
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Kde sa nachádza štúdio SHINE?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Štúdio SHINE sa nachádza v Pavlovej Vsi 24, 032 21 p. Bobrovec, v srdci Liptova. Ľahko dostupné z Liptovského Mikuláša (15 min), Ružomberka (20 min) aj Jasnej."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Aké služby ponúka SHINE?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "SHINE ponúka permanentný make-up, mihalnice, pleťové ošetrenia, vizáž a doplnkové služby ako Kobido masáž či chemický peeling."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Ako sa môžem objednať?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Objednať sa môžete online cez rezervačný systém Bookio na našej stránke, alebo telefonicky na +421 904 678 007."
-      }
-    }
-  ]
-}
-```
-
-#### 2. Rozšírený llms.txt
-**Súbor:** `/public/llms.txt` - pridať FAQ sekciu
-
-```txt
-## Frequently Asked Questions
-
-Q: Kde sa nachádza SHINE štúdio?
-A: Pavlova Ves 24, 032 21 p. Bobrovec, Liptov. 15 min od Liptovského Mikuláša.
-
-Q: Aké služby ponúkate?
-A: Permanentný make-up, mihalnice, pleťové ošetrenia, vizáž, Kobido masáž.
-
-Q: Ako sa objednať?
-A: Online cez Bookio alebo tel. +421 904 678 007.
-
-Q: Aké sú otváracie hodiny?
-A: Po-Pi 9:00-18:00, So podľa dohody.
-```
-
-#### 3. LocalBusiness rozšírenie
-- Pridať `openingHoursSpecification`
-- Pridať `priceRange`
-- Pridať `aggregateRating` (keď budú recenzie)
+| Google verifikácia | ✅ | `/public/google32f8dc4bd8c6842b.html` | HTML súbor |
 
 ---
 
 ## 🔍 GOOGLE & BING INDEXÁCIA
 
-### Google Search Console - KROKY
+### Google Search Console - STAV
 
 | # | Krok | URL/Akcia | Status |
 |---|------|-----------|--------|
-| 1 | Ísť na Search Console | https://search.google.com/search-console | ⬜ |
-| 2 | Kliknúť "Pridať property" | Vybrať "Domain" alebo "URL prefix" | ⬜ |
-| 3 | Zadať doménu | `shine-studio.sk` (tvoja doména) | ⬜ |
-| 4 | Overiť vlastníctvo | **Možnosti:** | ⬜ |
-| | | a) DNS záznam (odporúčané) | |
-| | | b) HTML súbor | |
-| | | c) HTML meta tag | |
-| | | d) Google Analytics | |
-| 5 | Po overení - Sitemap | Ísť na "Sitemaps" > Pridať `/sitemap.xml` | ⬜ |
-| 6 | Požiadať o indexáciu | URL Inspection > "Request indexing" pre hlavnú stránku | ⬜ |
-| 7 | Skontrolovať Mobile Usability | V menu vľavo | ⬜ |
-| 8 | Skontrolovať Core Web Vitals | V menu vľavo (po pár dňoch dát) | ⬜ |
+| 1 | Ísť na Search Console | https://search.google.com/search-console | ✅ |
+| 2 | Pridať property | URL prefix: www.katarinadzurikova.sk | ✅ |
+| 3 | Overiť vlastníctvo | HTML súbor (google32f8dc4bd8c6842b.html) | ✅ |
+| 4 | Odoslať sitemap | `/sitemap.xml` | ✅ |
+| 5 | Request indexing | URL Inspection > hlavná stránka | ⬜ **UROBIŤ** |
+| 6 | Skontrolovať Mobile Usability | V menu vľavo | ⬜ Po pár dňoch |
+| 7 | Skontrolovať Core Web Vitals | V menu vľavo | ⬜ Po pár dňoch |
 
-### Bing Webmaster Tools - KROKY
+### Bing Webmaster Tools - STAV
 
 | # | Krok | URL/Akcia | Status |
 |---|------|-----------|--------|
 | 1 | Ísť na Bing Webmaster | https://www.bing.com/webmasters | ⬜ |
-| 2 | Prihlásiť sa | Microsoft účet | ⬜ |
-| 3 | Importovať z Google | **NAJRÝCHLEJŠIE** - kliknúť "Import from GSC" | ⬜ |
-| 4 | Alebo manuálne | Pridať stránku + overiť | ⬜ |
-| 5 | Odoslať sitemap | `/sitemap.xml` | ⬜ |
+| 2 | Importovať z Google | Kliknúť "Import from GSC" | ⬜ |
+| 3 | Odoslať sitemap | `/sitemap.xml` | ⬜ |
 
-### Google Business Profile - KRITICKÉ PRE LOKÁLNE SEO
+### 🔴 Google Business Profile - KRITICKÉ PRE LOKÁLNE SEO
 
 | # | Krok | Akcia | Status |
 |---|------|-------|--------|
-| 1 | Ísť na Google Business | https://business.google.com | ⬜ |
-| 2 | Vytvoriť/nárokovať profil | Vyhľadať "SHINE Štúdio Krásy" | ⬜ |
+| 1 | Ísť na Google Business | https://business.google.com | ⬜ **PRIORITA** |
+| 2 | Vytvoriť profil | "SHINE Štúdio Krásy" | ⬜ |
 | 3 | Vyplniť základné info | Názov, adresa, telefón, web | ⬜ |
-| 4 | Vybrať kategóriu | "Kozmetický salón" / "Beauty Salon" | ⬜ |
+| 4 | Vybrať kategóriu | "Kozmetický salón" | ⬜ |
 | 5 | Pridať služby | Všetky služby s cenami | ⬜ |
 | 6 | Pridať fotky | Min 10 kvalitných fotiek | ⬜ |
-| 7 | Nastaviť hodiny | Otváracie hodiny | ⬜ |
+| 7 | Nastaviť hodiny | Po-Pi 9:00-18:00 | ⬜ |
 | 8 | Pridať rezervačný link | Bookio URL | ⬜ |
 | 9 | Overiť biznis | Poštou/telefonicky/emailom | ⬜ |
 | 10 | Zbierať recenzie | Požiadať spokojné klientky | ⬜ |
-
-### Ďalšie platformy (voliteľné)
-
-| Platforma | URL | Priorita |
-|-----------|-----|----------|
-| Apple Maps | https://mapsconnect.apple.com | 🟡 Stredná |
-| Yelp | https://biz.yelp.com | 🟢 Nízka |
-| TripAdvisor | https://www.tripadvisor.com/Owners | 🟢 Nízka |
-| Zlaté Stránky | https://www.zlatestranky.sk | 🟡 Stredná |
 
 ---
 
 ## ⚡ PAGESPEED OPTIMALIZÁCIA
 
-### Kde testovať:
+### 📊 AKTUÁLNE VÝSLEDKY (4.12.2025)
 
-| Nástroj | URL | Čo meria |
-|---------|-----|----------|
-| **PageSpeed Insights** | https://pagespeed.web.dev | Google Core Web Vitals |
-| **GTmetrix** | https://gtmetrix.com | Detailná analýza |
-| **WebPageTest** | https://webpagetest.org | Waterfall, filmstrip |
-| **Lighthouse** | Chrome DevTools (F12 > Lighthouse) | Kompletný audit |
+| Metrika | Desktop | Mobile | Cieľ |
+|---------|---------|--------|------|
+| **Performance** | **98** 🟢 | **95** 🟢 | > 90 |
+| **Accessibility** | **95** 🟢 | **100** 🟢 | > 90 |
+| **Best Practices** | **100** 🟢 | **100** 🟢 | 100 |
+| **SEO** | **100** 🟢 | **100** 🟢 | 100 |
+| LCP | 0.8s 🟢 | 2.9s 🟢 | < 2.5s |
+| FCP | 0.2s 🟢 | 0.9s 🟢 | < 1.8s |
+| TBT | 0ms 🟢 | 30ms 🟢 | < 200ms |
+| CLS | 0 🟢 | 0 🟢 | < 0.1 |
 
-### Cieľové metriky:
-
-| Metrika | Cieľ | Popis |
-|---------|------|-------|
-| **Performance** | > 90 | Celkové skóre |
-| **LCP** | < 2.5s | Largest Contentful Paint |
-| **FID/INP** | < 100ms | Interaktivita |
-| **CLS** | < 0.1 | Layout shift |
-| **TTFB** | < 600ms | Time to First Byte |
-| **Mobile Score** | > 85 | Mobile performance |
-
-### Čo už je optimalizované:
+### ✅ Optimalizácie vykonané:
 
 - ✅ Next.js Image Optimization (AVIF, WebP)
-- ✅ Video preload="metadata"
+- ✅ Hero video skomprimované (748KB z 1.47MB - **50% úspora**)
+- ✅ Video preload="auto" pre rýchlejšie načítanie
 - ✅ 30-dňový cache pre obrázky
 - ✅ Kompresia zapnutá
 - ✅ Statické stránky (SSG)
-
-### Možné ďalšie optimalizácie:
-
-| Optimalizácia | Dopad | Náročnosť |
-|---------------|-------|-----------|
-| Lazy load pod-fold obrázkov | 🟢 Vysoký | Nízka |
-| Font subsetting | 🟡 Stredný | Stredná |
-| Critical CSS | 🟡 Stredný | Vysoká |
-| Service Worker | 🟢 Vysoký | Stredná |
-| CDN pre médiá | 🟡 Stredný | Nízka |
+- ✅ Fonts swap pre rýchlejšie zobrazenie
 
 ---
 
 ## 📊 PREZENTAČNÉ METRIKY
 
-### Čo ukázať klientovi po dokončení:
+### Čo ukázať klientovi:
 
 ```markdown
 # 📈 SHINE Web - Výsledky
 
 ## TECHNICKÁ KVALITA
-- ✅ PageSpeed Mobile: __/100
-- ✅ PageSpeed Desktop: __/100
-- ✅ SEO Score: __/100
-- ✅ Accessibility: __/100
-- ✅ Best Practices: __/100
+- ✅ PageSpeed Mobile: 95/100
+- ✅ PageSpeed Desktop: 98/100
+- ✅ SEO Score: 100/100
+- ✅ Accessibility: 95-100/100
+- ✅ Best Practices: 100/100
 
 ## AI PRIPRAVENOSŤ
 - ✅ llms.txt implementovaný (AI agenti vedia čítať web)
 - ✅ Schema.org štruktúrované dáta (Google rozumie obsahu)
+- ✅ FAQ Schema pre rich snippets
 - ✅ robots.txt pre AI crawlery (ChatGPT, Claude, Perplexity)
 - ✅ Sitemap pre automatickú indexáciu
 
 ## INDEXÁCIA
 - ✅ Google Search Console - aktívne
-- ✅ Bing Webmaster Tools - aktívne
-- ✅ Google Business Profile - aktívne
+- ⏳ Bing Webmaster Tools - čaká
+- ⏳ Google Business Profile - čaká (PRIORITA)
 
 ## SEO
-- ✅ Lokálne SEO (Liptov, Ružomberok, LM...)
+- ✅ Lokálne SEO (Liptov, Ružomberok, LM, Jasná, Bešeňová)
 - ✅ Meta descriptions pre všetky stránky
 - ✅ OpenGraph pre sociálne siete
 - ✅ Canonical URLs
+- ✅ FAQ štruktúrované dáta
 
 ## FUNKCIE
 - ✅ Mobile-first responzívny dizajn
 - ✅ Online rezervačný systém (Bookio)
 - ✅ Rýchle načítanie (< 3s)
 - ✅ SSL certifikát (HTTPS)
+- ✅ Hero video na úvodnej stránke
 
 ## STRÁNKY
-- Hlavná stránka (/)
-- O mne (/o-mne)
-- Služby (/sluzby)
-- Cenník (/cennik)
-- Galéria (/galeria)
-- Kontakt (/kontakt)
+- ✅ Hlavná stránka (/)
+- ✅ O mne (/o-mne)
+- ✅ Služby (sekcia)
+- ✅ Cenník (sekcia)
+- ✅ Galéria (sekcia)
+- ✅ Kontakt (sekcia + footer)
 ```
 
 ---
 
 ## ✅ AKČNÝ CHECKLIST
 
-### 🔴 OKAMŽITE (Dnes)
+### ✅ HOTOVÉ
 
-- [ ] Spustiť PageSpeed test na produkčnej URL
-- [ ] Screenshot výsledkov
-- [ ] Vytvoriť Google Search Console property
-- [ ] Overiť vlastníctvo (DNS/HTML)
-- [ ] Odoslať sitemap.xml
+- [x] Spustiť PageSpeed test na produkčnej URL (98/95)
+- [x] Vytvoriť Google Search Console property
+- [x] Overiť vlastníctvo (HTML súbor)
+- [x] Odoslať sitemap.xml
+- [x] Pridať FAQ Schema.org do layout.tsx
+- [x] Rozšíriť llms.txt o FAQ
+- [x] Optimalizovať hero video (50% menšie)
+- [x] Opraviť URL na správnu doménu
+
+### 🔴 OKAMŽITE UROBIŤ
+
+- [ ] **Request indexing** v Google Search Console (URL Inspection > hlavná stránka)
+- [ ] **Vytvoriť Google Business Profile** na https://business.google.com
 
 ### 🟡 TENTO TÝŽDEŇ
 
-- [ ] Vytvoriť Google Business Profile
+- [ ] Vyplniť Google Business Profile kompletne
 - [ ] Pridať všetky služby do GBP
-- [ ] Nahrať fotky do GBP
-- [ ] Nastaviť Bing Webmaster Tools
-- [ ] Pridať FAQ Schema.org do layout.tsx
-- [ ] Rozšíriť llms.txt o FAQ
+- [ ] Nahrať fotky do GBP (min 10)
+- [ ] Nastaviť Bing Webmaster Tools (import z GSC)
 
 ### 🟢 DO 2 TÝŽDŇOV
 
-- [ ] Skontrolovať indexáciu v Google (site:domena.sk)
+- [ ] Skontrolovať indexáciu v Google (`site:katarinadzurikova.sk`)
 - [ ] Požiadať klientky o prvé recenzie na Google
 - [ ] Skontrolovať Core Web Vitals v GSC
 - [ ] Opraviť prípadné problémy z GSC
@@ -355,25 +289,30 @@ A: Po-Pi 9:00-18:00, So podľa dohody.
 
 ```
 /public/
-├── robots.txt          # Povolenia pre crawlery
-├── llms.txt            # Info pre AI agentov
-├── favicon.ico         # Favicon
-└── sitemap.xml         # Generovaný automaticky
+├── robots.txt                      # Povolenia pre crawlery
+├── llms.txt                        # Info pre AI agentov + FAQ
+├── favicon.ico                     # Favicon
+├── google32f8dc4bd8c6842b.html     # Google verifikácia
+└── images/hero/
+    └── katarina-hero-video.mp4     # Optimalizované hero video (748KB)
 
 /app/
-├── layout.tsx          # Metadata + JSON-LD Schema
+├── layout.tsx          # Metadata + JSON-LD Schema (BeautySalon + FAQ)
 ├── sitemap.ts          # Dynamický sitemap generátor
 ├── page.tsx            # Hlavná stránka
-├── o-mne/page.tsx
-├── sluzby/page.tsx
-├── cennik/page.tsx
-├── galeria/page.tsx
-└── kontakt/page.tsx
+└── o-mne/page.tsx      # O mne stránka
+
+/components/sections/
+├── hero.tsx            # Hero s videom
+├── about.tsx           # O mne sekcia
+├── services.tsx        # Služby
+├── gallery.tsx         # Galéria
+└── footer.tsx          # Footer s kontaktami
 ```
 
 ### Súbory na úpravu pri novom projekte:
 
-1. `app/layout.tsx` - metadata, JSON-LD, kontakty
+1. `app/layout.tsx` - metadata, JSON-LD, kontakty, doména
 2. `public/llms.txt` - info o biznise
 3. `public/robots.txt` - sitemap URL
 4. `app/sitemap.ts` - metadataBase URL
@@ -387,19 +326,29 @@ A: Po-Pi 9:00-18:00, So podľa dohody.
 
 | Nástroj | URL |
 |---------|-----|
-| Google Search Console | https://search.google.com/search-console |
-| Bing Webmaster Tools | https://www.bing.com/webmasters |
-| Google Business Profile | https://business.google.com |
-| PageSpeed Insights | https://pagespeed.web.dev |
-| GTmetrix | https://gtmetrix.com |
-| Schema.org Validator | https://validator.schema.org |
-| Rich Results Test | https://search.google.com/test/rich-results |
-| Mobile-Friendly Test | https://search.google.com/test/mobile-friendly |
-| OpenGraph Debugger | https://developers.facebook.com/tools/debug |
-| Twitter Card Validator | https://cards-dev.twitter.com/validator |
+| **Google Search Console** | https://search.google.com/search-console |
+| **Google Business Profile** | https://business.google.com |
+| **Bing Webmaster Tools** | https://www.bing.com/webmasters |
+| **PageSpeed Insights** | https://pagespeed.web.dev |
+| **Rich Results Test** | https://search.google.com/test/rich-results |
+| **Schema.org Validator** | https://validator.schema.org |
+| **GTmetrix** | https://gtmetrix.com |
+| **Mobile-Friendly Test** | https://search.google.com/test/mobile-friendly |
+| **OpenGraph Debugger** | https://developers.facebook.com/tools/debug |
 
 ---
 
-*Dokument vytvorený: December 2024*
-*Projekt: SHINE Štúdio Krásy - katarina-dzurikova-web*
+## 📞 KONTAKTNÉ ÚDAJE PROJEKTU
 
+- **Web:** https://www.katarinadzurikova.sk
+- **Telefón:** +421 904 678 007
+- **Email:** Katarinasosikova@gmail.com
+- **Instagram:** @k.dzurikova.studiokrasyshine
+- **Adresa:** Pavlova Ves 24, 032 21 p. Bobrovec
+- **Rezervácie:** https://services.bookio.com/studio-krasy-shine-yl2qwybl/widget?lang=sk
+
+---
+
+*Dokument aktualizovaný: 4. December 2025*  
+*Projekt: SHINE Štúdio Krásy - Katarína Dzuriková*  
+*Verzia: 2.0*
