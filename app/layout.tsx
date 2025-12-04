@@ -18,7 +18,7 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://studiokrasyshine.sk"),
+  metadataBase: new URL("https://www.katarinadzurikova.sk"),
   title: {
     default: "SHINE Štúdio Krásy | Kozmetika Liptovský Mikuláš, Ružomberok",
     template: "%s | SHINE Štúdio Krásy Liptov",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "sk_SK",
-    url: "https://studiokrasyshine.sk",
+    url: "https://www.katarinadzurikova.sk",
     siteName: "SHINE Štúdio Krásy",
     title: "SHINE Štúdio Krásy | Kozmetika Liptovský Mikuláš, Ružomberok",
     description:
@@ -98,7 +98,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://studiokrasyshine.sk",
+    canonical: "https://www.katarinadzurikova.sk",
   },
   other: {
     "geo.region": "SK-ZI",
@@ -114,8 +114,8 @@ const jsonLd = {
   "@type": "BeautySalon",
   name: "SHINE Štúdio Krásy",
   alternateName: ["Studio Krásy SHINE", "SHINE by Katarína Dzuriková"],
-  "@id": "https://studiokrasyshine.sk",
-  url: "https://studiokrasyshine.sk",
+  "@id": "https://www.katarinadzurikova.sk",
+  url: "https://www.katarinadzurikova.sk",
   telephone: "+421904678007",
   email: "Katarinasosikova@gmail.com",
   address: {
@@ -164,7 +164,7 @@ const jsonLd = {
     closes: "18:00",
   },
   priceRange: "€€",
-  image: "https://studiokrasyshine.sk/images/about/katarina-portrait.jpeg",
+  image: "https://www.katarinadzurikova.sk/images/about/katarina-portrait.jpeg",
   sameAs: [
     "https://instagram.com/k.dzurikova.studiokrasyshine",
   ],
@@ -266,6 +266,62 @@ const jsonLd = {
   },
 };
 
+// FAQ Schema pre Google Rich Snippets
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Kde sa nachádza štúdio SHINE?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Štúdio SHINE sa nachádza v Pavlovej Vsi 24, 032 21 p. Bobrovec, v srdci Liptova. Ľahko dostupné z Liptovského Mikuláša (15 min), Ružomberka (20 min) aj Jasnej.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Aké služby ponúka SHINE štúdio krásy?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "SHINE ponúka široké spektrum služieb: permanentný make-up (pery, obočie), lamináciu mihalníc a obočia, pleťové ošetrenia (čistenie, hydratácia, lifting), Kobido japonskú masáž tváre, chemické peelingy BioRePeel a vizáž.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Ako sa môžem objednať do štúdia SHINE?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Objednať sa môžete online cez rezervačný systém Bookio na našej stránke 24/7, alebo telefonicky na +421 904 678 007 počas pracovných hodín.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Aké sú otváracie hodiny štúdia SHINE?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Štúdio je otvorené Pondelok až Piatok od 9:00 do 18:00. Sobotné termíny sú dostupné po dohode.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Koľko stojí permanentný make-up v štúdiu SHINE?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Ceny permanentného make-upu začínajú od 30€ za korekcie. Púdrové obočie a Perfect lips majú individuálne cenové kalkulácie podľa náročnosti. Presný cenník nájdete na stránke alebo vám ho radi poskytneme telefonicky.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Čo je Kobido masáž?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Kobido je tradičná japonská liftingová masáž tváre, ktorá pomáha omladiť pleť neinvazívnym spôsobom. Stimuluje krvný obeh, zlepšuje kontúry tváre a dodáva pleti žiarivý vzhľad. V štúdiu SHINE používame autentické techniky.",
+      },
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -277,6 +333,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
