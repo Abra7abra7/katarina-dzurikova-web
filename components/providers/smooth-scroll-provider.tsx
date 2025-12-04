@@ -1,25 +1,36 @@
 "use client";
 
-import { ReactNode, useEffect } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import Lenis from "lenis";
 
 export function SmoothScrollProvider({ children }: { children: ReactNode }) {
+  const [lenis, setLenis] = useState<Lenis | null>(null);
+
   useEffect(() => {
-    const lenis = new Lenis({
+    // Vypnúť Lenis na mobile/tablet pre plynulejší scroll
+    const isMobile = window.innerWidth < 1024 || 'ontouchstart' in window;
+    
+    if (isMobile) {
+      return; // Na mobile používame natívny scroll
+    }
+
+    const lenisInstance = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
     });
 
+    setLenis(lenisInstance);
+
     function raf(time: number) {
-      lenis.raf(time);
+      lenisInstance.raf(time);
       requestAnimationFrame(raf);
     }
 
     requestAnimationFrame(raf);
 
     return () => {
-      lenis.destroy();
+      lenisInstance.destroy();
     };
   }, []);
 

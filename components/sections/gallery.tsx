@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
@@ -78,15 +78,24 @@ const galleryImages = {
 export function GallerySection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [activeFilter, setActiveFilter] = useState<string>("Všetko");
+  const [isMobile, setIsMobile] = useState(true); // Default true pre SSR
+  
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
   });
 
-  // Different parallax speeds for each column
-  const y1 = useTransform(scrollYProgress, [0, 1], ["0%", "-10%"]);
-  const y2 = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"]);
-  const y3 = useTransform(scrollYProgress, [0, 1], ["0%", "-15%"]);
+  // Parallax len na desktop - na mobile vypnuté pre plynulý scroll
+  const y1 = useTransform(scrollYProgress, [0, 1], isMobile ? ["0%", "0%"] : ["0%", "-10%"]);
+  const y2 = useTransform(scrollYProgress, [0, 1], isMobile ? ["0%", "0%"] : ["0%", "-20%"]);
+  const y3 = useTransform(scrollYProgress, [0, 1], isMobile ? ["0%", "0%"] : ["0%", "-15%"]);
 
   const categories = [
     "Všetko",
