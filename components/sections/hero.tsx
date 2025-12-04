@@ -52,17 +52,11 @@ export function HeroSection() {
             loop
             muted
             playsInline
-            preload="metadata"
+            preload="auto"
             onError={() => setVideoError(true)}
             poster="/images/about/katarina-portrait.jpeg"
             className="absolute inset-0 w-full h-full object-cover object-bottom lg:[object-position:center_80%]"
           >
-            {/* WebM pre lepšiu kompresiu (ak existuje) */}
-            <source
-              src="/images/hero/katarina-hero-video.webm"
-              type="video/webm"
-            />
-            {/* MP4 fallback */}
             <source
               src="/images/hero/katarina-hero-video.mp4"
               type="video/mp4"
