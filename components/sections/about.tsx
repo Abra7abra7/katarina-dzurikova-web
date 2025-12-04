@@ -36,7 +36,7 @@ export function AboutSection() {
                   src="/images/about/katarina-portrait.jpeg"
                   alt="Katarína Dzuriková - profesionálna kozmetička Liptov"
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                   quality={90}
                 />
               </motion.div>

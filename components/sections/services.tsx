@@ -17,6 +17,7 @@ interface Service {
   price: string;
   description: string;
   image: string;
+  imagePosition?: string; // Pre správne zobrazenie hláv na mobile
 }
 
 const services: Service[] = [
@@ -59,6 +60,7 @@ const services: Service[] = [
     description:
       "Kompletné služby pre dokonalý vzhľad - úprava obočia, farbenie mihalníc, laminácia a mapping obočia podľa proporcií tváre.",
     image: "/images/services/vizaz/katarina-nastroj.jpeg",
+    imagePosition: "top", // Katarína - ukázať hlavu
   },
   {
     id: 5,
@@ -69,6 +71,7 @@ const services: Service[] = [
     description:
       "Masáž tváre, parafínový zábal rúk a ďalšie relaxačné procedúry pre kompletný zážitok starostlivosti.",
     image: "/images/services/doplnkove/masaz-relax.jpeg",
+    imagePosition: "top", // Klientka - ukázať hlavu
   },
 ];
 
@@ -123,7 +126,9 @@ export function ServicesSection() {
                     src={service.image}
                     alt={service.title}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    className={`object-cover group-hover:scale-105 transition-transform duration-700 ${
+                      service.imagePosition === "top" ? "object-top" : ""
+                    }`}
                     quality={90}
                   />
                 </div>

@@ -64,7 +64,7 @@ export function HeroSection() {
         ) : (
           <Image
             src="/images/about/katarina-portrait.jpeg"
-            alt="SHINE Estetická Klinika"
+            alt="SHINE Štúdio Krásy Liptov"
             fill
             className="object-cover"
             priority
@@ -88,7 +88,7 @@ export function HeroSection() {
             className="mb-4 md:mb-6"
           >
             <span className="text-xs uppercase tracking-luxury font-sans font-semibold text-gold">
-              Estetická Medicína
+              Štúdio Krásy Liptov
             </span>
           </motion.div>
 
