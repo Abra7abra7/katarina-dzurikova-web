@@ -52,12 +52,19 @@ export function HeroSection() {
             loop
             muted
             playsInline
+            preload="metadata"
             onError={() => setVideoError(true)}
             poster="/images/about/katarina-portrait.jpeg"
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover object-bottom lg:[object-position:center_80%]"
           >
+            {/* WebM pre lepšiu kompresiu (ak existuje) */}
             <source
-              src="/images/hero/hero-video.mp4"
+              src="/images/hero/katarina-hero-video.webm"
+              type="video/webm"
+            />
+            {/* MP4 fallback */}
+            <source
+              src="/images/hero/katarina-hero-video.mp4"
               type="video/mp4"
             />
           </video>
@@ -87,7 +94,7 @@ export function HeroSection() {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="mb-4 md:mb-6"
           >
-            <span className="text-xs uppercase tracking-luxury font-sans font-semibold text-gold">
+            <span className="inline-block px-4 py-2 bg-ink/80 backdrop-blur-sm text-xs uppercase tracking-luxury font-sans font-semibold text-gold border border-gold/30">
               Štúdio Krásy Liptov
             </span>
           </motion.div>
