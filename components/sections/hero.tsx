@@ -61,7 +61,7 @@ export function HeroSection() {
             className="absolute inset-0 w-full h-full object-cover object-bottom lg:[object-position:center_80%]"
           >
             <source
-              src={`${CLOUDFLARE_R2_URL}/katarina-hero-video.mp4`}
+              src={`${CLOUDFLARE_R2_URL}/katarina-hero-section.mp4`}
               type="video/mp4"
             />
           </video>
