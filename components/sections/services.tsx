@@ -7,6 +7,8 @@ import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
+const BOOKIO_URL = "https://services.bookio.com/studio-krasy-shine-yl2qwybl/widget?lang=sk";
+
 interface Service {
   id: number;
   title: string;
@@ -20,63 +22,62 @@ interface Service {
 const services: Service[] = [
   {
     id: 1,
-    title: "Doplnkové služby",
-    subtitle: "Masáže a wellness procedúry",
-    duration: "od 1 min",
-    price: "od 2 €",
-    description:
-      "Masáž tváre, parafínový zábal rúk a ďalšie relaxačné procedúry pre kompletný zážitok starostlivosti.",
-    image:
-      "/images/gallery/WhatsApp Image 2025-12-01 at 20.53.38 (3).jpeg",
-  },
-  {
-    id: 2,
-    title: "Mihalnice",
-    subtitle: "5D predĺženie a styling",
-    duration: "od 30 min",
-    price: "od 10 €",
-    description:
-      "Profesionálne predĺženie mihalníc 5D technikou pre dokonalý a prirodzený vzhľad vašich očí.",
-    image:
-      "/images/gallery/WhatsApp Image 2025-12-01 at 20.53.46 (10).jpeg",
-  },
-  {
-    id: 3,
-    title: "Permanentný make-up",
-    subtitle: "Tetovanie pier a obočia",
-    duration: "od 2 h",
-    price: "od 30 €",
-    description:
-      "Perfect lips a púdrové obočie s profesionálnym prístupom. Prirodzený výsledok, ktorý vydrží roky.",
-    image:
-      "/images/gallery/WhatsApp Image 2025-12-01 at 20.53.46 (5).jpeg",
-  },
-  {
-    id: 4,
     title: "Pleťové ošetrenia",
     subtitle: "Hydratácia, lifting a regenerácia",
     duration: "od 1 h",
     price: "od 30 €",
     description:
       "Široká škála pleťových ošetrení - od hydratačných cez liftingové až po čistiace. Každé ošetrenie prispôsobené vašej pleti.",
-    image:
-      "/images/gallery/WhatsApp Image 2025-12-01 at 20.53.38.jpeg",
+    image: "/images/services/pletove/hydrabeauty.jpeg",
   },
   {
-    id: 5,
+    id: 2,
+    title: "Permanentný make-up",
+    subtitle: "Tetovanie pier a obočia",
+    duration: "od 2 h",
+    price: "od 30 €",
+    description:
+      "Perfect lips a púdrové obočie s profesionálnym prístupom. Prirodzený výsledok, ktorý vydrží roky.",
+    image: "/images/services/permanentny-makeup/perfect-lips.jpeg",
+  },
+  {
+    id: 3,
+    title: "Mihalnice",
+    subtitle: "5D predĺženie a styling",
+    duration: "od 30 min",
+    price: "od 10 €",
+    description:
+      "Profesionálne predĺženie mihalníc 5D technikou pre dokonalý a prirodzený vzhľad vašich očí.",
+    image: "/images/services/mihalnice/5d-predlzenie.jpeg",
+  },
+  {
+    id: 4,
     title: "Vizáž",
     subtitle: "Úprava a farbenie obočia",
     duration: "od 15 min",
     price: "od 5 €",
     description:
       "Kompletné služby pre dokonalý vzhľad - úprava obočia, farbenie mihalníc, laminácia a mapping obočia podľa proporcií tváre.",
-    image:
-      "/images/gallery/WhatsApp Image 2025-12-01 at 20.53.46 (11).jpeg",
+    image: "/images/services/vizaz/katarina-nastroj.jpeg",
+  },
+  {
+    id: 5,
+    title: "Doplnkové služby",
+    subtitle: "Masáže a wellness procedúry",
+    duration: "od 1 min",
+    price: "od 2 €",
+    description:
+      "Masáž tváre, parafínový zábal rúk a ďalšie relaxačné procedúry pre kompletný zážitok starostlivosti.",
+    image: "/images/services/doplnkove/masaz-relax.jpeg",
   },
 ];
 
 export function ServicesSection() {
   const [hoveredService, setHoveredService] = useState<number | null>(null);
+
+  const handleReservation = () => {
+    window.open(BOOKIO_URL, '_blank');
+  };
 
   return (
     <section id="services" className="relative bg-canvas py-24 md:py-32">
@@ -122,7 +123,7 @@ export function ServicesSection() {
                     src={service.image}
                     alt={service.title}
                     fill
-                    className="object-cover saturate-75 group-hover:scale-105 transition-transform duration-700"
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
                     quality={90}
                   />
                 </div>
@@ -186,7 +187,7 @@ export function ServicesSection() {
                     src={service.image}
                     alt={service.title}
                     fill
-                    className="object-cover saturate-75"
+                    className="object-cover"
                     quality={90}
                   />
                 </motion.div>
@@ -206,17 +207,22 @@ export function ServicesSection() {
           </div>
         </div>
 
-        {/* CTA Button */}
+        {/* CTA Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
           viewport={{ once: true }}
-          className="mt-16 md:mt-20 flex justify-center"
+          className="mt-16 md:mt-20 flex flex-col sm:flex-row gap-4 justify-center"
         >
           <Link href="/sluzby">
-            <Button variant="luxury" className="text-base md:text-lg px-8 md:px-12 py-6">
-              Zobraziť kompletný cenník
+            <Button variant="luxury" className="text-base md:text-lg px-8 md:px-12 py-6 w-full sm:w-auto">
+              Všetky služby
+            </Button>
+          </Link>
+          <Link href="/cennik">
+            <Button variant="luxury" className="text-base md:text-lg px-8 md:px-12 py-6 w-full sm:w-auto">
+              Zobraziť cenník
             </Button>
           </Link>
         </motion.div>
@@ -224,6 +230,3 @@ export function ServicesSection() {
     </section>
   );
 }
-
-
-

@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
+import Link from "next/link";
 
 export function AboutSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -32,10 +33,10 @@ export function AboutSection() {
             <div className="relative aspect-[3/4] overflow-hidden">
               <motion.div style={{ y: imageY }} className="h-full w-full">
                 <Image
-                  src="/images/gallery/WhatsApp Image 2025-12-01 at 20.53.46 (11).jpeg"
-                  alt="MUDr. Katarína Dzuriková"
+                  src="/images/about/katarina-portrait.jpeg"
+                  alt="Katarína Dzuriková - estetická špecialistka"
                   fill
-                  className="object-cover saturate-75"
+                  className="object-cover"
                   quality={90}
                 />
               </motion.div>
@@ -93,14 +94,6 @@ export function AboutSection() {
                   S viac ako 10-ročnými skúsenosťami v estetickej medicíne som
                   sa špecializovala na neinvazívne procedúry, ktoré prinášajú
                   viditeľné výsledky bez rizika a s minimálnym prestojom.
-                  Každému ošetreniu venujem maximálnu pozornosť a čas, aby ste
-                  sa cítili pohodlne a v bezpečí.
-                </p>
-                <p className="text-sm md:text-base lg:text-lg">
-                  Moja klinika je priestorom pokoja, kde sa o vás postarám s
-                  rovnakým rešpektom a starostlivosťou, aké by som chcela pre
-                  seba. Pretože skutočná krása nie je o dokonalosti – je o
-                  sebavedomí.
                 </p>
               </div>
 
@@ -121,28 +114,15 @@ export function AboutSection() {
                 </p>
               </motion.blockquote>
 
-              {/* Credentials */}
-              <div className="mt-8 md:mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                <div>
-                  <h4 className="text-xs uppercase tracking-luxury font-sans font-semibold text-gold mb-3">
-                    Vzdelanie
-                  </h4>
-                  <ul className="space-y-2 text-sm md:text-base text-ink/70">
-                    <li>— Lekárska fakulta UK Bratislava</li>
-                    <li>— Certifikácia estetická medicína</li>
-                    <li>— Pokročilé techniky injekčnej lipolýzy</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="text-xs uppercase tracking-luxury font-sans font-semibold text-gold mb-3">
-                    Špecializácia
-                  </h4>
-                  <ul className="space-y-2 text-sm md:text-base text-ink/70">
-                    <li>— Neinvazívny lifting</li>
-                    <li>— Obnovenie kontúr tváre</li>
-                    <li>— Anti-aging protokoly</li>
-                  </ul>
-                </div>
+              {/* CTA Link */}
+              <div className="mt-8 text-center">
+                <Link
+                  href="/o-mne"
+                  className="inline-flex items-center gap-2 text-sm uppercase tracking-luxury font-sans font-semibold text-gold hover:text-ink transition-colors duration-300"
+                >
+                  Viac o mne
+                  <span className="text-lg">→</span>
+                </Link>
               </div>
             </motion.div>
           </div>
@@ -151,6 +131,3 @@ export function AboutSection() {
     </section>
   );
 }
-
-
-

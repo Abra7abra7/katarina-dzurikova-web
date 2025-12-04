@@ -1,0 +1,36 @@
+# SHINE by Katarína Dzuriková - robots.txt
+# https://shineclinic.sk
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://shineclinic.sk/sitemap.xml
+
+# Disallow admin and private paths (if any)
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
+
+# AI Crawlers - Allow access for citation and indexing
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+

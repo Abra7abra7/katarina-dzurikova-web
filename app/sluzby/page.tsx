@@ -1,21 +1,25 @@
 import { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
-import { PricingSection } from "@/components/sections/pricing";
 import { FooterSection } from "@/components/sections/footer";
+import { ServicesPageContent } from "@/components/sections/services-page";
 
 export const metadata: Metadata = {
-  title: "Cenník služieb | SHINE by Katarína Dzuriková",
+  title: "Služby | SHINE by Katarína Dzuriková",
   description:
-    "Kompletný cenník služieb estetickej medicíny - pleťové ošetrenia, permanentný make-up, mihalnice, vizáž a doplnkové služby.",
+    "Kompletná ponuka služieb estetickej medicíny - permanentný make-up, pleťové ošetrenia, mihalnice, vizáž a doplnkové služby. Profesionálna starostlivosť v Bratislave.",
+  openGraph: {
+    title: "Služby | SHINE by Katarína Dzuriková",
+    description: "Kompletná ponuka služieb estetickej medicíny v Bratislave",
+    images: ["/images/services/pletove/hydrabeauty.jpeg"],
+  },
 };
 
 export default function SluzbyPage() {
   return (
     <main className="min-h-screen bg-canvas">
       <Navbar />
-      <PricingSection />
+      <ServicesPageContent />
       <FooterSection />
     </main>
   );
 }
-

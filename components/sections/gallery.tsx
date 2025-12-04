@@ -3,70 +3,72 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useRef, useState } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 const galleryImages = {
   column1: [
     {
-      src: "/images/gallery/WhatsApp Image 2025-12-01 at 20.53.38 (3).jpeg",
+      src: "/images/gallery/atmosfera/klientka-relax.jpeg",
       alt: "Klientka v luxusnom relaxačnom prostredí",
       category: "Atmosféra",
     },
     {
-      src: "/images/gallery/WhatsApp Image 2025-12-01 at 20.53.38.jpeg",
+      src: "/images/gallery/procedury/laser-cervene-svetlo.jpeg",
       alt: "Pokročilé laserové ošetrenie tváre",
       category: "Procedúry",
     },
     {
-      src: "/images/gallery/WhatsApp Image 2025-12-01 at 20.53.46 (5).jpeg",
+      src: "/images/gallery/vysledky/perfect-lips-vysledok.jpeg",
       alt: "Profesionálny permanentný make-up pier",
       category: "Výsledky",
     },
     {
-      src: "/images/gallery/WhatsApp Image 2025-12-01 at 20.53.46 (1).jpeg",
+      src: "/images/gallery/priestory/interier-kreslo.jpeg",
       alt: "Moderné vybavenie kliniky",
       category: "Priestory",
     },
   ],
   column2: [
     {
-      src: "/images/gallery/WhatsApp Image 2025-12-01 at 20.53.38 (2).jpeg",
-      alt: "Precízne laserové ošetrenie s červeným svetlom",
+      src: "/images/services/pletove/hydrabeauty.jpeg",
+      alt: "Hydrabeauty ošetrenie pleti",
       category: "Procedúry",
     },
     {
-      src: "/images/gallery/WhatsApp Image 2025-12-01 at 20.53.46 (9).jpeg",
-      alt: "MUDr. Katarína Dzuriková s profesionálnym vybavením",
+      src: "/images/services/vizaz/katarina-nastroj.jpeg",
+      alt: "Katarína Dzuriková s profesionálnym vybavením",
       category: "Profesionalita",
     },
     {
-      src: "/images/gallery/WhatsApp Image 2025-12-01 at 20.53.46.jpeg",
+      src: "/images/gallery/procedury/microneedling.jpeg",
       alt: "Microneedling - ošetrenie pokožky",
       category: "Procedúry",
     },
     {
-      src: "/images/gallery/WhatsApp Image 2025-12-01 at 20.53.38 (1).jpeg",
+      src: "/images/gallery/atmosfera/klientka-osetrenie.jpeg",
       alt: "Klientka počas ošetrenia v pokojnom prostredí",
       category: "Atmosféra",
     },
   ],
   column3: [
     {
-      src: "/images/gallery/WhatsApp Image 2025-12-01 at 20.53.45.jpeg",
+      src: "/images/gallery/atmosfera/elegantne-prostredie.jpeg",
       alt: "Elegantné prostredie kliniky",
       category: "Atmosféra",
     },
     {
-      src: "/images/gallery/WhatsApp Image 2025-12-01 at 20.53.46 (7).jpeg",
+      src: "/images/gallery/procedury/pmu-pery.jpeg",
       alt: "Permanentný make-up pier - priebeh ošetrenia",
       category: "Procedúry",
     },
     {
-      src: "/images/gallery/WhatsApp Image 2025-12-01 at 20.53.46 (11).jpeg",
-      alt: "MUDr. Katarína Dzuriková - vaša špecialistka",
+      src: "/images/about/katarina-portrait.jpeg",
+      alt: "Katarína Dzuriková - vaša špecialistka",
       category: "Profesionalita",
     },
     {
-      src: "/images/gallery/WhatsApp Image 2025-12-01 at 20.53.45 (4).jpeg",
+      src: "/images/gallery/atmosfera/relaxacia.jpeg",
       alt: "Relaxácia počas ošetrenia",
       category: "Atmosféra",
     },
@@ -169,7 +171,7 @@ export function GallerySection() {
                   src={image.src}
                   alt={image.alt}
                   fill
-                  className="object-cover saturate-75 group-hover:scale-105 group-hover:saturate-100 transition-all duration-700"
+                  className="object-cover group-hover:scale-105 transition-all duration-700"
                   quality={90}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/0 to-ink/0 opacity-0 group-hover:opacity-100 transition-all duration-700" />
@@ -202,7 +204,7 @@ export function GallerySection() {
                   src={image.src}
                   alt={image.alt}
                   fill
-                  className="object-cover saturate-75 group-hover:scale-105 group-hover:saturate-100 transition-all duration-700"
+                  className="object-cover group-hover:scale-105 transition-all duration-700"
                   quality={90}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/0 to-ink/0 opacity-0 group-hover:opacity-100 transition-all duration-700" />
@@ -235,7 +237,7 @@ export function GallerySection() {
                   src={image.src}
                   alt={image.alt}
                   fill
-                  className="object-cover saturate-75 group-hover:scale-105 group-hover:saturate-100 transition-all duration-700"
+                  className="object-cover group-hover:scale-105 transition-all duration-700"
                   quality={90}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/0 to-ink/0 opacity-0 group-hover:opacity-100 transition-all duration-700" />
@@ -249,10 +251,22 @@ export function GallerySection() {
             ))}
           </motion.div>
         </div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+          viewport={{ once: true }}
+          className="mt-16 text-center"
+        >
+          <Link href="/galeria">
+            <Button variant="luxury" className="text-base md:text-lg px-8 md:px-12 py-6">
+              Zobraziť celú galériu
+            </Button>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
 }
-
-
-
