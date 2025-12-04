@@ -1,11 +1,11 @@
-# SHINE by Katarína Dzuriková - robots.txt
-# https://shineclinic.sk
+# SHINE Štúdio Krásy by Katarína Dzuriková - robots.txt
+# https://studiokrasyshine.sk
 
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://shineclinic.sk/sitemap.xml
+Sitemap: https://studiokrasyshine.sk/sitemap.xml
 
 # Disallow admin and private paths (if any)
 Disallow: /api/
@@ -34,3 +34,5 @@ Allow: /
 User-agent: Googlebot
 Allow: /
 
+# Location keywords for local SEO
+# Liptovský Mikuláš, Ružomberok, Jasná, Nízke Tatry, Bešeňová, Chopok, Liptov

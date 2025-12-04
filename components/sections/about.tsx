@@ -34,7 +34,7 @@ export function AboutSection() {
               <motion.div style={{ y: imageY }} className="h-full w-full">
                 <Image
                   src="/images/about/katarina-portrait.jpeg"
-                  alt="Katarína Dzuriková - estetická špecialistka"
+                  alt="Katarína Dzuriková - profesionálna kozmetička Liptov"
                   fill
                   className="object-cover"
                   quality={90}
@@ -76,24 +76,19 @@ export function AboutSection() {
 
               {/* Headline */}
               <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-editorial leading-tight text-ink">
-                Vaša prirodzená krása, zvýraznená s citom
+                Vaša kozmetička v srdci Liptova
               </h2>
 
               {/* Body Text with Drop Cap */}
               <div className="space-y-4 md:space-y-6 text-ink/80 leading-relaxed">
                 <p className="text-base md:text-lg lg:text-xl">
                   <span className="float-left font-serif text-5xl md:text-7xl leading-none mr-2 md:mr-3 mt-1 md:mt-2 text-gold">
-                    V
+                    K
                   </span>
-                  erím, že každá žena má jedinečnú krásu, ktorá si zaslúži
-                  jemnú a precíznu starostlivosť. Moja filozofia je postavená
-                  na rešpekte k vašej prirodzenosti – nechcem meniť, ale
-                  zvýrazniť to najlepšie, čo už máte.
+                  ozmetika je pre mňa kombináciou estetiky, odbornosti a jemného ľudského prístupu. V SHINE sa zameriavam na pleť s maximálnou precíznosťou – sledujem detaily a vnímam, čo potrebuje.
                 </p>
                 <p className="text-sm md:text-base lg:text-lg">
-                  S viac ako 10-ročnými skúsenosťami v estetickej medicíne som
-                  sa špecializovala na neinvazívne procedúry, ktoré prinášajú
-                  viditeľné výsledky bez rizika a s minimálnym prestojom.
+                  Pracujem s jemným dotykom, no profesionálne. Každé ošetrenie je individuálne navrhnuté tak, aby prinieslo skutočný efekt. Kvalita, čistota prevedenia a výsledok sú pre mňa základ.
                 </p>
               </div>
 
@@ -110,9 +105,17 @@ export function AboutSection() {
                 className="mt-12 md:mt-16 py-8 md:py-12 border-t border-b border-gold/30"
               >
                 <p className="font-serif text-2xl sm:text-3xl md:text-4xl italic text-center leading-relaxed text-ink px-4">
-                  &ldquo;Výsledky, ktoré nekričia – ale žiaria&rdquo;
+                  &ldquo;Krása nevzniká náhodou – ale vedome, citlivo a odborne&rdquo;
                 </p>
               </motion.blockquote>
+
+              {/* Location info */}
+              <div className="mt-8 p-6 bg-stone-50">
+                <p className="text-sm text-ink/70 text-center">
+                  📍 Štúdio Krásy SHINE • Pavlova Ves, Liptov<br />
+                  <span className="text-xs text-ink/50">Ľahká dostupnosť z Liptovského Mikuláša, Ružomberka, Jasnej a Bešeňovej</span>
+                </p>
+              </div>
 
               {/* CTA Link */}
               <div className="mt-8 text-center">

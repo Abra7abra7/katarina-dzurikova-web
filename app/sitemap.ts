@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://shineclinic.sk'
+  const baseUrl = 'https://studiokrasyshine.sk'
   
   return [
     {
@@ -42,4 +42,3 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 }
-

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, Clock, Instagram, Facebook } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Instagram, Navigation } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const BOOKIO_URL = "https://services.bookio.com/studio-krasy-shine-yl2qwybl/widget?lang=sk";
@@ -10,43 +10,38 @@ const contactInfo = [
   {
     icon: Phone,
     label: "Telefón",
-    value: "+421 917 123 456",
-    href: "tel:+421917123456",
+    value: "+421 904 678 007",
+    href: "tel:+421904678007",
     note: "Po-Pia: 9:00 - 18:00",
   },
   {
     icon: Mail,
     label: "Email",
-    value: "info@shineclinic.sk",
-    href: "mailto:info@shineclinic.sk",
+    value: "Katarinasosikova@gmail.com",
+    href: "mailto:Katarinasosikova@gmail.com",
     note: "Odpovieme do 24 hodín",
   },
   {
     icon: MapPin,
     label: "Adresa",
-    value: "Hlavná 123, 811 01 Bratislava",
-    href: "https://maps.google.com/?q=Hlavná+123+Bratislava",
-    note: "Parkovanie k dispozícii",
+    value: "Pavlova Ves 24, 032 21 p. Bobrovec",
+    href: "https://maps.google.com/?q=49.1089,19.5844",
+    note: "V srdci Liptova",
   },
   {
     icon: Clock,
     label: "Otváracie hodiny",
     value: "Pondelok - Piatok",
-    note: "9:00 - 18:00",
+    note: "9:00 - 18:00 (alebo podľa dohody)",
   },
 ];
 
-const socialLinks = [
-  {
-    icon: Instagram,
-    label: "Instagram",
-    href: "https://instagram.com/shineclinic",
-  },
-  {
-    icon: Facebook,
-    label: "Facebook",
-    href: "https://facebook.com/shineclinic",
-  },
+const nearbyLocations = [
+  { name: "Liptovský Mikuláš", distance: "~15 min" },
+  { name: "Ružomberok", distance: "~20 min" },
+  { name: "Jasná / Chopok", distance: "~25 min" },
+  { name: "Bešeňová", distance: "~10 min" },
+  { name: "Demänovská Dolina", distance: "~20 min" },
 ];
 
 export function ContactPageContent() {
@@ -68,10 +63,10 @@ export function ContactPageContent() {
             Kontakt
           </span>
           <h1 className="mt-4 font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-editorial leading-tight text-ink">
-            Sme tu pre vás
+            Navštívte nás v Liptove
           </h1>
           <p className="mt-6 text-lg text-ink/70 max-w-2xl mx-auto">
-            Máte otázky alebo si chcete rezervovať termín? Neváhajte nás kontaktovať.
+            SHINE Štúdio Krásy sa nachádza v Pavlovej Vsi, v srdci Liptova. Sme ľahko dostupní z Liptovského Mikuláša, Ružomberka, Jasnej aj Bešeňovej.
           </p>
         </motion.div>
       </section>
@@ -130,20 +125,34 @@ export function ContactPageContent() {
             {/* Social Links */}
             <div className="mt-12">
               <h3 className="text-xs uppercase tracking-luxury font-sans font-semibold text-gold mb-4">
-                Sledujte nás
+                Sledujte nás na Instagrame
               </h3>
-              <div className="flex items-center gap-4">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3 border border-stone-200 text-ink hover:text-gold hover:border-gold transition-all duration-300"
-                    aria-label={social.label}
+              <a
+                href="https://instagram.com/k.dzurikova.studiokrasyshine"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 p-4 border border-stone-200 text-ink hover:text-gold hover:border-gold transition-all duration-300"
+              >
+                <Instagram size={24} strokeWidth={1.5} />
+                <span className="font-sans">@k.dzurikova.studiokrasyshine</span>
+              </a>
+            </div>
+
+            {/* Nearby Locations */}
+            <div className="mt-12">
+              <h3 className="text-xs uppercase tracking-luxury font-sans font-semibold text-gold mb-4">
+                Dostupnosť z okolia
+              </h3>
+              <div className="grid grid-cols-2 gap-3">
+                {nearbyLocations.map((location) => (
+                  <div
+                    key={location.name}
+                    className="flex items-center gap-2 text-sm text-ink/70"
                   >
-                    <social.icon size={24} strokeWidth={1.5} />
-                  </a>
+                    <Navigation size={14} className="text-gold" />
+                    <span>{location.name}</span>
+                    <span className="text-ink/40">{location.distance}</span>
+                  </div>
                 ))}
               </div>
             </div>
@@ -158,14 +167,14 @@ export function ContactPageContent() {
             className="relative aspect-square lg:aspect-auto lg:h-full min-h-[400px] overflow-hidden"
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2661.8892361898824!2d17.104934776893607!3d48.14867497122431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476c8943e1fb8c91%3A0x400f7d1c69687a0!2sHlavn%C3%A9%20n%C3%A1m.%2C%20811%2001%20Star%C3%A9%20Mesto!5e0!3m2!1ssk!2ssk!4v1701686400000!5m2!1ssk!2ssk"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2614.8!2d19.5844!3d49.1089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDnCsDA2JzMyLjAiTiAxOcKwMzUnMDMuOCJF!5e0!3m2!1ssk!2ssk!4v1701686400000!5m2!1ssk!2ssk"
               width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Mapa - SHINE Estetická Klinika"
+              title="Mapa - SHINE Štúdio Krásy Pavlova Ves"
               className="absolute inset-0"
             />
           </motion.div>
@@ -185,7 +194,7 @@ export function ContactPageContent() {
             Online rezervácia
           </h2>
           <p className="text-ink/70 max-w-2xl mx-auto">
-            Vyberte si termín, ktorý vám vyhovuje, a rezervujte si ošetrenie online.
+            Vyberte si termín, ktorý vám vyhovuje, a rezervujte si ošetrenie online. Teším sa na vás!
           </p>
         </motion.div>
 
@@ -201,7 +210,7 @@ export function ContactPageContent() {
             width="100%"
             height="700"
             style={{ border: 0 }}
-            title="Rezervácia termínu - SHINE"
+            title="Rezervácia termínu - SHINE Štúdio Krásy"
             className="w-full"
           />
         </motion.div>
@@ -217,17 +226,17 @@ export function ContactPageContent() {
           className="bg-ink text-canvas p-12 md:p-16 text-center"
         >
           <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-editorial mb-6">
-            Neviete si rady?
+            Máte otázky?
           </h2>
           <p className="text-canvas/70 max-w-2xl mx-auto mb-8">
-            Zavolajte nám a radi vám poradíme s výberom správneho ošetrenia.
+            Zavolajte mi a radi vám poradím s výberom správneho ošetrenia. Som tu pre klientky z celého Liptova.
           </p>
-          <a href="tel:+421917123456">
+          <a href="tel:+421904678007">
             <Button 
               variant="luxury" 
               className="border-canvas text-canvas hover:bg-canvas hover:text-ink"
             >
-              Zavolať teraz
+              Zavolať: +421 904 678 007
             </Button>
           </a>
         </motion.div>
@@ -235,4 +244,3 @@ export function ContactPageContent() {
     </article>
   );
 }
-

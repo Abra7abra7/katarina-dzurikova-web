@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, Instagram, Facebook } from "lucide-react";
+import { Phone, Mail, MapPin, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -41,8 +41,10 @@ export function FooterSection() {
               </h2>
             </Link>
             <p className="text-base md:text-lg text-canvas/70 leading-relaxed max-w-md">
-              Precízna estetická starostlivosť rešpektujúca vašu prirodzenú
-              krásu.
+              Štúdio krásy v srdci Liptova. Profesionálna kozmetika s individuálnym prístupom.
+            </p>
+            <p className="text-sm text-canvas/50 mt-4">
+              Obsluhujeme: Liptovský Mikuláš, Ružomberok, Jasná, Bešeňová, Nízke Tatry
             </p>
             <div className="mt-8 md:mt-12">
               <Button 
@@ -75,8 +77,8 @@ export function FooterSection() {
                 <div className="flex items-start gap-3">
                   <Phone className="mt-0.5 text-gold flex-shrink-0" strokeWidth={1.5} size={18} />
                   <div>
-                    <a href="tel:+421917123456" className="text-sm md:text-base text-canvas/90 hover:text-gold transition-colors">
-                      +421 917 123 456
+                    <a href="tel:+421904678007" className="text-sm md:text-base text-canvas/90 hover:text-gold transition-colors">
+                      +421 904 678 007
                     </a>
                     <p className="text-xs text-canvas/50 mt-1">
                       Po-Pia: 9:00 - 18:00
@@ -86,8 +88,8 @@ export function FooterSection() {
                 <div className="flex items-start gap-3">
                   <Mail className="mt-0.5 text-gold flex-shrink-0" strokeWidth={1.5} size={18} />
                   <div>
-                    <a href="mailto:info@shineclinic.sk" className="text-sm md:text-base text-canvas/90 break-all hover:text-gold transition-colors">
-                      info@shineclinic.sk
+                    <a href="mailto:Katarinasosikova@gmail.com" className="text-sm md:text-base text-canvas/90 break-all hover:text-gold transition-colors">
+                      Katarinasosikova@gmail.com
                     </a>
                   </div>
                 </div>
@@ -95,14 +97,17 @@ export function FooterSection() {
                   <MapPin className="mt-0.5 text-gold flex-shrink-0" strokeWidth={1.5} size={18} />
                   <div>
                     <a 
-                      href="https://maps.google.com/?q=Hlavná+123+Bratislava" 
+                      href="https://maps.google.com/?q=Pavlova+Ves+24+Bobrovec" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-sm md:text-base text-canvas/90 hover:text-gold transition-colors"
                     >
-                      <p>Hlavná 123</p>
-                      <p>811 01 Bratislava</p>
+                      <p>Pavlova Ves 24</p>
+                      <p>032 21 p. Bobrovec</p>
                     </a>
+                    <p className="text-xs text-canvas/50 mt-1">
+                      Blízko Lipt. Mikuláša a Ružomberka
+                    </p>
                   </div>
                 </div>
               </address>
@@ -124,22 +129,14 @@ export function FooterSection() {
               </h3>
               <div className="flex items-center gap-5 md:gap-6 mb-8 md:mb-12">
                 <a
-                  href="https://instagram.com/shineclinic"
+                  href="https://instagram.com/k.dzurikova.studiokrasyshine"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-canvas hover:text-gold transition-colors duration-300"
+                  className="text-canvas hover:text-gold transition-colors duration-300 flex items-center gap-2"
                   aria-label="Instagram"
                 >
                   <Instagram strokeWidth={1.5} size={22} />
-                </a>
-                <a
-                  href="https://facebook.com/shineclinic"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-canvas hover:text-gold transition-colors duration-300"
-                  aria-label="Facebook"
-                >
-                  <Facebook strokeWidth={1.5} size={22} />
+                  <span className="text-sm">@k.dzurikova.studiokrasyshine</span>
                 </a>
               </div>
 
@@ -170,10 +167,10 @@ export function FooterSection() {
           className="mt-16 md:mt-20 lg:mt-24 pt-6 md:pt-8 border-t border-canvas/20 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4 text-center md:text-left"
         >
           <p className="text-xs md:text-sm text-canvas/50">
-            © {new Date().getFullYear()} SHINE by Katarína Dzuriková. Všetky práva vyhradené.
+            © {new Date().getFullYear()} SHINE Štúdio Krásy by Katarína Dzuriková. Všetky práva vyhradené.
           </p>
-          <p className="text-xs md:text-sm text-canvas/30 italic">
-            Designed with elegance.
+          <p className="text-xs md:text-sm text-canvas/30">
+            Kozmetika Liptovský Mikuláš | Ružomberok | Liptov
           </p>
         </motion.div>
       </div>
