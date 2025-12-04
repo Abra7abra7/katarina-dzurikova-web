@@ -7,6 +7,9 @@ import { Button } from "@/components/ui/button";
 
 const BOOKIO_URL = "https://services.bookio.com/studio-krasy-shine-yl2qwybl/widget?lang=sk";
 
+// Cloudflare R2 CDN pre video
+const CLOUDFLARE_R2_URL = "https://pub-ca9ca721368949e4a4793e9cf426e44e.r2.dev";
+
 const textReveal = {
   hidden: { y: "100%", opacity: 0 },
   show: {
@@ -58,7 +61,7 @@ export function HeroSection() {
             className="absolute inset-0 w-full h-full object-cover object-bottom lg:[object-position:center_80%]"
           >
             <source
-              src="/images/hero/katarina-hero-video.mp4"
+              src={`${CLOUDFLARE_R2_URL}/katarina-hero-video.mp4`}
               type="video/mp4"
             />
           </video>
