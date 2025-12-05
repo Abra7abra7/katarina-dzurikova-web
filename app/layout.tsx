@@ -39,7 +39,10 @@ export const metadata: Metadata = {
     "kozmetika Nízke Tatry",
     "kozmetička Bešeňová",
     "kozmetika Chopok",
+    "kozmetika Chopok Sever",
     "beauty salón Liptov",
+    "kozmetika Tatralandia",
+    "kozmetika Liptovský Hrádok",
     // Služby
     "permanentný make-up pier",
     "permanentný make-up obočia",
@@ -146,6 +149,10 @@ const jsonLd = {
     },
     {
       "@type": "Place",
+      name: "Chopok Sever",
+    },
+    {
+      "@type": "Place",
       name: "Nízke Tatry",
     },
     {
@@ -155,6 +162,14 @@ const jsonLd = {
     {
       "@type": "Place",
       name: "Demänovská Dolina",
+    },
+    {
+      "@type": "Place",
+      name: "Liptovský Hrádok",
+    },
+    {
+      "@type": "Place",
+      name: "Tatralandia",
     },
   ],
   openingHoursSpecification: {
@@ -181,6 +196,10 @@ const jsonLd = {
       {
         "@type": "EducationalOrganization",
         name: "Univerzita Mateja Bela Banská Bystrica",
+      },
+      {
+        "@type": "EducationalOrganization",
+        name: "Prešovská univerzita v Prešove",
       },
     ],
   },
@@ -274,6 +293,9 @@ export default function RootLayout({
   return (
     <html lang="sk" className={`${playfair.variable} ${lato.variable}`}>
       <head>
+        {/* Google Search Console verifikácia - pridajte svoj vlastný kód */}
+        {/* <meta name="google-site-verification" content="VAS_VERIFIKACNY_KOD" /> */}
+        
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
