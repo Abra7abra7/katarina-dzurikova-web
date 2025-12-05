@@ -86,36 +86,22 @@ export function ServicesSection() {
     <section id="services" className="relative bg-canvas py-24 md:py-32">
       <div className="container mx-auto px-6 lg:px-12">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.33, 1, 0.68, 1] }}
-          viewport={{ once: true }}
-          className="mb-20"
-        >
+        <div className="mb-20">
           <span className="text-xs uppercase tracking-luxury font-sans font-semibold text-gold">
             Naše Služby
           </span>
           <h2 className="mt-6 font-serif text-4xl md:text-6xl font-semibold tracking-editorial leading-tight text-ink max-w-3xl">
             Precízne ošetrenia pre vašu prirodzenú krásu
           </h2>
-        </motion.div>
+        </div>
 
         {/* Services List */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* List */}
           <div className="lg:col-span-7">
-            {services.map((service, index) => (
-              <motion.div
+            {services.map((service) => (
+              <div
                 key={service.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{
-                  delay: index * 0.2,
-                  duration: 0.8,
-                  ease: [0.33, 1, 0.68, 1],
-                }}
-                viewport={{ once: true }}
                 onMouseEnter={() => setHoveredService(service.id)}
                 onMouseLeave={() => setHoveredService(null)}
                 className="group border-t border-stone-300 py-8 cursor-pointer transition-all duration-500"
@@ -173,7 +159,7 @@ export function ServicesSection() {
                     />
                   </motion.div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
 
@@ -216,13 +202,7 @@ export function ServicesSection() {
         </div>
 
         {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
-          viewport={{ once: true }}
-          className="mt-16 md:mt-20 flex flex-col sm:flex-row gap-4 justify-center"
-        >
+        <div className="mt-16 md:mt-20 flex flex-col sm:flex-row gap-4 justify-center">
           <Link href="/sluzby">
             <Button variant="luxury" className="text-base md:text-lg px-8 md:px-12 py-6 w-full sm:w-auto">
               Všetky služby
@@ -233,7 +213,7 @@ export function ServicesSection() {
               Zobraziť cenník
             </Button>
           </Link>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

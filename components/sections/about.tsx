@@ -1,17 +1,11 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 
 export function AboutSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"],
-  });
-
-  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
   return (
     <section
@@ -22,53 +16,27 @@ export function AboutSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-start">
           {/* Left Side - Image (Sticky) */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: [0.33, 1, 0.68, 1] }}
-            viewport={{ once: true }}
-            className="lg:col-span-5 lg:sticky lg:top-32"
-          >
+          <div className="lg:col-span-5 lg:sticky lg:top-32">
             <div className="relative aspect-[3/4] overflow-hidden">
-              <motion.div style={{ y: imageY }} className="h-full w-full">
-                <Image
-                  src="/images/about/katarina-portrait.jpeg"
-                  alt="Katarína Dzuriková - profesionálna kozmetička Liptov"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 42vw"
-                  className="object-cover saturate-75"
-                  quality={75}
-                />
-              </motion.div>
+              <Image
+                src="/images/about/katarina-portrait.jpeg"
+                alt="Katarína Dzuriková - profesionálna kozmetička Liptov"
+                fill
+                sizes="(max-width: 1024px) 100vw, 42vw"
+                className="object-cover saturate-75"
+                quality={75}
+              />
             </div>
             {/* Signature Line */}
-            <motion.div
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              transition={{ delay: 0.5, duration: 1, ease: [0.33, 1, 0.68, 1] }}
-              viewport={{ once: true }}
-              className="mt-6 h-px bg-gold origin-left"
-            />
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.8, duration: 0.8 }}
-              viewport={{ once: true }}
-              className="mt-4 text-sm uppercase tracking-luxury font-sans font-semibold text-ink/60"
-            >
+            <div className="mt-6 h-px bg-gold" />
+            <p className="mt-4 text-sm uppercase tracking-luxury font-sans font-semibold text-ink/60">
               Katarína Dzuriková - profesionálna kozmetička Liptov
-            </motion.p>
-          </motion.div>
+            </p>
+          </div>
 
           {/* Right Side - Content (Scrollable) */}
           <div className="lg:col-span-7">
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, ease: [0.33, 1, 0.68, 1] }}
-              viewport={{ once: true }}
-              className="space-y-8"
-            >
+            <div className="space-y-8">
               {/* Overline */}
               <span className="text-xs uppercase tracking-luxury font-sans font-semibold text-gold">
                 Katarína Dzuriková
@@ -106,21 +74,11 @@ export function AboutSection() {
               </div>
 
               {/* Quote */}
-              <motion.blockquote
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{
-                  delay: 0.3,
-                  duration: 1,
-                  ease: [0.33, 1, 0.68, 1],
-                }}
-                viewport={{ once: true }}
-                className="mt-12 md:mt-16 py-8 md:py-12 border-t border-b border-gold/30"
-              >
+              <blockquote className="mt-12 md:mt-16 py-8 md:py-12 border-t border-b border-gold/30">
                 <p className="font-serif text-2xl sm:text-3xl md:text-4xl italic text-center leading-relaxed text-ink px-4">
                   &ldquo;Krása nevzniká náhodou – ale vedome, citlivo a odborne&rdquo;
                 </p>
-              </motion.blockquote>
+              </blockquote>
 
               {/* Credentials */}
               <div className="mt-8 md:mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
@@ -156,7 +114,7 @@ export function AboutSection() {
                   </span>
                 </p>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>
