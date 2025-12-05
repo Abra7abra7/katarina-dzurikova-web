@@ -1,8 +1,18 @@
 # 🚀 KOMPLETNÝ PLÁN - SHINE Web (Katarína Dzuriková)
 
 > **Doména:** https://www.katarinadzurikova.sk  
-> **Aktualizované:** 4. December 2025  
-> **Stav projektu:** 🟢 TAKMER HOTOVÉ
+> **Aktualizované:** 5. December 2025  
+> **Stav projektu:** 🟢 HOTOVÉ - PRIPRAVENÉ NA ŠKÁLOVANIE
+
+---
+
+## 🎯 ŠKÁLOVATEĽNÝ PROJEKT
+
+Tento projekt slúži ako **šablóna pre budúce beauty salón weby**. 
+
+### 📄 Súvisiace dokumenty:
+- **[KLIENT_DOTAZNIK.md](KLIENT_DOTAZNIK.md)** - User-friendly formulár pre klientov
+- **[DEVELOPER_SABLONA.md](DEVELOPER_SABLONA.md)** - Technická dokumentácia pre realizáciu
 
 ---
 
@@ -30,7 +40,7 @@
 | Dostupnosť | ✅ **95-100/100** | |
 | SEO Score | ✅ **100/100** | |
 | Best Practices | ✅ **100/100** | |
-| Hero video optimalizované | ✅ | 748KB (z 1.47MB) |
+| Hero video optimalizované | ✅ | Cloudflare R2 CDN |
 | Google Search Console | ✅ | Overené HTML súborom |
 | Sitemap odoslaný | ✅ | sitemap.xml |
 | Schema.org BeautySalon | ✅ | Funguje (Rich Results Test) |
@@ -349,6 +359,35 @@ Kategória 5: Doplnkové služby (od 2€)
 
 ---
 
-*Dokument aktualizovaný: 4. December 2025*  
+---
+
+## 🔄 WORKFLOW PRE NOVÝ PROJEKT
+
+### 1. Akvizícia klienta
+1. Poslať `KLIENT_DOTAZNIK.md` na vyplnenie
+2. Dohodnúť call na upresnenie detailov
+3. Získať fotky, logo, prístupy
+
+### 2. Realizácia (4-5 hodín)
+1. Skopírovať tento template projekt
+2. Postupovať podľa `DEVELOPER_SABLONA.md`
+3. Upraviť všetky premenné
+4. Nahrať obsah klienta
+5. Deploy + DNS
+
+### 3. Odovzdanie
+1. Google Search Console setup
+2. Google Business Profile setup
+3. Zaškolenie klienta
+4. Odovzdávací protokol
+
+### 4. Údržba (voliteľná)
+- Mesačná kontrola
+- Aktualizácie obsahu
+- SEO monitoring
+
+---
+
+*Dokument aktualizovaný: 5. December 2025*  
 *Projekt: SHINE Štúdio Krásy - Katarína Dzuriková*  
-*Verzia: 2.0*
+*Verzia: 3.0 - Škálovateľná šablóna*
