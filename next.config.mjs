@@ -12,7 +12,11 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'images.unsplash.com',
       },
-      // Pre budúce CDN (Cloudflare R2, Bunny, atď.)
+      // Cloudflare R2 CDN
+      {
+        protocol: 'https',
+        hostname: 'pub-ca9ca721368949e4a4793e9cf426e44e.r2.dev',
+      },
       {
         protocol: 'https',
         hostname: '*.r2.cloudflarestorage.com',
