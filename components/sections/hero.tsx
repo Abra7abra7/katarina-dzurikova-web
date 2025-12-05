@@ -3,12 +3,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-
-const BOOKIO_URL = "https://services.bookio.com/studio-krasy-shine-yl2qwybl/widget?lang=sk";
-
-// Cloudflare R2 CDN pre video
-const CLOUDFLARE_R2_URL = "https://pub-ca9ca721368949e4a4793e9cf426e44e.r2.dev";
 
 const textReveal = {
   hidden: { y: "100%", opacity: 0 },
@@ -33,10 +27,6 @@ const staggerContainer = {
 export function HeroSection() {
   const [videoError, setVideoError] = useState(false);
 
-  const handleReservation = () => {
-    window.open(BOOKIO_URL, '_blank');
-  };
-
   return (
     <section
       id="hero"
@@ -55,30 +45,28 @@ export function HeroSection() {
             loop
             muted
             playsInline
-            preload="auto"
             onError={() => setVideoError(true)}
-            poster="/images/about/katarina-portrait.jpeg"
-            className="absolute inset-0 w-full h-full object-cover object-bottom lg:[object-position:center_80%]"
+            className="absolute inset-0 w-full h-full object-cover brightness-90 saturate-75"
           >
             <source
-              src={`${CLOUDFLARE_R2_URL}/katarina-hero-section.mp4`}
+              src="/images/gallery/video/WhatsApp Video 2025-12-01 at 21.47.46.mp4"
               type="video/mp4"
             />
           </video>
         ) : (
           <Image
-            src="/images/about/katarina-portrait.jpeg"
-            alt="SHINE Štúdio Krásy Liptov"
+            src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=2940&auto=format&fit=crop"
+            alt="Aesthetic beauty"
             fill
-            className="object-cover"
+            className="object-cover brightness-90 saturate-75"
             priority
             quality={95}
           />
         )}
-        {/* Light overlay for better navbar visibility */}
-        <div className="absolute inset-0 bg-gradient-to-b from-canvas/70 via-canvas/30 to-canvas/80" />
-        {/* Subtle vignette effect */}
-        <div className="absolute inset-0 bg-gradient-to-r from-canvas/40 via-transparent to-canvas/40" />
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-canvas/80" />
+        {/* Subtle dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-ink/10" />
       </motion.div>
 
       {/* Content */}
@@ -91,8 +79,8 @@ export function HeroSection() {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="mb-4 md:mb-6"
           >
-            <span className="inline-block px-4 py-2 bg-ink/80 backdrop-blur-sm text-xs uppercase tracking-luxury font-sans font-semibold text-gold border border-gold/30">
-              Štúdio Krásy Liptov
+            <span className="text-xs uppercase tracking-luxury font-sans font-semibold text-gold">
+              Estetická Medicína
             </span>
           </motion.div>
 
@@ -120,21 +108,10 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2, duration: 0.8 }}
-            className="font-sans text-base md:text-lg lg:text-xl text-ink/80 leading-relaxed max-w-2xl pr-4 mb-8"
+            className="font-sans text-base md:text-lg lg:text-xl text-ink/80 leading-relaxed max-w-2xl pr-4"
           >
             Precízna starostlivosť rešpektujúca vašu prirodzenosť.
           </motion.p>
-
-          {/* CTA Button */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.4, duration: 0.8 }}
-          >
-            <Button variant="luxury" onClick={handleReservation} className="text-base md:text-lg px-8 py-6">
-              Rezervovať termín
-            </Button>
-          </motion.div>
 
           {/* Scroll Indicator */}
           <motion.div
@@ -155,3 +132,6 @@ export function HeroSection() {
     </section>
   );
 }
+
+
+

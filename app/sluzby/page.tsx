@@ -4,13 +4,16 @@ import { FooterSection } from "@/components/sections/footer";
 import { ServicesPageContent } from "@/components/sections/services-page";
 
 export const metadata: Metadata = {
-  title: "Služby | SHINE by Katarína Dzuriková",
+  title: "Služby | Kozmetika Liptovský Mikuláš, Ružomberok",
   description:
-    "Kompletná ponuka služieb estetickej medicíny - permanentný make-up, pleťové ošetrenia, mihalnice, vizáž a doplnkové služby. Profesionálna starostlivosť v Bratislave.",
+    "Kompletná ponuka kozmetických služieb v Liptove - permanentný make-up, pleťové ošetrenia, Kobido masáž, laminácia mihalníc. SHINE Štúdio Krásy Liptovský Mikuláš, Ružomberok.",
   openGraph: {
-    title: "Služby | SHINE by Katarína Dzuriková",
-    description: "Kompletná ponuka služieb estetickej medicíny v Bratislave",
+    title: "Služby | SHINE Štúdio Krásy Liptov",
+    description: "Kozmetické služby v Liptove - permanentný make-up, pleťové ošetrenia, Kobido masáž",
     images: ["/images/services/pletove/hydrabeauty.jpeg"],
+  },
+  alternates: {
+    canonical: "https://www.katarinadzurikova.sk/sluzby",
   },
 };
 

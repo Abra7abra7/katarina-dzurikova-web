@@ -4,12 +4,15 @@ import { PricingSection } from "@/components/sections/pricing";
 import { FooterSection } from "@/components/sections/footer";
 
 export const metadata: Metadata = {
-  title: "Cenník služieb | SHINE by Katarína Dzuriková",
+  title: "Cenník | Kozmetika Liptovský Mikuláš, Ružomberok",
   description:
-    "Kompletný cenník služieb estetickej medicíny - pleťové ošetrenia od 30€, permanentný make-up, mihalnice, vizáž a doplnkové služby. Transparentné ceny bez skrytých poplatkov.",
+    "Cenník kozmetických služieb v Liptove - pleťové ošetrenia od 30€, permanentný make-up, Kobido masáž, laminácia mihalníc. SHINE Štúdio Krásy - transparentné ceny.",
   openGraph: {
-    title: "Cenník služieb | SHINE by Katarína Dzuriková",
-    description: "Kompletný cenník služieb estetickej medicíny - transparentné ceny",
+    title: "Cenník | SHINE Štúdio Krásy Liptov",
+    description: "Cenník kozmetických služieb v Liptove - transparentné ceny bez skrytých poplatkov",
+  },
+  alternates: {
+    canonical: "https://www.katarinadzurikova.sk/cennik",
   },
 };
 
@@ -22,5 +25,6 @@ export default function CennikPage() {
     </main>
   );
 }
+
 
 

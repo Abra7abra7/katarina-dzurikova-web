@@ -4,13 +4,16 @@ import { FooterSection } from "@/components/sections/footer";
 import { AboutPageContent } from "@/components/sections/about-page";
 
 export const metadata: Metadata = {
-  title: "O mne | SHINE by Katarína Dzuriková",
+  title: "O mne | Kozmetička Katarína Dzuriková Liptov",
   description:
-    "Zoznámte sa s Katarínou Dzurikovou - špecialistkou na estetickú medicínu s 10+ rokmi skúseností. Profesionálna starostlivosť o vašu prirodzenú krásu v Bratislave.",
+    "Zoznámte sa s Katarínou Dzurikovou - profesionálnou kozmetičkou v Liptove. Permanentný make-up, pleťové ošetrenia, Kobido masáž. Obsluhujeme Liptovský Mikuláš, Ružomberok, Jasná.",
   openGraph: {
-    title: "O mne | SHINE by Katarína Dzuriková",
-    description: "Zoznámte sa s Katarínou Dzurikovou - špecialistkou na estetickú medicínu",
+    title: "O mne | Kozmetička Katarína Dzuriková Liptov",
+    description: "Profesionálna kozmetička v Liptove - Katarína Dzuriková. Starostlivosť o vašu prirodzenú krásu.",
     images: ["/images/about/katarina-portrait.jpeg"],
+  },
+  alternates: {
+    canonical: "https://www.katarinadzurikova.sk/o-mne",
   },
 };
 
@@ -23,5 +26,6 @@ export default function OmnePage() {
     </main>
   );
 }
+
 
 

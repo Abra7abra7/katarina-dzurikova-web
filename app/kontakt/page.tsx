@@ -4,12 +4,15 @@ import { FooterSection } from "@/components/sections/footer";
 import { ContactPageContent } from "@/components/sections/contact-page";
 
 export const metadata: Metadata = {
-  title: "Kontakt | SHINE by Katarína Dzuriková",
+  title: "Kontakt | SHINE Štúdio Krásy Liptov",
   description:
-    "Kontaktujte nás a rezervujte si termín. Nájdete nás na Hlavnej 123, Bratislava. Telefón: +421 917 123 456, Email: info@shineclinic.sk",
+    "Kontaktujte SHINE Štúdio Krásy a rezervujte si termín. Adresa: Pavlova Ves 24, Bobrovec (Liptov). Telefón: +421 904 678 007. Kozmetika blízko Liptovského Mikuláša a Ružomberka.",
   openGraph: {
-    title: "Kontakt | SHINE by Katarína Dzuriková",
-    description: "Kontaktujte nás a rezervujte si termín v SHINE estetickej klinike",
+    title: "Kontakt | SHINE Štúdio Krásy Liptov",
+    description: "Rezervujte si termín v SHINE Štúdiu Krásy - kozmetika v Liptove",
+  },
+  alternates: {
+    canonical: "https://www.katarinadzurikova.sk/kontakt",
   },
 };
 
@@ -22,5 +25,6 @@ export default function KontaktPage() {
     </main>
   );
 }
+
 
 

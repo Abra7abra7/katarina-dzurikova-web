@@ -1,11 +1,11 @@
 # SHINE Štúdio Krásy by Katarína Dzuriková - robots.txt
-# https://studiokrasyshine.sk
+# https://www.katarinadzurikova.sk
 
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://studiokrasyshine.sk/sitemap.xml
+Sitemap: https://www.katarinadzurikova.sk/sitemap.xml
 
 # Disallow admin and private paths (if any)
 Disallow: /api/

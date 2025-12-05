@@ -4,13 +4,16 @@ import { FooterSection } from "@/components/sections/footer";
 import { GalleryPageContent } from "@/components/sections/gallery-page";
 
 export const metadata: Metadata = {
-  title: "Galéria | SHINE by Katarína Dzuriková",
+  title: "Galéria | SHINE Štúdio Krásy Liptov",
   description:
-    "Pozrite si fotogalériu našich ošetrení, výsledkov a priestorov kliniky. Profesionálna estetická starostlivosť v príjemnom prostredí.",
+    "Fotogaléria kozmetických ošetrení, výsledkov a priestorov SHINE Štúdia Krásy v Liptove. Permanentný make-up, pleťové ošetrenia, laminácia mihalníc - ukážky práce.",
   openGraph: {
-    title: "Galéria | SHINE by Katarína Dzuriková",
-    description: "Fotogaléria estetických ošetrení a priestorov kliniky",
+    title: "Galéria | SHINE Štúdio Krásy Liptov",
+    description: "Fotogaléria kozmetických ošetrení a priestorov štúdia v Liptove",
     images: ["/images/gallery/procedury/microneedling.jpeg"],
+  },
+  alternates: {
+    canonical: "https://www.katarinadzurikova.sk/galeria",
   },
 };
 
@@ -23,5 +26,6 @@ export default function GaleriaPage() {
     </main>
   );
 }
+
 
 

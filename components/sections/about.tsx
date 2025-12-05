@@ -2,27 +2,16 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import { useRef, useState, useEffect } from "react";
-import Link from "next/link";
+import { useRef } from "react";
 
 export function AboutSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const [isMobile, setIsMobile] = useState(true); // Default true pre SSR
-  
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
   });
 
-  // Parallax len na desktop - na mobile vypnuté pre plynulý scroll
-  const imageY = useTransform(scrollYProgress, [0, 1], isMobile ? ["0%", "0%"] : ["0%", "20%"]);
+  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
   return (
     <section
@@ -43,10 +32,10 @@ export function AboutSection() {
             <div className="relative aspect-[3/4] overflow-hidden">
               <motion.div style={{ y: imageY }} className="h-full w-full">
                 <Image
-                  src="/images/about/katarina-portrait.jpeg"
-                  alt="Katarína Dzuriková - profesionálna kozmetička Liptov"
+                  src="/images/gallery/WhatsApp Image 2025-12-01 at 20.53.46 (11).jpeg"
+                  alt="MUDr. Katarína Dzuriková"
                   fill
-                  className="object-cover object-top"
+                  className="object-cover saturate-75"
                   quality={90}
                 />
               </motion.div>
@@ -86,19 +75,32 @@ export function AboutSection() {
 
               {/* Headline */}
               <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-editorial leading-tight text-ink">
-                Vaša kozmetička v srdci Liptova
+                Vaša prirodzená krása, zvýraznená s citom
               </h2>
 
               {/* Body Text with Drop Cap */}
               <div className="space-y-4 md:space-y-6 text-ink/80 leading-relaxed">
                 <p className="text-base md:text-lg lg:text-xl">
                   <span className="float-left font-serif text-5xl md:text-7xl leading-none mr-2 md:mr-3 mt-1 md:mt-2 text-gold">
-                    K
+                    V
                   </span>
-                  ozmetika je pre mňa kombináciou estetiky, odbornosti a jemného ľudského prístupu. V SHINE sa zameriavam na pleť s maximálnou precíznosťou – sledujem detaily a vnímam, čo potrebuje.
+                  erím, že každá žena má jedinečnú krásu, ktorá si zaslúži
+                  jemnú a precíznu starostlivosť. Moja filozofia je postavená
+                  na rešpekte k vašej prirodzenosti – nechcem meniť, ale
+                  zvýrazniť to najlepšie, čo už máte.
                 </p>
                 <p className="text-sm md:text-base lg:text-lg">
-                  Pracujem s jemným dotykom, no profesionálne. Každé ošetrenie je individuálne navrhnuté tak, aby prinieslo skutočný efekt. Kvalita, čistota prevedenia a výsledok sú pre mňa základ.
+                  S viac ako 10-ročnými skúsenosťami v estetickej medicíne som
+                  sa špecializovala na neinvazívne procedúry, ktoré prinášajú
+                  viditeľné výsledky bez rizika a s minimálnym prestojom.
+                  Každému ošetreniu venujem maximálnu pozornosť a čas, aby ste
+                  sa cítili pohodlne a v bezpečí.
+                </p>
+                <p className="text-sm md:text-base lg:text-lg">
+                  Moja klinika je priestorom pokoja, kde sa o vás postarám s
+                  rovnakým rešpektom a starostlivosťou, aké by som chcela pre
+                  seba. Pretože skutočná krása nie je o dokonalosti – je o
+                  sebavedomí.
                 </p>
               </div>
 
@@ -115,27 +117,32 @@ export function AboutSection() {
                 className="mt-12 md:mt-16 py-8 md:py-12 border-t border-b border-gold/30"
               >
                 <p className="font-serif text-2xl sm:text-3xl md:text-4xl italic text-center leading-relaxed text-ink px-4">
-                  &ldquo;Krása nevzniká náhodou – ale vedome, citlivo a odborne&rdquo;
+                  &ldquo;Výsledky, ktoré nekričia – ale žiaria&rdquo;
                 </p>
               </motion.blockquote>
 
-              {/* Location info */}
-              <div className="mt-8 p-6 bg-stone-50">
-                <p className="text-sm text-ink/70 text-center">
-                  📍 Štúdio Krásy SHINE • Pavlova Ves, Liptov<br />
-                  <span className="text-xs text-ink/50">Ľahká dostupnosť z Liptovského Mikuláša, Ružomberka, Jasnej a Bešeňovej</span>
-                </p>
-              </div>
-
-              {/* CTA Link */}
-              <div className="mt-8 text-center">
-                <Link
-                  href="/o-mne"
-                  className="inline-flex items-center gap-2 text-sm uppercase tracking-luxury font-sans font-semibold text-gold hover:text-ink transition-colors duration-300"
-                >
-                  Viac o mne
-                  <span className="text-lg">→</span>
-                </Link>
+              {/* Credentials */}
+              <div className="mt-8 md:mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                <div>
+                  <h4 className="text-xs uppercase tracking-luxury font-sans font-semibold text-gold mb-3">
+                    Vzdelanie
+                  </h4>
+                  <ul className="space-y-2 text-sm md:text-base text-ink/70">
+                    <li>— Lekárska fakulta UK Bratislava</li>
+                    <li>— Certifikácia estetická medicína</li>
+                    <li>— Pokročilé techniky injekčnej lipolýzy</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-xs uppercase tracking-luxury font-sans font-semibold text-gold mb-3">
+                    Špecializácia
+                  </h4>
+                  <ul className="space-y-2 text-sm md:text-base text-ink/70">
+                    <li>— Neinvazívny lifting</li>
+                    <li>— Obnovenie kontúr tváre</li>
+                    <li>— Anti-aging protokoly</li>
+                  </ul>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -144,3 +151,6 @@ export function AboutSection() {
     </section>
   );
 }
+
+
+

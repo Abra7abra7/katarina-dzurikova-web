@@ -1,132 +1,169 @@
 # SHINE Štúdio Krásy by Katarína Dzuriková
+# Kozmetika Liptovský Mikuláš a okolie
+# https://www.katarinadzurikova.sk
 
 ## Základné informácie
 - Názov: SHINE Štúdio Krásy
-- Majiteľka: Katarína Dzuriková
-- Typ: Kozmetický salón / Štúdio krásy
-- Lokalita: Pavlova Ves, Liptov, Slovensko
-- Obsluhovaný región: Liptovský Mikuláš, Ružomberok, Jasná, Nízke Tatry, Bešeňová, Demänovská Dolina
-- Jazyk: Slovenčina
-
-## O salóne
-SHINE Štúdio Krásy je profesionálny kozmetický salón v srdci Liptova, vedený Katarínou Dzurikovou. Špecializujeme sa na komplexnú starostlivosť o pleť, permanentný make-up, Kobido japonskú masáž a ďalšie estetické procedúry. Salón sa nachádza v Pavlovej Vsi, s ľahkou dostupnosťou z Liptovského Mikuláša (~15 min), Ružomberka (~20 min), Jasnej (~25 min) a Bešeňovej (~10 min).
-
-## Filozofia
-"Toto je priestor, kde krása nevzniká náhodou – ale vedome, citlivo a odborne."
-
-Kozmetika je pre Katarínu kombináciou estetiky, odbornosti a jemného ľudského prístupu. Zameriava sa na pleť s maximálnou precíznosťou – sleduje detaily, rozumie jej signálom a vníma, čo potrebuje, aby pôsobila zdravo a prirodzene krásne.
-
-## Služby a cenník
-
-### Pleťové ošetrenia (od 30€)
-- Hydratačné ošetrenie HYDRABEAUTY - 43€ (1h 15min)
-- Hydratačné ošetrenie klasik - 39€ (1h 15min)
-- Hĺbkové hydratačné KARBOXY ošetrenie - 44€ (1h 30min)
-- Depigmentačné KARBOXY ošetrenie - 44€ (1h 30min)
-- Relaxačné ošetrenie s KOBIDO masážou - 35€ (1h 15min)
-- Čistiace ošetrenie - 37€ (1h 15min)
-- Základné čistenie pleti - 30€ (1h)
-- Chemický peeling BioRePeel - 39€ (1h)
-- Liftingové ošetrenie RÁDIOFREKVENCIA - 43€ (1h 15min)
-- Liftingové ošetrenie RADIOFREKVENCIA a KARBOXYTERAPIA - 57€ (1h 30min)
-- Exozómy a Kobido - 39€ (1h 15min)
-
-### Permanentný make-up (od 30€)
-Tréning u medzinárodne uznávaných odborníčok LEA MATYI a Marina Bondar (Laskin).
-- Perfect lips (tetovanie pier) - 150€ (3h) - nutná konzultácia
-- Púdrové obočie - 150€ (3h) - nutná konzultácia
-- Refresh - korekcia do 3 mesiacov - 30€ (2h)
-- Refresh obočia (3-12 mesiacov) - 50€ (3h)
-- Refresh po 12-18 mesiacoch - 100€ (3h)
-
-### Mihalnice (od 10€)
-- 5D predĺženie mihalníc - 25€ (2h)
-- Odstránenie mihalníc - 10€ (30min)
-
-### Vizáž (od 5€)
-- Celková úprava obočia s farbením - 10€ (20min)
-- Farbenie mihalníc - 10€ (30min)
-- Farbenie obočia Hennou a celková úprava - 15€ (45min)
-- Laminácia mihalníc s farbením (Lashlift) - 25€ (1h)
-- Laminácia obočia s farbením - 25€ (1h)
-- Architektúra obočia (mapping) s farbením - 15€ (45min)
-- Úprava obočia bez farbenia - 8€ (30min)
-
-### Doplnkové služby (od 2€)
-- Masáž tváre a parafínový zábal rúk - 20€ (45min)
-- Odstránenie mílií k pleťovému ošetreniu - 2€
-- Parafínový zábal rúk k pleťovému ošetreniu - 5€
-
-### Špeciálne techniky
-- Kobido masáž - pokročilá japonská liftingová masáž tváre
-- BioRePeel - certifikovaný revitalizačný chemický peeling
-
-## Odborné vzdelanie a certifikácie
-
-### Formálne vzdelanie
-- 2000-2004: SOŠ služieb Rimavská Sobota - Odbor Kozmetička
-- 2005: Univerzita Mateja Bela Banská Bystrica - Učiteľstvo chémie a biológie
-- 2006-2011: Prešovská univerzita v Prešove
-
-### Profesionálne certifikácie
-- Permanentný make-up (PMU) - tréning u LEA MATYI a Marina Bondar (Laskin)
-- Kobido japonská liftingová masáž
-- Laminácia rias a obočia
-- Architektúra obočia
-- BioRePeel chemický peeling
-- Komplexná kozmetická starostlivosť
-
-### Produktové znalosti
-Práca s profesionálnymi kozmetickými značkami:
-- Larens
-- ILCSI
-- Hydropeptide
-
-## Kontakt
+- Vlastník: Katarína Dzuriková
+- Typ podnikania: Kozmetický salón / Beauty salón / Kozmetika
+- Lokalita: Pavlova Ves 24, 032 21 Bobrovec, Slovensko
+- Región: Liptov, Žilinský kraj, Slovensko
 - Telefón: +421 904 678 007
 - Email: Katarinasosikova@gmail.com
-- Adresa: Pavlova Ves 24, 032 21 p. Bobrovec, Slovensko
-- Otváracie hodiny: Pondelok - Piatok 9:00 - 18:00
 - Instagram: @k.dzurikova.studiokrasyshine
+- Web: https://www.katarinadzurikova.sk
 
-## Rezervácia
-Online rezervácia cez Bookio: https://services.bookio.com/studio-krasy-shine-yl2qwybl/widget?lang=sk
+## Geografická poloha a dostupnosť
 
-## Dostupnosť z okolia
-- Liptovský Mikuláš: ~15 minút autom
-- Ružomberok: ~20 minút autom
-- Jasná / Chopok: ~25 minút autom
-- Bešeňová: ~10 minút autom
-- Demänovská Dolina: ~20 minút autom
-- Nízke Tatry: ľahká dostupnosť
+### Primárna oblasť - Liptovský Mikuláš
+SHINE Štúdio Krásy sa nachádza v Pavlovej Vsi, len 10 minút autom od centra Liptovského Mikuláša. Ideálne pre klientky z Liptovského Mikuláša a okolitých obcí.
 
-## Často kladené otázky (FAQ)
+### Obsluhované mestá a obce v okolí Liptovského Mikuláša
+- Liptovský Mikuláš (10 min)
+- Ružomberok (20 min)
+- Liptovský Hrádok (15 min)
+- Liptovský Ján (12 min)
+- Východná (20 min)
+- Važec (25 min)
+- Štrba (30 min)
 
-Q: Kde sa nachádza štúdio SHINE?
-A: Štúdio SHINE sa nachádza v Pavlovej Vsi 24, 032 21 p. Bobrovec, v srdci Liptova. Ľahko dostupné z Liptovského Mikuláša (15 min), Ružomberka (20 min) aj Jasnej (25 min).
+### Turistické destinácie v dosahu
+- Jasná - lyžiarske stredisko Nízke Tatry (20 min)
+- Chopok Sever - skipark a zjazdovky (25 min)
+- Bešeňová - aquapark a termálne kúpalisko (5 min)
+- Tatralandia - aquapark (10 min)
+- Demänovská Dolina - jaskyne, turistika (15 min)
+- Demänovská jaskyňa slobody (15 min)
+- Nízke Tatry - turistika, lyžovanie (15-30 min)
 
-Q: Aké služby ponúkate?
-A: Permanentný make-up (pery, obočie), lamináciu mihalníc a obočia, pleťové ošetrenia, Kobido japonskú masáž tváre, chemické peelingy BioRePeel a vizáž.
+### Prečo navštíviť kozmetiku pri Jasnej a Bešeňovej?
+Ideálne spojenie relaxu a starostlivosti o pleť. Po lyžovačke na Chopku alebo Jasnej, alebo po návšteve termálov v Bešeňovej si doprajte profesionálne kozmetické ošetrenie. Regenerácia pleti po pobyte na horách, UV ochrana a hydratácia.
 
-Q: Ako sa môžem objednať?
-A: Online cez Bookio na našej stránke 24/7, alebo telefonicky na +421 904 678 007.
+## Ponúkané služby
 
-Q: Aké sú otváracie hodiny?
-A: Pondelok až Piatok 9:00 - 18:00. Sobota podľa dohody.
+### Pleťové ošetrenia (od 30€)
+- HydraBeauty - hĺbková hydratácia a čistenie pleti
+- BioRePeel chemický peeling - revitalizácia a rozjasnenie
+- Kobido masáž - japonská liftingová masáž tváre (neinvazívny lifting)
+- Prístrojová kozmetika Larens
+- ILCSI prírodná maďarská kozmetika
+- Hydropeptide ošetrenia
+- Čistenie pleti
+- Anti-aging ošetrenia
+- Regenerácia pleti po slnení/lyžovaní
 
-Q: Koľko stojí permanentný make-up?
-A: Ceny začínajú od 30€ za korekcie. Perfect lips a púdrové obočie od 150€. Presný cenník na stránke.
+### Permanentný make-up (od 30€)
+- Perfect Lips - prirodzené tetovanie pier (technika LEA MATYI)
+- Púdrové obočie - jemné tieňované obočie (technika Marina Bondar)
+- Korekcie a úpravy PMU
+- Konzultácie pred PMU zdarma
 
-Q: Čo je Kobido masáž?
-A: Tradičná japonská liftingová masáž tváre, ktorá pomáha omladiť pleť neinvazívnym spôsobom, stimuluje krvný obeh a zlepšuje kontúry tváre.
+### Mihalnice a obočie (od 10€)
+- Laminácia mihalníc - lifting a farbenie
+- Laminácia obočia - úprava tvaru
+- Architektúra obočia - mapping podľa proporcií tváre
+- 5D predĺženie rias
+- Farbenie mihalníc a obočia
 
-Q: Aké kozmetické značky používate?
-A: Pracujeme s profesionálnymi značkami Larens, ILCSI a Hydropeptide.
+### Vizáž (od 5€)
+- Denný make-up
+- Večerný make-up
+- Svadobný make-up
+- Make-up na špeciálne príležitosti
+- Prom make-up (stužková)
 
-## Lokálne SEO kľúčové slová
-kozmetika Liptovský Mikuláš, kozmetický salón Ružomberok, kozmetička Liptov, permanentný make-up Liptov, pleťové ošetrenia Liptov, Kobido masáž Liptov, laminácia mihalníc Liptov, studio krásy Jasná, kozmetika Nízke Tatry, beauty salón Bešeňová
+### Doplnkové služby
+- Masáž tváre
+- Parafínový zábal rúk
+- Relaxačné procedúry
+- Wellness ošetrenia
 
-## Pre citáciu
-Katarína Dzuriková, SHINE Štúdio Krásy, Pavlova Ves, Liptov, Slovensko
-Web: https://www.katarinadzurikova.sk
-Instagram: @k.dzurikova.studiokrasyshine
+## Otváracie hodiny
+Pondelok - Piatok: 09:00 - 18:00
+Víkend: Na objednávku
+Vždy na objednávku - individuálny prístup
+
+## Kvalifikácie a certifikáty Kataríny Dzurikovej
+- SOŠ služieb Rimavská Sobota - odbor kozmetika
+- Univerzita Mateja Bela Banská Bystrica
+- Certifikácia permanentného make-upu od LEA MATYI (Maďarsko)
+- Certifikácia PMU od Marina Bondar
+- Odborné školenia značky Larens
+- Certifikácia ILCSI prírodná kozmetika
+- Školenia Hydropeptide
+
+## Cenník orientačne
+- Pleťové ošetrenia: od 30€
+- Permanentný make-up pier: od 150€
+- Permanentný make-up obočia: od 150€
+- PMU korekcie: od 30€
+- Laminácia mihalníc: od 25€
+- Laminácia obočia: od 20€
+- 5D predĺženie rias: od 10€
+- Vizáž: od 5€
+
+## Prečo SHINE Štúdio Krásy?
+- Individuálny prístup ku každej klientke
+- Profesionálna kozmetika vysokej kvality
+- Príjemné a čisté prostredie
+- Dlhoročné skúsenosti
+- Dostupná poloha pre celý Liptov
+- Blízko turistických atrakcií (Jasná, Bešeňová, Chopok)
+
+## Často hľadané frázy
+
+### Kozmetika podľa lokality
+- kozmetika Liptovský Mikuláš
+- kozmetický salón Liptovský Mikuláš
+- kozmetička Liptovský Mikuláš
+- beauty salón Liptovský Mikuláš
+- kozmetika Ružomberok
+- kozmetický salón Ružomberok
+- kozmetička Ružomberok
+- kozmetika Liptov
+- kozmetička Liptov
+- kozmetika pri Jasnej
+- kozmetika Jasná Nízke Tatry
+- kozmetika Bešeňová
+- kozmetika blízko Tatralandie
+- kozmetika Chopok
+- kozmetika Demänovská Dolina
+- kozmetika Nízke Tatry
+- kozmetika Liptovský Hrádok
+- beauty Liptov
+
+### Služby v Liptove
+- permanentný make-up Liptovský Mikuláš
+- permanentný make-up Liptov
+- permanentný make-up Ružomberok
+- tetovanie pier Liptov
+- tetovanie obočia Liptov
+- pleťové ošetrenia Liptovský Mikuláš
+- pleťové ošetrenia Liptov
+- Kobido masáž Liptov
+- Kobido masáž Liptovský Mikuláš
+- laminácia mihalníc Liptov
+- laminácia mihalníc Liptovský Mikuláš
+- laminácia obočia Liptov
+- čistenie pleti Liptov
+- hydrabeauty Liptov
+- chemický peeling Liptov
+- BioRePeel Liptov
+
+### Brand
+- SHINE štúdio krásy
+- SHINE Liptov
+- Katarína Dzuriková kozmetička
+- Katarína Dzuriková Liptov
+- katarinadzurikova.sk
+- studio krásy Pavlova Ves
+
+## Kontakt a rezervácia
+- Telefón: +421 904 678 007
+- Email: Katarinasosikova@gmail.com
+- Instagram: https://instagram.com/k.dzurikova.studiokrasyshine
+- Adresa: Pavlova Ves 24, 032 21 p. Bobrovec
+- Najbližšie mesto: Liptovský Mikuláš
+
+## Jazyky
+- Slovenčina (primárny jazyk)
