@@ -45,6 +45,7 @@ export function HeroSection() {
             loop
             muted
             playsInline
+            preload="metadata"
             onError={() => setVideoError(true)}
             className="absolute inset-0 w-full h-full object-cover brightness-90 saturate-75"
           >
@@ -56,11 +57,12 @@ export function HeroSection() {
         ) : (
           <Image
             src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=2940&auto=format&fit=crop"
-            alt="Aesthetic beauty"
+            alt="SHINE Štúdio Krásy - kozmetika Liptov"
             fill
+            sizes="100vw"
             className="object-cover brightness-90 saturate-75"
             priority
-            quality={95}
+            quality={80}
           />
         )}
         {/* Gradient Overlay */}

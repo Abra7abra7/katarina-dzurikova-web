@@ -183,8 +183,10 @@ export function GalleryPageContent() {
                   src={image.src}
                   alt={image.alt}
                   fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
-                  quality={85}
+                  quality={75}
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/0 to-ink/0 opacity-0 group-hover:opacity-100 transition-all duration-500" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
@@ -227,8 +229,9 @@ export function GalleryPageContent() {
                 src={selectedImage.src}
                 alt={selectedImage.alt}
                 fill
+                sizes="100vw"
                 className="object-contain"
-                quality={95}
+                quality={85}
               />
             </motion.div>
             <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-center">

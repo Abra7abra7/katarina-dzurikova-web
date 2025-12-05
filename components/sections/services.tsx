@@ -126,10 +126,12 @@ export function ServicesSection() {
                     src={service.image}
                     alt={service.title}
                     fill
+                    sizes="(max-width: 1024px) 100vw, 58vw"
                     className={`object-cover group-hover:scale-105 transition-transform duration-700 ${
                       service.imagePosition === "top" ? "object-top" : ""
                     }`}
-                    quality={90}
+                    quality={75}
+                    loading="lazy"
                   />
                 </div>
 
@@ -192,8 +194,9 @@ export function ServicesSection() {
                     src={service.image}
                     alt={service.title}
                     fill
+                    sizes="42vw"
                     className="object-cover"
-                    quality={90}
+                    quality={75}
                   />
                 </motion.div>
               ))}

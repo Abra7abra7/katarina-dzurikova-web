@@ -106,9 +106,10 @@ export function AboutPageContent() {
                 src="/images/about/katarina-portrait.jpeg"
                 alt="Katarína Dzuriková - profesionálna kozmetička Liptov"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover object-top"
                 priority
-                quality={90}
+                quality={80}
               />
             </div>
             <motion.div
@@ -332,8 +333,10 @@ export function AboutPageContent() {
               src="/images/gallery/priestory/certifikaty.jpeg"
               alt="Certifikáty Kataríny Dzurikovej - kozmetička Liptov"
               fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
-              quality={90}
+              quality={75}
+              loading="lazy"
             />
           </motion.div>
         </div>

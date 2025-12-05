@@ -35,7 +35,7 @@ const galleryImages = {
     },
     {
       src: "/images/gallery/WhatsApp Image 2025-12-01 at 20.53.46 (9).jpeg",
-      alt: "MUDr. Katarína Dzuriková s profesionálnym vybavením",
+      alt: "Katarína Dzuriková s profesionálnym vybavením",
       category: "Profesionalita",
     },
     {
@@ -62,7 +62,7 @@ const galleryImages = {
     },
     {
       src: "/images/gallery/WhatsApp Image 2025-12-01 at 20.53.46 (11).jpeg",
-      alt: "MUDr. Katarína Dzuriková - vaša špecialistka",
+      alt: "Katarína Dzuriková - vaša kozmetička v Liptove",
       category: "Profesionalita",
     },
     {
@@ -169,8 +169,10 @@ export function GallerySection() {
                   src={image.src}
                   alt={image.alt}
                   fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover saturate-75 group-hover:scale-105 group-hover:saturate-100 transition-all duration-700"
-                  quality={90}
+                  quality={75}
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/0 to-ink/0 opacity-0 group-hover:opacity-100 transition-all duration-700" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
@@ -202,8 +204,10 @@ export function GallerySection() {
                   src={image.src}
                   alt={image.alt}
                   fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover saturate-75 group-hover:scale-105 group-hover:saturate-100 transition-all duration-700"
-                  quality={90}
+                  quality={75}
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/0 to-ink/0 opacity-0 group-hover:opacity-100 transition-all duration-700" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
@@ -235,8 +239,10 @@ export function GallerySection() {
                   src={image.src}
                   alt={image.alt}
                   fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover saturate-75 group-hover:scale-105 group-hover:saturate-100 transition-all duration-700"
-                  quality={90}
+                  quality={75}
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/0 to-ink/0 opacity-0 group-hover:opacity-100 transition-all duration-700" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">

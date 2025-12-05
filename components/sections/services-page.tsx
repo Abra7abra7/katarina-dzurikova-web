@@ -103,8 +103,10 @@ export function ServicesPageContent() {
                   src={service.image}
                   alt={service.title}
                   fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
-                  quality={90}
+                  quality={75}
+                  priority={index === 0}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-canvas">
@@ -165,8 +167,10 @@ export function ServicesPageContent() {
                   src={service.image}
                   alt={service.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
-                  quality={90}
+                  quality={75}
+                  loading="lazy"
                 />
               </div>
               <div className="p-6">
