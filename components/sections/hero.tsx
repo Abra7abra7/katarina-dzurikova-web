@@ -49,7 +49,7 @@ export function HeroSection() {
             className="absolute inset-0 w-full h-full object-cover brightness-90 saturate-75"
           >
             <source
-              src="/images/gallery/video/WhatsApp Video 2025-12-01 at 21.47.46.mp4"
+              src="/images/hero/katarina-hero-video.mp4"
               type="video/mp4"
             />
           </video>
@@ -80,7 +80,7 @@ export function HeroSection() {
             className="mb-4 md:mb-6"
           >
             <span className="text-xs uppercase tracking-luxury font-sans font-semibold text-gold">
-              Estetická Medicína
+              Štúdio Krásy Liptov
             </span>
           </motion.div>
 

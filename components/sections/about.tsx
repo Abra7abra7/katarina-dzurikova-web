@@ -32,8 +32,8 @@ export function AboutSection() {
             <div className="relative aspect-[3/4] overflow-hidden">
               <motion.div style={{ y: imageY }} className="h-full w-full">
                 <Image
-                  src="/images/gallery/WhatsApp Image 2025-12-01 at 20.53.46 (11).jpeg"
-                  alt="MUDr. Katarína Dzuriková"
+                  src="/images/about/katarina-portrait.jpeg"
+                  alt="Katarína Dzuriková - profesionálna kozmetička Liptov"
                   fill
                   className="object-cover saturate-75"
                   quality={90}
@@ -55,7 +55,7 @@ export function AboutSection() {
               viewport={{ once: true }}
               className="mt-4 text-sm uppercase tracking-luxury font-sans font-semibold text-ink/60"
             >
-              Katarína Dzuriková
+              Katarína Dzuriková - profesionálna kozmetička Liptov
             </motion.p>
           </motion.div>
 
@@ -70,37 +70,37 @@ export function AboutSection() {
             >
               {/* Overline */}
               <span className="text-xs uppercase tracking-luxury font-sans font-semibold text-gold">
-                O mne
+                Katarína Dzuriková
               </span>
 
               {/* Headline */}
               <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-editorial leading-tight text-ink">
-                Vaša prirodzená krása, zvýraznená s citom
+                Vaša kozmetička v srdci Liptova
               </h2>
 
               {/* Body Text with Drop Cap */}
               <div className="space-y-4 md:space-y-6 text-ink/80 leading-relaxed">
                 <p className="text-base md:text-lg lg:text-xl">
                   <span className="float-left font-serif text-5xl md:text-7xl leading-none mr-2 md:mr-3 mt-1 md:mt-2 text-gold">
-                    V
+                    K
                   </span>
-                  erím, že každá žena má jedinečnú krásu, ktorá si zaslúži
-                  jemnú a precíznu starostlivosť. Moja filozofia je postavená
-                  na rešpekte k vašej prirodzenosti – nechcem meniť, ale
-                  zvýrazniť to najlepšie, čo už máte.
+                  ozmetika je pre mňa kombináciou estetiky, odbornosti a jemného
+                  ľudského prístupu. V SHINE sa zameriavam na pleť s maximálnou
+                  precíznosťou – sledujem detaily, rozumiem jej signálom a vnímam,
+                  čo potrebuje, aby pôsobila zdravo a prirodzene krásne.
                 </p>
                 <p className="text-sm md:text-base lg:text-lg">
-                  S viac ako 10-ročnými skúsenosťami v estetickej medicíne som
-                  sa špecializovala na neinvazívne procedúry, ktoré prinášajú
-                  viditeľné výsledky bez rizika a s minimálnym prestojom.
-                  Každému ošetreniu venujem maximálnu pozornosť a čas, aby ste
-                  sa cítili pohodlne a v bezpečí.
+                  Pracujem s jemným dotykom, no profesionálne. Každé ošetrenie je
+                  individuálne navrhnuté tak, aby prinieslo skutočný efekt, nie
+                  len krátkodobý pocit príjemnej starostlivosti. Kvalita, čistota
+                  prevedenia a výsledok sú pre mňa základ.
                 </p>
                 <p className="text-sm md:text-base lg:text-lg">
-                  Moja klinika je priestorom pokoja, kde sa o vás postarám s
-                  rovnakým rešpektom a starostlivosťou, aké by som chcela pre
-                  seba. Pretože skutočná krása nie je o dokonalosti – je o
-                  sebavedomí.
+                  Neustále sa vzdelávam a rozširujem svoje portfólio moderných
+                  techník, aby som klientkam prinášala postupy, ktoré sú funkčné,
+                  premyslené a zároveň bezpečné. Mojou ambíciou je, aby žena
+                  odchádzala z SHINE nielen s krajšou pleťou, ale aj s pocitom,
+                  že sa o ňu niekto naozaj postaral.
                 </p>
               </div>
 
@@ -117,7 +117,7 @@ export function AboutSection() {
                 className="mt-12 md:mt-16 py-8 md:py-12 border-t border-b border-gold/30"
               >
                 <p className="font-serif text-2xl sm:text-3xl md:text-4xl italic text-center leading-relaxed text-ink px-4">
-                  &ldquo;Výsledky, ktoré nekričia – ale žiaria&rdquo;
+                  &ldquo;Krása nevzniká náhodou – ale vedome, citlivo a odborne&rdquo;
                 </p>
               </motion.blockquote>
 
@@ -128,9 +128,9 @@ export function AboutSection() {
                     Vzdelanie
                   </h4>
                   <ul className="space-y-2 text-sm md:text-base text-ink/70">
-                    <li>— Lekárska fakulta UK Bratislava</li>
-                    <li>— Certifikácia estetická medicína</li>
-                    <li>— Pokročilé techniky injekčnej lipolýzy</li>
+                    <li>— SOŠ služieb Rimavská Sobota</li>
+                    <li>— UMB Banská Bystrica</li>
+                    <li>— Prešovská univerzita v Prešove</li>
                   </ul>
                 </div>
                 <div>
@@ -138,11 +138,22 @@ export function AboutSection() {
                     Špecializácia
                   </h4>
                   <ul className="space-y-2 text-sm md:text-base text-ink/70">
-                    <li>— Neinvazívny lifting</li>
-                    <li>— Obnovenie kontúr tváre</li>
-                    <li>— Anti-aging protokoly</li>
+                    <li>— Permanentný make-up (LEA MATYI, Marina Bondar)</li>
+                    <li>— Kobido japonská masáž</li>
+                    <li>— BioRePeel, Larens, ILCSI, Hydropeptide</li>
                   </ul>
                 </div>
+              </div>
+
+              {/* Location Info */}
+              <div className="mt-8 p-6 bg-stone-50 border-l-2 border-gold">
+                <p className="text-sm text-ink/70">
+                  📍 <strong>SHINE Štúdio Krásy</strong> • Pavlova Ves 24, Bobrovec
+                  <br />
+                  <span className="text-xs">
+                    Ľahká dostupnosť z Liptovského Mikuláša, Ružomberka, Jasnej a Bešeňovej
+                  </span>
+                </p>
               </div>
             </motion.div>
           </div>
@@ -151,6 +162,3 @@ export function AboutSection() {
     </section>
   );
 }
-
-
-
