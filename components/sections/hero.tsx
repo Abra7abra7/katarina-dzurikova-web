@@ -50,7 +50,7 @@ export function HeroSection() {
             className="absolute inset-0 w-full h-full object-cover brightness-90 saturate-75"
           >
             <source
-              src="https://pub-ca9ca721368949e4a4793e9cf426e44e.r2.dev/katarina-dzurikova-web-sk/katarina-hero-section.mp4"
+              src="https://pub-ca9ca721368949e4a4793e9cf426e44e.r2.dev/katarina-hero-section.mp4"
               type="video/mp4"
             />
           </video>
