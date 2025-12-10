@@ -80,7 +80,7 @@ const education = [
 
 const productKnowledge = [
   "Larens",
-  "ILCSI", 
+  "ILCSI",
   "Hydropeptide",
 ];
 
@@ -295,7 +295,7 @@ export function AboutPageContent() {
             <h2 className="mt-4 font-serif text-3xl md:text-4xl font-semibold tracking-editorial text-ink mb-8">
               Formálne vzdelanie
             </h2>
-            
+
             <div className="space-y-8">
               {education.map((edu, index) => (
                 <motion.div
@@ -334,7 +334,7 @@ export function AboutPageContent() {
               alt="Certifikáty Kataríny Dzurikovej - kozmetička Liptov"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
+              className="object-cover object-top"
               quality={75}
               loading="lazy"
             />
@@ -360,8 +360,8 @@ export function AboutPageContent() {
           <p className="text-canvas/50 text-sm mb-8">
             Obsluhujeme klientky z celého regiónu: Jasná, Nízke Tatry, Bešeňová, Demänovská Dolina
           </p>
-          <Button 
-            variant="luxury" 
+          <Button
+            variant="luxury"
             onClick={handleReservation}
             className="border-canvas text-canvas hover:bg-canvas hover:text-ink"
           >

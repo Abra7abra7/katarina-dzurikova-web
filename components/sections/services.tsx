@@ -76,7 +76,7 @@ const services: Service[] = [
 ];
 
 export function ServicesSection() {
-  const [hoveredService, setHoveredService] = useState<number | null>(null);
+  const [hoveredService, setHoveredService] = useState<number | null>(1);
 
   const handleReservation = () => {
     window.open(BOOKIO_URL, '_blank');
@@ -103,7 +103,7 @@ export function ServicesSection() {
               <div
                 key={service.id}
                 onMouseEnter={() => setHoveredService(service.id)}
-                onMouseLeave={() => setHoveredService(null)}
+                onMouseLeave={() => setHoveredService(1)}
                 className="group border-t border-stone-300 py-8 cursor-pointer transition-all duration-500"
               >
                 {/* Mobile Image */}
@@ -113,9 +113,8 @@ export function ServicesSection() {
                     alt={service.title}
                     fill
                     sizes="(max-width: 1024px) 100vw, 58vw"
-                    className={`object-cover group-hover:scale-105 transition-transform duration-700 ${
-                      service.imagePosition === "top" ? "object-top" : ""
-                    }`}
+                    className={`object-cover group-hover:scale-105 transition-transform duration-700 ${service.imagePosition === "top" ? "object-top" : ""
+                      }`}
                     quality={75}
                     loading="lazy"
                   />
@@ -169,7 +168,7 @@ export function ServicesSection() {
               {services.map((service) => (
                 <motion.div
                   key={service.id}
-                  initial={{ opacity: 0 }}
+                  initial={{ opacity: service.id === 1 ? 1 : 0 }}
                   animate={{
                     opacity: hoveredService === service.id ? 1 : 0,
                   }}
@@ -183,20 +182,12 @@ export function ServicesSection() {
                     sizes="42vw"
                     className="object-cover"
                     quality={75}
+                    priority={true}
                   />
                 </motion.div>
               ))}
               {/* Default State */}
-              {hoveredService === null && (
-                <motion.div
-                  initial={{ opacity: 1 }}
-                  className="absolute inset-0 flex items-center justify-center bg-stone-100"
-                >
-                  <p className="text-sm uppercase tracking-luxury font-sans font-semibold text-ink/30">
-                    Prejdite myšou cez službu
-                  </p>
-                </motion.div>
-              )}
+
             </div>
           </div>
         </div>

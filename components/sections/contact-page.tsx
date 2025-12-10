@@ -84,7 +84,7 @@ export function ContactPageContent() {
             <h2 className="font-serif text-2xl md:text-3xl font-semibold tracking-editorial text-ink mb-8">
               Kontaktné údaje
             </h2>
-            
+
             <div className="space-y-8">
               {contactInfo.map((item, index) => (
                 <motion.div
@@ -164,10 +164,10 @@ export function ContactPageContent() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="relative aspect-square lg:aspect-auto lg:h-full min-h-[400px] overflow-hidden"
+            className="relative aspect-square lg:aspect-auto lg:h-full min-h-[400px] overflow-hidden bg-stone-100"
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2614.8!2d19.5844!3d49.1089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDnCsDA2JzMyLjAiTiAxOcKwMzUnMDMuOCJF!5e0!3m2!1ssk!2ssk!4v1701686400000!5m2!1ssk!2ssk"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d83590.27962137937!2d19.46324264669648!3d49.123891404646725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDnCsDA2JzMyLjAiTiAxOcKwMzUnMDMuOCJF!5e0!3m2!1ssk!2ssk!4v1701686400000!5m2!1ssk!2ssk"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -175,7 +175,7 @@ export function ContactPageContent() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title="Mapa - SHINE Štúdio Krásy Pavlova Ves"
-              className="absolute inset-0"
+              className="absolute inset-0 grayscale hover:grayscale-0 transition-all duration-500"
             />
           </motion.div>
         </div>
@@ -232,8 +232,8 @@ export function ContactPageContent() {
             Zavolajte mi a radi vám poradím s výberom správneho ošetrenia. Som tu pre klientky z celého Liptova.
           </p>
           <a href="tel:+421904678007">
-            <Button 
-              variant="luxury" 
+            <Button
+              variant="luxury"
               className="border-canvas text-canvas hover:bg-canvas hover:text-ink"
             >
               Zavolať: +421 904 678 007

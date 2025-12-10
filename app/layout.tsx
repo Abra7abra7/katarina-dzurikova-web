@@ -140,7 +140,7 @@ const jsonLd = {
       name: "Liptovský Mikuláš",
     },
     {
-      "@type": "City", 
+      "@type": "City",
       name: "Ružomberok",
     },
     {
@@ -295,12 +295,12 @@ export default function RootLayout({
       <head>
         {/* Google Search Console verifikácia - pridajte svoj vlastný kód */}
         {/* <meta name="google-site-verification" content="VAS_VERIFIKACNY_KOD" /> */}
-        
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/icon.png" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="theme-color" content="#F9F8F6" />
         <meta name="geo.region" content="SK-ZI" />

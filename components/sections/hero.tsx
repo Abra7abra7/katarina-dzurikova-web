@@ -45,9 +45,10 @@ export function HeroSection() {
             loop
             muted
             playsInline
-            preload="metadata"
+            preload="auto"
+            poster="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=2940&auto=format&fit=crop"
             onError={() => setVideoError(true)}
-            className="absolute inset-0 w-full h-full object-cover brightness-90 saturate-75"
+            className="absolute inset-0 w-full h-full object-cover object-[center_75%] brightness-90 saturate-75"
           >
             <source
               src="https://pub-ca9ca721368949e4a4793e9cf426e44e.r2.dev/katarina-hero-section.mp4"
