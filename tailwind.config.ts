@@ -85,6 +85,15 @@ const config: Config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      keyframes: {
+        scrolldown: {
+          '0%': { transform: 'translateY(-100%)' },
+          '100%': { transform: 'translateY(100%)' }
+        }
+      },
+      animation: {
+        scrolldown: 'scrolldown 2s cubic-bezier(0.77, 0, 0.175, 1) infinite',
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

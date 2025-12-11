@@ -76,7 +76,7 @@ export const metadata: Metadata = {
       "Profesionálna kozmetika v Liptove. Permanentný make-up, pleťové ošetrenia, Kobido masáž. Katarína Dzuriková - kozmetička s individuálnym prístupom.",
     images: [
       {
-        url: "/images/about/katarina-portrait.jpeg",
+        url: "https://pub-ca9ca721368949e4a4793e9cf426e44e.r2.dev/gallery/06_Katarina/katarina-dzurikova-kozmeticka-001.jpg",
         width: 1200,
         height: 630,
         alt: "SHINE Štúdio Krásy - Katarína Dzuriková, kozmetička Liptov",
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "SHINE Štúdio Krásy | Kozmetika Liptov",
     description: "Profesionálna kozmetika v okolí Liptovského Mikuláša a Ružomberka",
-    images: ["/images/about/katarina-portrait.jpeg"],
+    images: ["https://pub-ca9ca721368949e4a4793e9cf426e44e.r2.dev/gallery/06_Katarina/katarina-dzurikova-kozmeticka-001.jpg"],
   },
   robots: {
     index: true,
@@ -179,7 +179,7 @@ const jsonLd = {
     closes: "18:00",
   },
   priceRange: "€€",
-  image: "https://www.katarinadzurikova.sk/images/about/katarina-portrait.jpeg",
+  image: "https://pub-ca9ca721368949e4a4793e9cf426e44e.r2.dev/gallery/06_Katarina/katarina-dzurikova-kozmeticka-001.jpg",
   sameAs: [
     "https://instagram.com/k.dzurikova.studiokrasyshine",
   ],

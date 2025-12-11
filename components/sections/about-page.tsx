@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Award, Heart, Shield, Sparkles, GraduationCap, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { galleryImages } from "@/lib/data/gallery";
 
 const BOOKIO_URL = "https://services.bookio.com/studio-krasy-shine-yl2qwybl/widget?lang=sk";
 
@@ -174,6 +175,30 @@ export function AboutPageContent() {
             &ldquo;Toto je priestor, kde krása nevzniká náhodou – ale vedome, citlivo a odborne.&rdquo;
           </p>
         </motion.blockquote>
+      </section>
+
+      {/* Photo Showcase Section */}
+      <section className="container mx-auto px-4 sm:px-6 lg:px-12 mt-16 md:mt-24">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+        >
+          {galleryImages.katarina.slice(1, 4).map((img, index) => (
+            <div key={index} className="relative aspect-[3/4] overflow-hidden group">
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-ink/10 group-hover:bg-transparent transition-colors duration-500" />
+            </div>
+          ))}
+        </motion.div>
       </section>
 
       {/* Values Section */}

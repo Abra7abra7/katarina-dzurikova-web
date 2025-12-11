@@ -9,71 +9,7 @@ import { Button } from "@/components/ui/button";
 
 const BOOKIO_URL = "https://services.bookio.com/studio-krasy-shine-yl2qwybl/widget?lang=sk";
 
-interface Service {
-  id: number;
-  title: string;
-  subtitle: string;
-  duration: string;
-  price: string;
-  description: string;
-  image: string;
-  imagePosition?: string; // Pre správne zobrazenie hláv na mobile
-}
-
-const services: Service[] = [
-  {
-    id: 1,
-    title: "Pleťové ošetrenia",
-    subtitle: "Hydratácia, lifting a regenerácia",
-    duration: "od 1 h",
-    price: "od 30 €",
-    description:
-      "Široká škála pleťových ošetrení - od hydratačných cez liftingové až po čistiace. Každé ošetrenie prispôsobené vašej pleti.",
-    image: "/images/services/pletove/hydrabeauty.jpeg",
-  },
-  {
-    id: 2,
-    title: "Permanentný make-up",
-    subtitle: "Tetovanie pier a obočia",
-    duration: "od 2 h",
-    price: "od 30 €",
-    description:
-      "Perfect lips a púdrové obočie s profesionálnym prístupom. Prirodzený výsledok, ktorý vydrží roky.",
-    image: "/images/services/permanentny-makeup/perfect-lips.jpeg",
-  },
-  {
-    id: 3,
-    title: "Mihalnice",
-    subtitle: "5D predĺženie a styling",
-    duration: "od 30 min",
-    price: "od 10 €",
-    description:
-      "Profesionálne predĺženie mihalníc 5D technikou pre dokonalý a prirodzený vzhľad vašich očí.",
-    image: "/images/services/mihalnice/5d-predlzenie.jpeg",
-  },
-  {
-    id: 4,
-    title: "Vizáž",
-    subtitle: "Úprava a farbenie obočia",
-    duration: "od 15 min",
-    price: "od 5 €",
-    description:
-      "Kompletné služby pre dokonalý vzhľad - úprava obočia, farbenie mihalníc, laminácia a mapping obočia podľa proporcií tváre.",
-    image: "/images/services/vizaz/katarina-nastroj.jpeg",
-    imagePosition: "top", // Katarína - ukázať hlavu
-  },
-  {
-    id: 5,
-    title: "Doplnkové služby",
-    subtitle: "Masáže a wellness procedúry",
-    duration: "od 1 min",
-    price: "od 2 €",
-    description:
-      "Masáž tváre, parafínový zábal rúk a ďalšie relaxačné procedúry pre kompletný zážitok starostlivosti.",
-    image: "/images/services/doplnkove/masaz-relax.jpeg",
-    imagePosition: "top", // Klientka - ukázať hlavu
-  },
-];
+import { Service, services } from "@/lib/data/services";
 
 export function ServicesSection() {
   const [hoveredService, setHoveredService] = useState<number | null>(1);

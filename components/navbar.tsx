@@ -8,6 +8,8 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { BookingModal } from "@/components/ui/booking-modal";
+
 const BOOKIO_URL = "https://services.bookio.com/studio-krasy-shine-yl2qwybl/widget?lang=sk";
 
 const navItems = [
@@ -21,6 +23,7 @@ const navItems = [
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
   const pathname = usePathname();
   const isHomePage = pathname === "/";
 
@@ -34,7 +37,7 @@ export function Navbar() {
   }, []);
 
   const handleReservation = () => {
-    window.open(BOOKIO_URL, '_blank');
+    setIsBookingModalOpen(true);
   };
 
   return (
@@ -125,16 +128,16 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-canvas md:hidden pt-24"
+            className="fixed inset-0 z-40 bg-canvas md:hidden pt-24 px-6 flex flex-col"
           >
-            <div className="container mx-auto px-6 flex flex-col gap-8">
+            <div className="flex-1 flex flex-col gap-6">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={cn(
-                    "text-3xl font-serif transition-colors duration-300 text-left",
+                    "text-3xl font-serif transition-colors duration-300 text-left py-2",
                     pathname === item.href
                       ? "text-gold"
                       : "text-ink hover:text-gold"
@@ -143,20 +146,78 @@ export function Navbar() {
                   {item.label}
                 </Link>
               ))}
-              <Button
-                variant="luxury"
-                className="mt-8 w-full"
-                onClick={() => {
-                  handleReservation();
-                  setIsMobileMenuOpen(false);
-                }}
-              >
-                Rezervácia
-              </Button>
+
+              <div className="mt-auto pb-8 space-y-8">
+                <Button
+                  variant="luxury"
+                  className="w-full h-12 text-lg"
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    handleReservation();
+                  }}
+                >
+                  Rezervácia
+                </Button>
+
+                {/* Social Icons for Mobile */}
+                <div className="flex items-center justify-center gap-8 pt-4 border-t border-stone-200">
+                  <a
+                    href="https://instagram.com/k.dzurikova.studiokrasyshine"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 text-ink/70 hover:text-gold transition-colors"
+                    aria-label="Instagram"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                    </svg>
+                  </a>
+                  {/* Facebook - if applicable, otherwise just IG as per existing footer */}
+                  {/* Using just IG as seen in footer, user asked for IG/FB but footer only has IG. I'll stick to IG to be safe or add generic FB if standard. Request said IG/FB. */}
+                  <a
+                    href="https://www.facebook.com/people/SHINE-Studio-kr%C3%A1sy-Katar%C3%ADna-Dzurikov%C3%A1/61555653422079/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 text-ink/70 hover:text-gold transition-colors"
+                    aria-label="Facebook"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
+
+      <BookingModal
+        isOpen={isBookingModalOpen}
+        onClose={() => setIsBookingModalOpen(false)}
+      />
     </>
   );
 }

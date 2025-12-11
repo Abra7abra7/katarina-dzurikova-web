@@ -27,16 +27,21 @@ const staggerContainer = {
 export function HeroSection() {
   const [videoError, setVideoError] = useState(false);
 
+  // Neskôr nahradiť configom alebo environment premennou
+  const R2_BASE = "https://pub-ca9ca721368949e4a4793e9cf426e44e.r2.dev";
+  const VIDEO_SRC = `${R2_BASE}/katarina-hero-section.mp4`;
+  const POSTER_SRC = `${R2_BASE}/katarina-hero-poster.jpg`;
+
   return (
     <section
       id="hero"
       className="relative h-screen w-full overflow-hidden bg-canvas"
     >
-      {/* Background Video/Image */}
+      {/* Background Video */}
       <motion.div
-        initial={{ scale: 1.2, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1.8, ease: [0.33, 1, 0.68, 1] }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2 }}
         className="absolute inset-0 z-0"
       >
         {!videoError ? (
@@ -46,91 +51,62 @@ export function HeroSection() {
             muted
             playsInline
             preload="auto"
-            poster="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=2940&auto=format&fit=crop"
+            poster={POSTER_SRC}
             onError={() => setVideoError(true)}
-            className="absolute inset-0 w-full h-full object-cover object-[center_75%] brightness-90 saturate-75"
+            className="absolute inset-0 w-full h-full object-cover object-[center_75%] brightness-[0.85]"
           >
             <source
-              src="https://pub-ca9ca721368949e4a4793e9cf426e44e.r2.dev/katarina-hero-section.mp4"
+              src={VIDEO_SRC}
               type="video/mp4"
             />
           </video>
         ) : (
           <Image
-            src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=2940&auto=format&fit=crop"
+            src={POSTER_SRC}
             alt="SHINE Štúdio Krásy - kozmetika Liptov"
             fill
             sizes="100vw"
-            className="object-cover brightness-90 saturate-75"
+            className="object-cover brightness-[0.85]"
             priority
             quality={80}
           />
         )}
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-canvas/80" />
-        {/* Subtle dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-ink/10" />
+        {/* Subtle Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
       </motion.div>
 
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col justify-center items-start container mx-auto px-4 sm:px-6 lg:px-12">
-        <div className="max-w-5xl">
-          {/* Overline */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-            className="mb-4 md:mb-6"
-          >
-            <span className="text-xs uppercase tracking-luxury font-sans font-semibold text-gold">
-              Štúdio Krásy Liptov
-            </span>
-          </motion.div>
+      <div className="relative z-10 h-full flex flex-col justify-center items-center text-center container mx-auto px-4 sm:px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          className="max-w-4xl"
+        >
+          <span className="block text-xs md:text-sm uppercase tracking-[0.3em] font-sans font-medium text-white/80 mb-6 md:mb-8">
+            Štúdio Krásy Liptov
+          </span>
 
-          {/* Main Headline */}
-          <motion.h1
-            variants={staggerContainer}
-            initial="hidden"
-            animate="show"
-            className="font-serif text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold tracking-editorial leading-none text-ink mb-6 md:mb-8 overflow-hidden"
-          >
-            <div className="overflow-hidden">
-              <motion.span variants={textReveal} className="inline-block">
-                VIDITEĽNÁ
-              </motion.span>
-            </div>
-            <div className="overflow-hidden">
-              <motion.span variants={textReveal} className="inline-block">
-                KRÁSA
-              </motion.span>
-            </div>
-          </motion.h1>
+          <h1 className="font-serif text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-medium tracking-tight text-white mb-8 md:mb-10 drop-shadow-2xl">
+            <span className="text-gold">VIDITEĽNÁ</span> <br className="md:hidden" /> KRÁSA
+          </h1>
 
-          {/* Subheadline */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2, duration: 0.8 }}
-            className="font-sans text-base md:text-lg lg:text-xl text-ink/80 leading-relaxed max-w-2xl pr-4"
-          >
+          <p className="font-sans text-base md:text-lg text-white/90 font-light leading-relaxed max-w-lg mx-auto tracking-wide">
             Precízna starostlivosť rešpektujúca vašu prirodzenosť.
-          </motion.p>
+          </p>
+        </motion.div>
 
-          {/* Scroll Indicator */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 2, duration: 0.8 }}
-            className="absolute bottom-12 left-6 lg:left-12"
-          >
-            <div className="flex items-center gap-3">
-              <div className="w-px h-16 bg-ink/30" />
-              <span className="text-xs uppercase tracking-luxury font-sans font-semibold text-ink/60 -rotate-90 origin-left translate-y-8">
-                Scroll
-              </span>
-            </div>
-          </motion.div>
-        </div>
+        {/* Minimal Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 2, duration: 2 }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        >
+          <div className="w-[1px] h-16 bg-white/30 overflow-hidden">
+            <div className="w-full h-full bg-gold animate-scrolldown" />
+          </div>
+        </motion.div>
       </div>
     </section>
   );

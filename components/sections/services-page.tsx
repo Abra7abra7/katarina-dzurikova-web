@@ -15,7 +15,7 @@ const serviceCategories = [
     subtitle: "Hydratácia, lifting a regenerácia",
     description: "Široká škála pleťových ošetrení prispôsobených vašej pleti - od hydratačných cez liftingové až po čistiace procedúry.",
     priceFrom: "od 30 €",
-    image: "/images/services/pletove/hydrabeauty.jpeg",
+    image: "https://pub-ca9ca721368949e4a4793e9cf426e44e.r2.dev/gallery/01_Pletove_Osetrenia/pletove-osetrenie-shine-012.jpg",
     featured: true,
   },
   {
@@ -24,7 +24,7 @@ const serviceCategories = [
     subtitle: "Tetovanie pier a obočia",
     description: "Perfect lips a púdrové obočie s profesionálnym prístupom. Prirodzený výsledok, ktorý vydrží roky.",
     priceFrom: "od 30 €",
-    image: "/images/services/permanentny-makeup/perfect-lips.jpeg",
+    image: "https://pub-ca9ca721368949e4a4793e9cf426e44e.r2.dev/gallery/02_Permanentny_Makeup/permanentny-makeup-liptov-001.jpg",
     featured: true,
   },
   {
@@ -33,7 +33,7 @@ const serviceCategories = [
     subtitle: "5D predĺženie a styling",
     description: "Profesionálne predĺženie mihalníc 5D technikou pre dokonalý a prirodzený vzhľad vašich očí.",
     priceFrom: "od 10 €",
-    image: "/images/services/mihalnice/5d-predlzenie.jpeg",
+    image: "https://pub-ca9ca721368949e4a4793e9cf426e44e.r2.dev/gallery/03_Mihalnice_Obocie/mihalnice-obocie-shine-003.jpg",
     featured: false,
   },
   {
@@ -42,7 +42,7 @@ const serviceCategories = [
     subtitle: "Úprava a farbenie obočia",
     description: "Kompletné služby pre dokonalý vzhľad - úprava obočia, farbenie, laminácia a mapping podľa proporcií tváre.",
     priceFrom: "od 5 €",
-    image: "/images/services/vizaz/katarina-nastroj.jpeg",
+    image: "https://pub-ca9ca721368949e4a4793e9cf426e44e.r2.dev/gallery/03_Mihalnice_Obocie/mihalnice-obocie-shine-010.jpg",
     featured: false,
   },
   {
@@ -51,7 +51,7 @@ const serviceCategories = [
     subtitle: "Masáže a wellness procedúry",
     description: "Masáž tváre, parafínový zábal rúk a ďalšie relaxačné procedúry pre kompletný zážitok starostlivosti.",
     priceFrom: "od 2 €",
-    image: "/images/services/doplnkove/masaz-relax.jpeg",
+    image: "https://pub-ca9ca721368949e4a4793e9cf426e44e.r2.dev/gallery/04_Atmosfera_Priestory/salon-krasy-shine-interier-004.jpg",
     featured: false,
   },
 ];
@@ -96,15 +96,15 @@ export function ServicesPageContent() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.8 }}
               viewport={{ once: true }}
-              className="group relative overflow-hidden bg-canvas border border-stone-200 hover:border-gold/50 transition-all duration-500"
+              className="group relative overflow-hidden bg-canvas border border-stone-200 hover:border-gold/50 transition-colors duration-500"
             >
-              <div className="relative aspect-[4/3] overflow-hidden">
+              <div className="relative aspect-[4/3] overflow-hidden bg-stone-100">
                 <Image
                   src={service.image}
                   alt={service.title}
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700 will-change-transform"
                   quality={75}
                   priority={index === 0}
                 />
@@ -151,7 +151,7 @@ export function ServicesPageContent() {
         >
           Ďalšie služby
         </motion.h2>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {otherServices.map((service, index) => (
             <motion.div
@@ -160,15 +160,15 @@ export function ServicesPageContent() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.8 }}
               viewport={{ once: true }}
-              className="group border border-stone-200 hover:border-gold/50 transition-all duration-500 overflow-hidden"
+              className="group border border-stone-200 hover:border-gold/50 transition-colors duration-500 overflow-hidden bg-canvas"
             >
-              <div className="relative aspect-square overflow-hidden">
+              <div className="relative aspect-square overflow-hidden bg-stone-100">
                 <Image
                   src={service.image}
                   alt={service.title}
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700 will-change-transform"
                   quality={75}
                   loading="lazy"
                 />
@@ -210,16 +210,16 @@ export function ServicesPageContent() {
             Rezervujte si bezplatnú konzultáciu a spoločne nájdeme to najlepšie ošetrenie pre vás.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              variant="luxury" 
+            <Button
+              variant="luxury"
               onClick={handleReservation}
               className="border-canvas text-canvas hover:bg-canvas hover:text-ink"
             >
               Rezervovať konzultáciu
             </Button>
             <Link href="/cennik">
-              <Button 
-                variant="luxury" 
+              <Button
+                variant="luxury"
                 className="border-canvas text-canvas hover:bg-canvas hover:text-ink w-full sm:w-auto"
               >
                 Zobraziť kompletný cenník

@@ -5,115 +5,62 @@ import Image from "next/image";
 import { useState } from "react";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { allImages, GalleryImage } from "@/lib/data/gallery"; // Import types if exported, else just data
+import { cn } from "@/lib/utils";
 
 const BOOKIO_URL = "https://services.bookio.com/studio-krasy-shine-yl2qwybl/widget?lang=sk";
 
-interface GalleryImage {
-  src: string;
-  alt: string;
-  category: string;
-}
-
-const galleryImages: GalleryImage[] = [
-  // Procedúry
-  {
-    src: "/images/gallery/procedury/laser-cervene-svetlo.jpeg",
-    alt: "Laserové ošetrenie s červeným svetlom",
-    category: "Procedúry",
-  },
-  {
-    src: "/images/gallery/procedury/microneedling.jpeg",
-    alt: "Microneedling - ošetrenie pokožky",
-    category: "Procedúry",
-  },
-  {
-    src: "/images/gallery/procedury/pmu-pery.jpeg",
-    alt: "Permanentný make-up pier - priebeh",
-    category: "Procedúry",
-  },
-  {
-    src: "/images/gallery/procedury/pmu-oboci.jpeg",
-    alt: "Permanentný make-up obočia",
-    category: "Procedúry",
-  },
-  // Výsledky
-  {
-    src: "/images/gallery/vysledky/perfect-lips-vysledok.jpeg",
-    alt: "Perfect lips - výsledok",
-    category: "Výsledky",
-  },
-  {
-    src: "/images/gallery/vysledky/pletove-osetrenie.jpeg",
-    alt: "Pleťové ošetrenie - výsledok",
-    category: "Výsledky",
-  },
-  {
-    src: "/images/gallery/vysledky/mihalnice-vysledok.jpeg",
-    alt: "Mihalnice - výsledok",
-    category: "Výsledky",
-  },
-  // Atmosféra
-  {
-    src: "/images/gallery/atmosfera/elegantne-prostredie.jpeg",
-    alt: "Elegantné prostredie kliniky",
-    category: "Atmosféra",
-  },
-  {
-    src: "/images/gallery/atmosfera/relaxacia.jpeg",
-    alt: "Relaxácia počas ošetrenia",
-    category: "Atmosféra",
-  },
-  {
-    src: "/images/gallery/atmosfera/klientka-osetrenie.jpeg",
-    alt: "Klientka počas ošetrenia",
-    category: "Atmosféra",
-  },
-  {
-    src: "/images/gallery/atmosfera/klientka-relax.jpeg",
-    alt: "Klientka v relaxačnom prostredí",
-    category: "Atmosféra",
-  },
-  {
-    src: "/images/gallery/atmosfera/klientka-pohar.jpeg",
-    alt: "Klientka s pohárom v relaxačnom prostredí",
-    category: "Atmosféra",
-  },
-  {
-    src: "/images/gallery/atmosfera/klientka-wellness.jpeg",
-    alt: "Wellness atmosféra",
-    category: "Atmosféra",
-  },
-  // Priestory
-  {
-    src: "/images/gallery/priestory/interier-kreslo.jpeg",
-    alt: "Interiér kliniky - ošetrovacie kreslo",
-    category: "Priestory",
-  },
-  {
-    src: "/images/gallery/priestory/pracovisko.jpeg",
-    alt: "Pracovisko s profesionálnym vybavením",
-    category: "Priestory",
-  },
-  {
-    src: "/images/gallery/priestory/certifikaty.jpeg",
-    alt: "Certifikáty a ocenenia",
-    category: "Priestory",
-  },
-];
-
-const categories = ["Všetko", "Procedúry", "Výsledky", "Atmosféra", "Priestory"];
-
 export function GalleryPageContent() {
   const [activeFilter, setActiveFilter] = useState<string>("Všetko");
+  const [displayedCount, setDisplayedCount] = useState(12);
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
 
-  const filteredImages = activeFilter === "Všetko" 
-    ? galleryImages 
-    : galleryImages.filter(img => img.category === activeFilter);
+  const categories = [
+    "Všetko",
+    "Pleťové ošetrenia",
+    "Permanentný make-up",
+    "Mihalnice a Obočie",
+    "Priestory",
+    "O mne",
+    "Školenia",
+    "Ostatné"
+  ];
+
+  // Filter images
+  const filteredImages = activeFilter === "Všetko"
+    ? allImages
+    : allImages.filter(img => img.category === activeFilter);
+
+  // Pagination
+  const visibleImages = filteredImages.slice(0, displayedCount);
+  const hasMore = visibleImages.length < filteredImages.length;
+
+  const handleLoadMore = () => {
+    setDisplayedCount(prev => prev + 12);
+  };
+
+  const handleFilterChange = (category: string) => {
+    setActiveFilter(category);
+    setDisplayedCount(12);
+  };
 
   const handleReservation = () => {
     window.open(BOOKIO_URL, '_blank');
   };
+
+  // Distribute to columns for Masonry
+  const getColumns = (images: typeof allImages) => {
+    const columns: typeof allImages[] = [[], [], []];
+    // Use 4 columns for desktop if desired, matching the old gallery-page css grid
+    // But masonry logic usually maps to specific column count.
+    // Let's stick to 3 columns to match Homepage for consistency as requested.
+    images.forEach((img, i) => {
+      columns[i % 3].push(img);
+    });
+    return columns;
+  };
+
+  const columns = getColumns(visibleImages);
 
   return (
     <article className="relative bg-canvas pt-32 pb-16 md:pt-40 md:pb-24">
@@ -148,12 +95,13 @@ export function GalleryPageContent() {
           {categories.map((category) => (
             <button
               key={category}
-              onClick={() => setActiveFilter(category)}
-              className={`px-6 py-3 text-sm uppercase tracking-luxury font-sans font-semibold transition-all duration-500 ${
+              onClick={() => handleFilterChange(category)}
+              className={cn(
+                "px-4 md:px-6 py-2 text-xs md:text-sm uppercase tracking-luxury font-sans font-semibold transition-all duration-500 rounded-full border",
                 activeFilter === category
-                  ? "bg-gold text-canvas"
-                  : "bg-canvas border border-gold/30 text-gold hover:bg-gold/10"
-              }`}
+                  ? "bg-gold border-gold text-canvas"
+                  : "bg-transparent border-stone-200 text-ink/60 hover:border-gold hover:text-gold"
+              )}
             >
               {category}
             </button>
@@ -161,44 +109,55 @@ export function GalleryPageContent() {
         </motion.div>
       </section>
 
-      {/* Gallery Grid */}
+      {/* Gallery Grid (Masonry) */}
       <section className="container mx-auto px-4 sm:px-6 lg:px-12 mb-16 md:mb-24">
-        <motion.div 
-          layout
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6"
-        >
-          <AnimatePresence mode="popLayout">
-            {filteredImages.map((image, index) => (
-              <motion.div
-                key={image.src}
-                layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="group relative aspect-[3/4] overflow-hidden cursor-pointer"
-                onClick={() => setSelectedImage(image)}
-              >
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
-                  quality={75}
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/0 to-ink/0 opacity-0 group-hover:opacity-100 transition-all duration-500" />
-                <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                  <span className="text-xs uppercase tracking-luxury font-sans font-semibold text-gold">
-                    {image.category}
-                  </span>
-                  <p className="mt-1 text-sm text-canvas/90">{image.alt}</p>
-                </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+          {columns.map((col, colIndex) => (
+            <div key={colIndex} className="flex flex-col gap-4 md:gap-6">
+              {col.map((image, i) => (
+                <motion.div
+                  key={`${image.src}-${i}`}
+                  layout
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.05 }}
+                  className="relative aspect-[3/4] overflow-hidden group cursor-pointer rounded-sm"
+                  onClick={() => setSelectedImage(image)}
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover saturate-[0.85] group-hover:scale-105 group-hover:saturate-100 transition-all duration-700"
+                    quality={75}
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-0 left-0 p-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                    <span className="text-xs uppercase tracking-luxury font-sans font-semibold text-gold">
+                      {image.category}
+                    </span>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          ))}
+        </div>
+
+        {/* Load More Button */}
+        {hasMore && (
+          <div className="mt-16 flex justify-center">
+            <Button
+              variant="luxury"
+              className="border-gold text-gold hover:bg-gold hover:text-canvas px-8 py-6 text-base tracking-widest"
+              onClick={handleLoadMore}
+            >
+              Načítať ďalšie
+            </Button>
+          </div>
+        )}
       </section>
 
       {/* Lightbox */}
@@ -208,7 +167,7 @@ export function GalleryPageContent() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-ink/95 flex items-center justify-center p-4"
+            className="fixed inset-0 z-[100] bg-ink/95 flex items-center justify-center p-4"
             onClick={() => setSelectedImage(null)}
           >
             <button
@@ -222,7 +181,7 @@ export function GalleryPageContent() {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="relative max-w-5xl max-h-[90vh] w-full aspect-[3/4]"
+              className="relative max-w-5xl max-h-[90vh] w-full aspect-[3/4] md:aspect-auto h-full"
               onClick={(e) => e.stopPropagation()}
             >
               <Image
@@ -234,11 +193,11 @@ export function GalleryPageContent() {
                 quality={85}
               />
             </motion.div>
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-center">
-              <span className="text-xs uppercase tracking-luxury font-sans font-semibold text-gold">
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-center w-full px-4 pointer-events-none">
+              <span className="text-xs uppercase tracking-luxury font-sans font-semibold text-gold md:text-sm">
                 {selectedImage.category}
               </span>
-              <p className="mt-1 text-canvas">{selectedImage.alt}</p>
+              <p className="mt-1 text-canvas text-sm md:text-base">{selectedImage.alt}</p>
             </div>
           </motion.div>
         )}
@@ -259,8 +218,8 @@ export function GalleryPageContent() {
           <p className="text-canvas/70 max-w-2xl mx-auto mb-8">
             Rezervujte si termín a spoločne vytvoríme vašu vlastnú cestu ku kráse.
           </p>
-          <Button 
-            variant="luxury" 
+          <Button
+            variant="luxury"
             onClick={handleReservation}
             className="border-canvas text-canvas hover:bg-canvas hover:text-ink"
           >

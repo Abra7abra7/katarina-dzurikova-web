@@ -19,7 +19,7 @@ export function AboutSection() {
           <div className="lg:col-span-5 lg:sticky lg:top-32">
             <div className="relative aspect-[3/4] overflow-hidden">
               <Image
-                src="/images/about/katarina-portrait.jpeg"
+                src="https://pub-ca9ca721368949e4a4793e9cf426e44e.r2.dev/gallery/06_Katarina/katarina-dzurikova-kozmeticka-005.jpg"
                 alt="Katarína Dzuriková - profesionálna kozmetička Liptov"
                 fill
                 sizes="(max-width: 1024px) 100vw, 42vw"

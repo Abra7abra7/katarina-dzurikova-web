@@ -3,6 +3,8 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import Image from "next/image";
+import { galleryImages } from "@/lib/data/gallery";
 
 interface Service {
   name: string;
@@ -16,83 +18,14 @@ interface Category {
   id: string;
   title: string;
   services: Service[];
+  galleryKey: keyof typeof galleryImages; // Allow mapping to gallery keys
 }
 
 const categories: Category[] = [
   {
-    id: "doplnkove",
-    title: "Doplnkové služby",
-    services: [
-      {
-        name: "Masáž tváre a parafínový zábal rúk",
-        duration: "45 min",
-        price: "20 €",
-      },
-      {
-        name: "Odstránenie mílií",
-        duration: "1 min",
-        price: "2 €",
-        description: "k pleťovému ošetreniu",
-      },
-      {
-        name: "Parafínový zábal rúk k pleťovému ošetreniu",
-        duration: "1 min",
-        price: "5 €",
-      },
-    ],
-  },
-  {
-    id: "mihalnice",
-    title: "Mihalnice",
-    services: [
-      {
-        name: "5D",
-        duration: "2 h",
-        price: "25 €",
-      },
-      {
-        name: "Odstránenie mihalníc",
-        duration: "30 min",
-        price: "10 €",
-      },
-    ],
-  },
-  {
-    id: "permanent",
-    title: "Permanentný make-up (tetovanie)",
-    services: [
-      {
-        name: "Perfect lips (tetovanie pier)",
-        duration: "3 h",
-        price: "150 €",
-        description: "nutná konzultácia",
-      },
-      {
-        name: "Púdrové obočie",
-        duration: "3 h",
-        price: "150 €",
-        description: "nutná konzultácia",
-      },
-      {
-        name: "Refresh - korekcia do 3 mesiacov",
-        duration: "2 h",
-        price: "30 €",
-      },
-      {
-        name: "Refresh obočia (3-12 mesiacov)",
-        duration: "3 h",
-        price: "50 €",
-      },
-      {
-        name: "Refresh po 12-18 mesiacoch",
-        duration: "3 h",
-        price: "100 €",
-      },
-    ],
-  },
-  {
     id: "pletove",
     title: "Pleťové ošetrenia",
+    galleryKey: "pletove",
     services: [
       {
         name: "Hydratačné ošetrenie prístrojom HYDRABEAUTY",
@@ -244,8 +177,60 @@ const categories: Category[] = [
     ],
   },
   {
+    id: "permanent",
+    title: "Permanentný make-up",
+    galleryKey: "permanent",
+    services: [
+      {
+        name: "Perfect lips (tetovanie pier)",
+        duration: "3 h",
+        price: "150 €",
+        description: "nutná konzultácia",
+      },
+      {
+        name: "Púdrové obočie",
+        duration: "3 h",
+        price: "150 €",
+        description: "nutná konzultácia",
+      },
+      {
+        name: "Refresh - korekcia do 3 mesiacov",
+        duration: "2 h",
+        price: "30 €",
+      },
+      {
+        name: "Refresh obočia (3-12 mesiacov)",
+        duration: "3 h",
+        price: "50 €",
+      },
+      {
+        name: "Refresh po 12-18 mesiacoch",
+        duration: "3 h",
+        price: "100 €",
+      },
+    ],
+  },
+  {
+    id: "mihalnice",
+    title: "Mihalnice",
+    galleryKey: "mihalnice", // Using mihalnice for both
+    services: [
+      {
+        name: "5D",
+        duration: "2 h",
+        price: "25 €",
+      },
+      {
+        name: "Odstránenie mihalníc",
+        duration: "30 min",
+        price: "10 €",
+      },
+    ],
+  },
+  {
     id: "vizaz",
     title: "Vizáž",
+    galleryKey: "mihalnice", // Reuse mihalnice/brows
     services: [
       {
         name: "Celková úprava obočia s farbením",
@@ -289,17 +274,41 @@ const categories: Category[] = [
       },
     ],
   },
+  {
+    id: "doplnkove",
+    title: "Doplnkové služby",
+    galleryKey: "ostatne", // Miscellaneous
+    services: [
+      {
+        name: "Masáž tváre a parafínový zábal rúk",
+        duration: "45 min",
+        price: "20 €",
+      },
+      {
+        name: "Odstránenie mílií",
+        duration: "1 min",
+        price: "2 €",
+        description: "k pleťovému ošetreniu",
+      },
+      {
+        name: "Parafínový zábal rúk k pleťovému ošetreniu",
+        duration: "1 min",
+        price: "5 €",
+      },
+    ],
+  },
 ];
 
 export function PricingSection() {
-  const [activeCategory, setActiveCategory] = useState<string | null>(
-    categories[0].id
-  );
+  const [activeCategoryId, setActiveCategoryId] = useState<string>(categories[0].id);
   const [expandedService, setExpandedService] = useState<string | null>(null);
 
   const toggleService = (serviceName: string) => {
     setExpandedService(expandedService === serviceName ? null : serviceName);
   };
+
+  const activeCategory = categories.find((c) => c.id === activeCategoryId) || categories[0];
+  const activeImages = galleryImages[activeCategory.galleryKey] || [];
 
   return (
     <section className="relative bg-canvas py-16 md:py-24 lg:py-32 min-h-screen">
@@ -327,116 +336,139 @@ export function PricingSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
-          className="mb-12 md:mb-16 flex flex-wrap justify-center gap-3 md:gap-4"
+          className="mb-12 md:mb-16 flex flex-wrap justify-center gap-3 md:gap-4 border-b border-stone-100 pb-8"
         >
           {categories.map((category) => (
             <button
               key={category.id}
-              onClick={() => setActiveCategory(category.id)}
-              className={`px-4 md:px-6 py-2 md:py-3 text-xs md:text-sm uppercase tracking-luxury font-sans font-semibold transition-all duration-500 ${
-                activeCategory === category.id
-                  ? "bg-gold text-canvas"
-                  : "bg-canvas border border-gold/30 text-gold hover:bg-gold/10"
-              }`}
+              onClick={() => setActiveCategoryId(category.id)}
+              className={`px-4 md:px-6 py-2 md:py-3 text-xs md:text-sm uppercase tracking-luxury font-sans font-semibold transition-all duration-500 rounded-full border ${activeCategoryId === category.id
+                  ? "bg-gold border-gold text-canvas"
+                  : "bg-transparent border-stone-200 text-ink/60 hover:border-gold hover:text-gold"
+                }`}
             >
               {category.title}
             </button>
           ))}
         </motion.div>
 
-        {/* Services Grid */}
-        <AnimatePresence mode="wait">
-          {categories.map(
-            (category) =>
-              activeCategory === category.id && (
-                <motion.div
-                  key={category.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.5, ease: [0.33, 1, 0.68, 1] }}
-                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
-                >
-                  {category.services.map((service, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 30 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{
-                        delay: index * 0.1,
-                        duration: 0.6,
-                        ease: [0.33, 1, 0.68, 1],
-                      }}
-                      className="group bg-canvas border border-stone-300 p-6 md:p-8 hover:border-gold/50 transition-all duration-500 cursor-pointer"
-                      onClick={() =>
-                        service.details && toggleService(service.name)
-                      }
-                    >
-                      {/* Service Name */}
-                      <h3 className="font-serif text-xl md:text-2xl font-semibold tracking-editorial text-ink mb-3 group-hover:text-gold transition-colors duration-500">
-                        {service.name}
-                      </h3>
+        {/* Content Area - Split Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 
-                      {/* Description */}
-                      {service.description && (
-                        <p className="text-xs md:text-sm text-ink/60 mb-3">
-                          {service.description}
-                        </p>
-                      )}
+          {/* Visual Column (Sticky) */}
+          <motion.div
+            layout
+            className="lg:col-span-5 lg:sticky lg:top-32 space-y-6"
+          >
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeCategory.id}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.5 }}
+                className="grid gap-4"
+              >
+                {/* Show first 2 images from the category */}
+                {activeImages.slice(0, 2).map((img, idx) => (
+                  <div key={idx} className={`relative overflow-hidden rounded-sm shadow-sm ${idx === 0 ? 'aspect-[4/3] md:aspect-[3/4]' : 'aspect-square hidden md:block'}`}>
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 40vw"
+                      className="object-cover transition-transform duration-1000 hover:scale-105"
+                    />
+                  </div>
+                ))}
+                {activeImages.length === 0 && (
+                  <div className="aspect-[3/4] bg-stone-100 flex items-center justify-center text-ink/30">
+                    <span className="text-sm">Obrázok sa pripravuje</span>
+                  </div>
+                )}
+              </motion.div>
+            </AnimatePresence>
+          </motion.div>
 
-                      {/* Duration & Price */}
-                      <div className="flex items-center justify-between mt-4">
-                        {service.duration && (
-                          <span className="text-sm text-ink/60">
-                            ⏱ {service.duration}
-                          </span>
+          {/* Pricing List Column */}
+          <div className="lg:col-span-7">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeCategory.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5 }}
+                className="grid grid-cols-1 gap-4"
+              >
+                {activeCategory.services.map((service, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.05 }}
+                    className="group bg-canvas border border-stone-200 p-6 hover:border-gold/50 transition-all duration-300 rounded-sm cursor-pointer hover:shadow-sm"
+                    onClick={() => service.details && toggleService(service.name)}
+                  >
+                    <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                      <div className="flex-1">
+                        <h3 className="font-serif text-lg md:text-xl font-medium text-ink group-hover:text-gold transition-colors duration-300">
+                          {service.name}
+                        </h3>
+                        {service.description && (
+                          <p className="text-sm text-ink/60 mt-1">
+                            {service.description}
+                          </p>
                         )}
-                        <span className="font-sans text-xl md:text-2xl font-bold text-gold">
+                        {service.duration && (
+                          <p className="text-xs text-ink/40 mt-2 flex items-center gap-1">
+                            <span>⏱</span> {service.duration}
+                          </p>
+                        )}
+                      </div>
+                      <div className="flex items-center gap-4 shrink-0">
+                        <span className="font-sans text-xl font-bold text-gold">
                           {service.price}
                         </span>
-                      </div>
-
-                      {/* Expandable Details */}
-                      {service.details && (
-                        <div className="mt-4 flex items-center justify-center">
+                        {service.details && (
                           <ChevronDown
-                            className={`text-gold transition-transform duration-300 ${
-                              expandedService === service.name
-                                ? "rotate-180"
-                                : ""
-                            }`}
+                            className={`text-gold/50 transition-transform duration-300 ${expandedService === service.name ? "rotate-180" : ""
+                              }`}
                             size={20}
                           />
-                        </div>
-                      )}
+                        )}
+                      </div>
+                    </div>
 
-                      <AnimatePresence>
-                        {service.details &&
-                          expandedService === service.name && (
-                            <motion.div
-                              initial={{ height: 0, opacity: 0 }}
-                              animate={{ height: "auto", opacity: 1 }}
-                              exit={{ height: 0, opacity: 0 }}
-                              transition={{ duration: 0.3 }}
-                              className="mt-4 pt-4 border-t border-gold/30 overflow-hidden"
-                            >
-                              <p className="text-xs uppercase tracking-luxury font-sans font-semibold text-gold mb-3">
-                                Postup ošetrenia:
-                              </p>
-                              <ul className="space-y-2 text-sm text-ink/70">
-                                {service.details.map((detail, idx) => (
-                                  <li key={idx}>• {detail}</li>
-                                ))}
-                              </ul>
-                            </motion.div>
-                          )}
-                      </AnimatePresence>
-                    </motion.div>
-                  ))}
-                </motion.div>
-              )
-          )}
-        </AnimatePresence>
+                    <AnimatePresence>
+                      {service.details && expandedService === service.name && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="mt-4 pt-4 border-t border-gold/20 overflow-hidden"
+                        >
+                          <p className="text-xs uppercase tracking-luxury font-sans font-semibold text-gold mb-2">
+                            Postup ošetrenia:
+                          </p>
+                          <ul className="space-y-1 text-sm text-ink/70">
+                            {service.details.map((detail, idx) => (
+                              <li key={idx} className="flex items-start gap-2">
+                                <span className="text-gold/50 mt-1.5 w-1 h-1 rounded-full bg-gold shrink-0" />
+                                <span>{detail}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </div>
       </div>
     </section>
   );
