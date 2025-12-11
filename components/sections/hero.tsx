@@ -37,14 +37,27 @@ export function HeroSection() {
       id="hero"
       className="relative h-screen w-full overflow-hidden bg-canvas"
     >
-      {/* Background Video */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 2 }}
-        className="absolute inset-0 z-0"
-      >
-        {!videoError ? (
+      {/* Background Image - Always rendered for LCP */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={POSTER_SRC}
+          alt="SHINE Štúdio Krásy - kozmetika Liptov"
+          fill
+          sizes="100vw"
+          className="object-cover brightness-[0.85]"
+          priority
+          quality={80}
+        />
+      </div>
+
+      {/* Video Layer - Fades in over the image */}
+      {!videoError && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="absolute inset-0 z-0"
+        >
           <video
             autoPlay
             loop
@@ -60,20 +73,11 @@ export function HeroSection() {
               type="video/mp4"
             />
           </video>
-        ) : (
-          <Image
-            src={POSTER_SRC}
-            alt="SHINE Štúdio Krásy - kozmetika Liptov"
-            fill
-            sizes="100vw"
-            className="object-cover brightness-[0.85]"
-            priority
-            quality={80}
-          />
-        )}
-        {/* Subtle Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-      </motion.div>
+        </motion.div>
+      )}
+
+      {/* Subtle Overlay */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none" />
 
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col justify-center items-center text-center container mx-auto px-4 sm:px-6">
