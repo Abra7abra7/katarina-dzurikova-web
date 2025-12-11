@@ -15,7 +15,7 @@ const serviceCategories = [
     subtitle: "Hydratácia, lifting a regenerácia",
     description: "Široká škála pleťových ošetrení prispôsobených vašej pleti - od hydratačných cez liftingové až po čistiace procedúry.",
     priceFrom: "od 30 €",
-    image: "https://pub-ca9ca721368949e4a4793e9cf426e44e.r2.dev/gallery/01_Pletove_Osetrenia/pletove-osetrenie-shine-012.jpg",
+    image: "https://pub-ca9ca721368949e4a4793e9cf426e44e.r2.dev/gallery/01_Pletove_Osetrenia/pletove-osetrenie-shine-011.jpg",
     featured: true,
   },
   {
@@ -24,7 +24,7 @@ const serviceCategories = [
     subtitle: "Tetovanie pier a obočia",
     description: "Perfect lips a púdrové obočie s profesionálnym prístupom. Prirodzený výsledok, ktorý vydrží roky.",
     priceFrom: "od 30 €",
-    image: "https://pub-ca9ca721368949e4a4793e9cf426e44e.r2.dev/gallery/02_Permanentny_Makeup/permanentny-makeup-liptov-001.jpg",
+    image: "https://pub-ca9ca721368949e4a4793e9cf426e44e.r2.dev/gallery/02_Permanentny_Makeup/permanentny-makeup-liptov-010.jpg",
     featured: true,
   },
   {
@@ -83,6 +83,31 @@ export function ServicesPageContent() {
           <p className="mt-6 text-lg text-ink/70 max-w-2xl mx-auto">
             Precízna starostlivosť prispôsobená vašim potrebám. Vyberte si z našej ponuky profesionálnych ošetrení.
           </p>
+        </motion.div>
+      </section>
+
+      {/* Mobile Services */}
+      <section className="container mx-auto px-4 sm:px-6 lg:px-12 mb-16 md:mb-24">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="bg-stone-50 border border-stone-200 p-8 md:p-12 text-center max-w-4xl mx-auto"
+        >
+          <h2 className="font-serif text-2xl md:text-3xl font-semibold tracking-editorial text-ink mb-6">
+            Služby priamo u vás
+          </h2>
+          <p className="text-ink/80 leading-relaxed mb-8 text-lg">
+            Ste na víkendovom pobyte, túre alebo babskej jazde? Doprajte si diagnostiku pleti, glow-up rituály, expresné hydratačné či regeneračné kúry, Kobido, relaxačné tvárové masáže alebo farbenie obočia a mihalníc priamo u vás na izbe a premeňte svoj pobyt na výnimočný zážitok.
+          </p>
+          <Link
+            href="/kontakt"
+            className="inline-flex items-center gap-2 text-gold hover:text-gold/80 font-sans font-semibold tracking-luxury uppercase transition-colors"
+          >
+            Napíšte mi
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </motion.div>
       </section>
 
@@ -192,6 +217,33 @@ export function ServicesPageContent() {
             </motion.div>
           ))}
         </div>
+      </section>
+
+
+
+      {/* Social Media Params */}
+      <section className="container mx-auto px-4 sm:px-6 lg:px-12 mb-16 md:mb-24 text-center">
+        <p className="text-ink/70 max-w-2xl mx-auto leading-relaxed">
+          Najnovšie akcie, prémiové balíčky a zvýhodnené ošetrenia a ďalšie zaujímavé informácie nájdete na našom{' '}
+          <a
+            href="https://www.facebook.com/people/SHINE-Studio-kr%C3%A1sy-Katar%C3%ADna-Dzurikov%C3%A1/61555653422079/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gold hover:underline font-semibold"
+          >
+            Facebooku
+          </a>
+          {' '}a{' '}
+          <a
+            href="https://instagram.com/k.dzurikova.studiokrasyshine"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gold hover:underline font-semibold"
+          >
+            instagrame
+          </a>
+          .
+        </p>
       </section>
 
       {/* CTA Section */}
