@@ -20,6 +20,7 @@ interface Category {
   title: string;
   services: Service[];
   galleryKey: keyof typeof galleryImages;
+  customImages?: { src: string; alt: string }[];
 }
 
 const categories: Category[] = [
@@ -192,6 +193,11 @@ const categories: Category[] = [
     id: "permanent",
     title: "Permanentný make-up",
     galleryKey: "permanent",
+    customImages: [
+      { src: "https://pub-ca9ca721368949e4a4793e9cf426e44e.r2.dev/gallery/02_Permanentny_Makeup/permanentny-makeup-liptov-001.jpg", alt: "Permanentný make-up pery" },
+      { src: "https://pub-ca9ca721368949e4a4793e9cf426e44e.r2.dev/gallery/02_Permanentny_Makeup/permanentny-makeup-liptov-006.jpg", alt: "Permanentný make-up obočie" },
+      { src: "https://pub-ca9ca721368949e4a4793e9cf426e44e.r2.dev/gallery/02_Permanentny_Makeup/permanentny-makeup-liptov-004.jpg", alt: "Detail permanentného make-upu" },
+    ],
     services: [
       {
         name: "Perfect lips (tetovanie pier)",
@@ -330,7 +336,7 @@ export function PricingSection() {
   };
 
   const activeCategory = categories.find((c) => c.id === activeCategoryId) || categories[0];
-  const activeImages = galleryImages[activeCategory.galleryKey] || [];
+  const activeImages = activeCategory.customImages || galleryImages[activeCategory.galleryKey] || [];
 
   return (
     <section className="relative bg-canvas py-16 md:py-24 lg:py-32 min-h-screen">
@@ -378,7 +384,7 @@ export function PricingSection() {
                 transition={{ duration: 0.4 }}
                 className="grid gap-4"
               >
-                {activeImages.slice(0, 2).map((img, idx) => (
+                {activeImages.slice(0, 3).map((img, idx) => (
                   <div key={idx} className={`relative overflow-hidden rounded-sm shadow-sm ${idx === 0 ? 'aspect-[4/3]' : 'aspect-square'}`}>
                     <Image
                       src={img.src}
